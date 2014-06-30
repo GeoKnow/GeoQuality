@@ -1,0 +1,1143 @@
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#>. 
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#>. 
+@prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#>. 
+@prefix qb: <http://purl.org/linked-data/cube#>. 
+@prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>.
+@prefix dcterms: <http://purl.org/dc/terms/>. 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>. 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema>. 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sdmx-metadata: <http://purl.org/linked-data/sdmx/2009/metadata#>.
+@prefix sdmx: <http://purl.org/linked-data/sdmx#>. 
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>.
+@prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#>. 
+@prefix gk-dim: <http://www.geoknow.eu/properties/>. 
+@prefix owl: <http://www.w3.org/2002/07/owl#>. 
+@prefix gk-measure: <http://www.geoknow.eu/measure/>. 
+
+<> a owl:Ontology ; 
+ rdfs:label "GeoKnow Spatical Data Qaluty DataCube Knowledge Base" ;
+ dc:description "This knowledgebase contains 3 different DataCubes with different dimensions and measures." .
+
+#
+ #Data Set 
+ # 
+<http://www.geoknow.eu/dataset/ds1>  a qb:DataSet ;
+	       dcterms:publisher "AKSW, GeoKnow" ; 
+	       rdfs:label "DataCube1 Results:  Normal vs. Outlier Instances" ; 
+	       rdfs:comment "DataCube1 Results:  Normal vs. Outlier Instances" ; 
+	       qb:structure <http://www.geoknow.eu/data-cube/dsd1> ;
+	       dcterms:date "Mon Jun 30 16:37:52 CEST 2014". 
+
+<http://www.geoknow.eu/dataset/ds2>  a qb:DataSet ;
+	       dcterms:publisher "AKSW, GeoKnow" ; 
+	       rdfs:label "DataCube2 Results:  Instances Information with Properties count" ; 
+	       rdfs:comment "DataCube2 Results:  Instances Informaton with Properties count" ; 
+	       qb:structure <http://www.geoknow.eu/data-cube/dsd2> ;
+	       dcterms:date "Mon Jun 30 16:37:52 CEST 2014". 
+
+<http://www.geoknow.eu/dataset/ds3>  a qb:DataSet ;
+	       dcterms:publisher "AKSW, GeoKnow" ; 
+	       rdfs:label "DataCube3 Results:  Properties Information" ; 
+	       rdfs:comment "DataCube3 Results:  Properties Informaton" ; 
+	       qb:structure <http://www.geoknow.eu/data-cube/dsd3> ;
+	       dcterms:date "Mon Jun 30 16:37:52 CEST 2014". 
+
+# 
+# Data Structure Definitions 
+ # 
+<http://www.geoknow.eu/data-cube/dsd1> a qb:DataStructureDefinition ; 
+                                       rdfs:label   "A Data Structure Definition"@en ;
+                                       rdfs:comment  "A Data Structure Definition for DataCube1" ;
+                                       qb:component <http://www.geoknow.eu/data-cube/dsd1/c1>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd1/c2>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd1/c3>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd1/c4> . 
+
+<http://www.geoknow.eu/data-cube/dsd2> a qb:DataStructureDefinition ; 
+                                       rdfs:label   "A Data Structure Definition"@en ;
+                                       rdfs:comment  "A Data Structure Definition for DataCube2" ;
+                                       qb:component <http://www.geoknow.eu/data-cube/dsd2/c1>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd2/c2>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd2/c3>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd2/c4>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd2/c5> . 
+
+<http://www.geoknow.eu/data-cube/dsd3> a qb:DataStructureDefinition ; 
+                                       rdfs:label   "A Data Structure Definition"@en ;
+                                       rdfs:comment  "A Data Structure Definition for DataCube3" ;
+                                       qb:component <http://www.geoknow.eu/data-cube/dsd3/c1>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd3/c2>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd3/c3>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd3/c4>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd3/c5> . 
+
+ # 
+ #Componenet Specifications
+ #
+ <http://www.geoknow.eu/data-cube/dsd1/c1> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of IsOutlier " ;
+                                          qb:dimension gk-dim:InstanceType . 
+<http://www.geoknow.eu/data-cube/dsd1/c2> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Class" ;
+                                          qb:dimension gk-dim:Class . 
+<http://www.geoknow.eu/data-cube/dsd1/c3> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Time Stamp" ;
+                                          qb:dimension gk-dim:TimeStamp . 
+<http://www.geoknow.eu/data-cube/dsd1/c4> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Instance" ;
+                                          qb:measure sdmx-measure:InstanceCount . 
+
+<http://www.geoknow.eu/data-cube/dsd2/c1> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Instance" ;
+                                          qb:dimension gk-dim:Instance . 
+<http://www.geoknow.eu/data-cube/dsd2/c2> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of IsOutlier " ;
+                                          qb:dimension gk-dim:InstanceType . 
+<http://www.geoknow.eu/data-cube/dsd2/c3> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Class" ;
+                                          qb:dimension gk-dim:Class . 
+<http://www.geoknow.eu/data-cube/dsd2/c4> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Time Stamp" ;
+                                          qb:dimension gk-dim:TimeStamp . 
+<http://www.geoknow.eu/data-cube/dsd2/c5> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of PropsCount" ;
+                                          qb:measure sdmx-measure:PropsCount . 
+
+<http://www.geoknow.eu/data-cube/dsd3/c1> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Property" ;
+                                          qb:dimension gk-dim:Property . 
+<http://www.geoknow.eu/data-cube/dsd3/c2> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Class" ;
+                                          qb:dimension gk-dim:Class . 
+<http://www.geoknow.eu/data-cube/dsd3/c3> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Time Stamp" ;
+                                          qb:dimension gk-dim:TimeStamp . 
+<http://www.geoknow.eu/data-cube/dsd3/c4> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of ObjectsCount" ;
+                                          qb:measure sdmx-measure:ObjectsCount . 
+<http://www.geoknow.eu/data-cube/dsd3/c5> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of SubjectsCount" ;
+                                          qb:measure sdmx-measure:SubjectsCount . 
+
+### 
+ ## Dimensions, Unit, and Measure
+##
+gk-dim:InstanceType a qb:DimensionProperty ; 
+                 rdfs:label   "Normal or Outlier instance"@en .
+gk-dim:Class a qb:DimensionProperty ; 
+                  rdfs:label   "class of instance"@en .
+gk-dim:TimeStamp a qb:DimensionProperty ; 
+                 rdfs:label   "Time Stamp"@en .
+sdmx-measure:InstaceCount  a qb:MeasureProperty ; 
+                 rdfs:label   "Instance Count"@en .
+gk-dim:Instance a qb:DimensionProperty ; 
+                 rdfs:label   "Instance"@en .
+sdmx-measure:PropsCount  a qb:MeasureProperty ; 
+                 rdfs:label   "Properties Count"@en .
+gk-dim:Property a qb:DimensionProperty ; 
+                 rdfs:label   "Property name"@en .
+sdmx-measure:ObjectsCount  a qb:DimensionProperty ; 
+                 rdfs:label   "Distinct Objects Count"@en .
+sdmx-measure:SubjectsCount a qb:DimensionProperty ; 
+                 rdfs:label   "Distinct Subjects Count"@en .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs1> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1039036534> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs2> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1098185199> ;
+	gk-dim:InstanceType "Outlier" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 10 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs3> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1365370805> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs4> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1368677758> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs5> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1368677759> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs6> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1368677760> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs7> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1368677761> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs8> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1368677762> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs9> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1368677763> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs10> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1368677765> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs11> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1368677766> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs12> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1368677768> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs13> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1368677769> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs14> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1368677770> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs15> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1368677771> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs16> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1368677772> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs17> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1368677773> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs18> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1368677774> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs19> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1368677775> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs20> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374642121> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs21> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374642125> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs22> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374642136> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs23> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374642142> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs24> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374642145> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs25> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374642146> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs26> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374642153> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs27> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374642157> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs28> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374642166> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs29> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374642167> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs30> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374642170> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs31> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374642176> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs32> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374642179> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs33> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374642182> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs34> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374683157> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs35> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374683158> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs36> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374683159> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs37> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374683160> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs38> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374683161> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs39> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374683162> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs40> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374683163> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs41> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374683164> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs42> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1374683165> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs43> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node1419925786> ;
+	gk-dim:InstanceType "Outlier" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 9 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs44> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node444751987> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs45> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node456842439> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs46> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node456842442> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs47> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node456842444> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs48> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node456844601> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs49> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node456844950> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 14 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs50> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node530492527> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 14 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs51> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node530500808> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs52> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node530545264> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs53> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node532064236> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs54> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node532307003> ;
+	gk-dim:InstanceType "Outlier" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs55> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node535989763> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs56> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node535994344> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs57> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536012329> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs58> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536039465> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs59> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536060132> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs60> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536079402> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs61> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536084352> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs62> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536114638> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs63> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536397920> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs64> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536402318> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs65> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536406074> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs66> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536407008> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs67> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536408334> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs68> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536411142> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs69> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536413294> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs70> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536414154> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs71> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536415873> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs72> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536419674> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs73> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536421535> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs74> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536425861> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs75> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536466901> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 14 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs76> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536468021> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 14 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs77> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536469594> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs78> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536470693> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 14 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs79> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536491198> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs80> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536494478> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs81> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536533745> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 14 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs82> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536537561> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 14 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs83> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536551761> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs84> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536569415> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs85> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536574828> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs86> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536579621> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs87> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536594568> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs88> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536596034> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs89> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node536720121> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 14 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs90> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node538060709> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs91> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node538063186> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs92> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node538068007> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs93> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node538072026> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs94> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node538493938> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 14 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs95> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node538497403> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs96> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node539184617> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs97> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node539384321> ;
+	gk-dim:InstanceType "Outlier" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 11 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs98> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node539385474> ;
+	gk-dim:InstanceType "Outlier" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 11 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs99> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node539386640> ;
+	gk-dim:InstanceType "Outlier" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 11 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs100> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node539387437> ;
+	gk-dim:InstanceType "Outlier" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 12 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs101> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node539388589> ;
+	gk-dim:InstanceType "Outlier" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 11 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs102> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/node583233731> ;
+	gk-dim:InstanceType "Normal" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 13 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs103> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/way119024663> ;
+	gk-dim:InstanceType "Outlier" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 6 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs104> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Instance <http://linkedgeodata.org/triplify/way131382972> ;
+	gk-dim:InstanceType "Outlier" ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:PropsCount 8 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs1> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:InstanceType "Outlier";
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:InstanceCount 10 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs2> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:InstanceType "Normal";
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:InstanceCount 94 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs1> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 104 ;
+	sdmx-measure:SubjectsCount 7 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs2> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://purl.org/dc/terms/modified> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 104 ;
+	sdmx-measure:SubjectsCount 59 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs3> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://www.w3.org/2002/07/owl#sameAs> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 102 ;
+	sdmx-measure:SubjectsCount 102 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs4> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://www.w3.org/2000/01/rdf-schema#label> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 101 ;
+	sdmx-measure:SubjectsCount 170 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs5> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://www.w3.org/2003/01/geo/wgs84_pos#long> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 102 ;
+	sdmx-measure:SubjectsCount 102 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs6> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 102 ;
+	sdmx-measure:SubjectsCount 102 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs7> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://purl.org/dc/terms/contributor> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 104 ;
+	sdmx-measure:SubjectsCount 11 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs8> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://linkedgeodata.org/ontology/building> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 1 ;
+	sdmx-measure:SubjectsCount 1 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs9> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://linkedgeodata.org/ontology/changeset> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 104 ;
+	sdmx-measure:SubjectsCount 34 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs10> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://linkedgeodata.org/ontology/version> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 104 ;
+	sdmx-measure:SubjectsCount 8 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs11> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://linkedgeodata.org/ontology/wheelchair> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 1 ;
+	sdmx-measure:SubjectsCount 2 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs12> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://geovocab.org/geometry#geometry> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 104 ;
+	sdmx-measure:SubjectsCount 104 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs13> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://linkedgeodata.org/ontology/layer> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 1 ;
+	sdmx-measure:SubjectsCount 1 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs14> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://www.w3.org/2004/02/skos/core#altLabel> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 3 ;
+	sdmx-measure:SubjectsCount 3 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs15> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://linkedgeodata.org/ontology/information> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 1 ;
+	sdmx-measure:SubjectsCount 1 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs16> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://linkedgeodata.org/ontology/level> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 10 ;
+	sdmx-measure:SubjectsCount 1 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs17> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://linkedgeodata.org/ontology/localName> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 60 ;
+	sdmx-measure:SubjectsCount 59 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs18> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://linkedgeodata.org/ontology/ntnu%3Aorg> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 94 ;
+	sdmx-measure:SubjectsCount 1 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs19> qb:dataSet <http://www.geoknow.eu/dataset/ds3> ; 
+	gk-dim:Property <http://linkedgeodata.org/ontology/ntnu%3Aorgid> ;
+	gk-dim:Class <http://linkedgeodata.org/ontology/ReceptionArea> ;
+	gk-dim:TimeStamp "Mon Jun 30 16:37:49 CEST 2014" ;
+	sdmx-measure:ObjectsCount 94 ;
+	sdmx-measure:SubjectsCount 94 ;
+	a qb:Observation .
+
