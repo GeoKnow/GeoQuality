@@ -40,7 +40,17 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 		for(Resource c : classes){
 			List<Resource> instances = getGeoInstances(inputModel, c);
 			for(Resource r : instances){
-				
+				List<Resource> sourcePointSet = getPointSet(inputModel, r);
+				if(!sourcePointSet.isEmpty()){
+					List<Resource> sameAsInstances = getSameAsInstances(inputModel, r);
+					for(Resource t : sameAsInstances){
+						List<Resource> targetPointSet = getPointSet(inputModel, t); //TODO find a way to read the target dataset
+						if(!targetPointSet.isEmpty()){
+							// Compute point set distance
+						}
+					}
+				}
+
 			}
 		}
 		return null;
@@ -91,22 +101,40 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 		return results;
 	}
 
-	public List<Resource> getCoordinates(Model m, Resource r){
+	public List<Resource> getPointSet(Model m, Resource r){
 		List<Resource> results = new ArrayList<Resource>();
 		for(Property p : geoPredicates){
 			String sparqlQueryString = 
-					"SELECT DISTINCT ?s " +
-							"{?s <" + p.toString() +"> ?o. " +
-							"?s <" + OWL.sameAs + "> ?q}";
+					"SELECT DISTINCT ?o " +
+							"{<" + r.toString() + "> <" + p.toString() +"> ?o. }";
 			QueryFactory.create(sparqlQueryString);
 			QueryExecution qexec = QueryExecutionFactory.create(sparqlQueryString, m);
 			ResultSet queryResults = qexec.execSelect();
 			while(queryResults.hasNext()){
 				QuerySolution qs = queryResults.nextSolution();
-				results.add(qs.getResource("?s"));
+				results.add(qs.getResource("?o"));
 			}
 			qexec.close() ;
+			if(results.size() > 0){
+				return results;
+			}
 		}
+		return results;
+	}
+
+	public List<Resource> getSameAsInstances(Model m, Resource r){
+		List<Resource> results = new ArrayList<Resource>();
+		String sparqlQueryString = 
+				"SELECT DISTINCT ?s " +
+						"{<" + r.toString() + "> <" + OWL.sameAs + "> ?q}";
+		QueryFactory.create(sparqlQueryString);
+		QueryExecution qexec = QueryExecutionFactory.create(sparqlQueryString, m);
+		ResultSet queryResults = qexec.execSelect();
+		while(queryResults.hasNext()){
+			QuerySolution qs = queryResults.nextSolution();
+			results.add(qs.getResource("?q"));
+		}
+		qexec.close() ;
 		return results;
 	}
 
