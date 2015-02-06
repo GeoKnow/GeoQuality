@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.aksw.geoknow.assessment;
+package org.aksw.geoknow.assessment.polygons;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.aksw.geoknow.assessment.GeoQualityMetric;
 import org.apache.log4j.Logger;
 
 import com.hp.hpl.jena.query.QueryExecution;
