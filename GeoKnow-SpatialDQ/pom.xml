@@ -59,7 +59,19 @@
 			<artifactId>limes-core</artifactId>
 			<version>2013-10-02</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>apache-jena-libs</artifactId>
+			<version>2.12.1</version>
+		</dependency>
+
 
 	</dependencies>
+	<repositories>
+		<repository>
+			<id>aksw-internal</id>
+			<url>http://nexus.extern.aws.semweb.unister.de/content/repositories/maven.aksw.internal/</url>
+		</repository>
+	</repositories>
 
 </project>
