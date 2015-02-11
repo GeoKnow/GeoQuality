@@ -42,17 +42,21 @@ public class GK {
         public static final Property Class = property(uri, "Class");
         public static final Property TimeStamp = property(uri, "TimeStamp");
         public static final Property Property = property(uri, "Property");
+        public static final Property Instance = property(uri, "Instance");
 
         public static List<Statement> InstanceTypeStatements = new ArrayList<Statement>();
         public static List<Statement> ClassStatements = new ArrayList<Statement>();
         public static List<Statement> TimeStampStatements = new ArrayList<Statement>();
         public static List<Statement> PropertyStatements = new ArrayList<Statement>();
+        public static List<Statement> InstanceStatements = new ArrayList<Statement>();
 
         static {
             InstanceTypeStatements.add(ResourceFactory.createStatement(InstanceType, RDF.type, QB.DimensionProperty));
             ClassStatements.add(ResourceFactory.createStatement(Class, RDF.type, QB.DimensionProperty));
             TimeStampStatements.add(ResourceFactory.createStatement(TimeStamp, RDF.type, QB.DimensionProperty));
             PropertyStatements.add(ResourceFactory.createStatement(Property, RDF.type, QB.DimensionProperty));
+            InstanceStatements.add(ResourceFactory.createStatement(Property, RDF.type, QB.DimensionProperty));
+
             InstanceTypeStatements.add(ResourceFactory.createStatement(InstanceType, RDFS.label,
                     ResourceFactory.createLangLiteral("Normal or Outlier instance", "en")));
             ClassStatements.add(ResourceFactory.createStatement(Class, RDFS.label,
@@ -61,6 +65,8 @@ public class GK {
                     ResourceFactory.createLangLiteral("Time Stamp", "en")));
             PropertyStatements.add(ResourceFactory.createStatement(Property, RDFS.label,
                     ResourceFactory.createLangLiteral("Property name", "en")));
+            InstanceStatements.add(ResourceFactory.createStatement(Property, RDFS.label,
+                    ResourceFactory.createLangLiteral("Instance name", "en")));
         }
 
     }
@@ -70,8 +76,12 @@ public class GK {
         public static final String prefix = "gk-measure";
 
         public static final Property InstanceCount = property(uri, "InstanceCount");
+        public static final Property PropertyCount = property(uri, "PropertyCount");
+        public static final Property OtherClassesCount = property(uri, "OtherClasses");
 
         public static List<Statement> InstanceCountStatements;
+        public static List<Statement> PropertyCountStatements;
+        public static List<Statement> OtherClassesCountStatements;
 
         static {
             InstanceCountStatements = new ArrayList<Statement>(4);
@@ -81,6 +91,22 @@ public class GK {
             InstanceCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.subPropertyOf,
                     SDMX.MEASURE.obs));
             InstanceCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.range, XSD.integer));
+
+            PropertyCountStatements = new ArrayList<Statement>(4);
+            PropertyCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDF.type, QB.MeasureProperty));
+            PropertyCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.label,
+                    ResourceFactory.createLangLiteral("Property Count", "en")));
+            PropertyCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.subPropertyOf,
+                    SDMX.MEASURE.obs));
+            PropertyCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.range, XSD.integer));
+
+            OtherClassesCountStatements = new ArrayList<Statement>(4);
+            OtherClassesCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDF.type, QB.MeasureProperty));
+            OtherClassesCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.label,
+                    ResourceFactory.createLangLiteral("Other Classes Count", "en")));
+            OtherClassesCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.subPropertyOf,
+                    SDMX.MEASURE.obs));
+            OtherClassesCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.range, XSD.integer));
         }
     }
 

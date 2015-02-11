@@ -59,10 +59,19 @@ public class InstancesNumberMetric implements GeoQualityMetric {
         Resource structure = cubeData.createResource(STRUCTURE,
                 QB.DataStructureDefinition);
 
-        structure.addProperty(QB.component, GK.DIM.Class);
+        Resource c1 = cubeData.createResource(STRUCTURE+"/c1",QB.ComponentSpecification);
+        c1.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Class", "en"));
+        c1.addProperty(QB.dimension, GK.DIM.Class);
+
+        Resource c2 = cubeData.createResource(STRUCTURE+"/c2",QB.ComponentSpecification);
+        c2.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Number of Instances", "en"));
+        c2.addProperty(QB.measure, GK.MEASURE.InstanceCount);
+
+        structure.addProperty(QB.component, c1);
         structure.addProperty(RDFS.label,
                 cubeData.createLiteral("A Data Structure Definition for Instances Number Metric", "en"));
-        structure.addProperty(QB.component, GK.MEASURE.InstanceCount);
+        structure.addProperty(QB.component, c2);
+
 
         cubeData.add(GK.MEASURE.InstanceCountStatements);
         cubeData.add(GK.DIM.ClassStatements);

@@ -33,7 +33,7 @@ public class SDMX {
 	}
 
 	/**
-	 * Represnt the sub vocabulary sdmx-measure {@link http://purl.org/linked-data/sdmx/2009/measure#}
+	 * Represent the sub vocabulary sdmx-measure {@link http://purl.org/linked-data/sdmx/2009/measure#}
 	 * @author d.cherix
 	 *
 	 */
