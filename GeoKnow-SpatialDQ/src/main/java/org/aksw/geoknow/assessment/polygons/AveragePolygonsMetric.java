@@ -5,6 +5,7 @@ package org.aksw.geoknow.assessment.polygons;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.aksw.geoknow.assessment.GeoQualityMetric;
+import org.aksw.geoknow.helper.vacabularies.QB;
 import org.apache.log4j.Logger;
 
 import com.hp.hpl.jena.query.QueryExecution;
@@ -26,6 +28,7 @@ import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.ResourceFactory;
 import com.hp.hpl.jena.vocabulary.OWL;
+import com.hp.hpl.jena.vocabulary.RDF;
 
 import de.uni_leipzig.simba.cache.Cache;
 import de.uni_leipzig.simba.cache.HybridCache;
@@ -42,19 +45,32 @@ import de.uni_leipzig.simba.measures.pointsets.SetMeasureFactory.Type;
 public class AveragePolygonsMetric implements GeoQualityMetric {
 	private static final Logger logger = Logger.getLogger(AveragePolygonsMetric.class.getName());
 
+	private static final double DISTANCE_THRESHOULD = 0.7;
+	private int MAX_CLASS_COUNT = 30;
+
 	public static List<Property> geoPredicates = new ArrayList<Property>(
 			Arrays.asList(ResourceFactory.createProperty("http://www.w3.org/2003/01/geo/wgs84_pos#geometry")));
 
 	private String sourceEndpoint = "http://live.dbpedia.org/sparql";
 	private String targetEndpoint = "http://linkedgeodata.org/sparql";
-	public String targetAuthority;
+	public  String targetAuthority;
 	private String sourceGeoPredicate =  "<http://www.w3.org/2003/01/geo/wgs84_pos#geometry>";
 	private String targetGeoPredicate =  "<http://geovocab.org/geometry#geometry>/<http://www.opengis.net/ont/geosparql#asWKT>";
+	private static Cache source = new HybridCache();
+	private static Cache target = new HybridCache();
 
-	private int MAX_CLASS_COUNT = 30;
-	public static Cache source = new HybridCache();
-	public static Cache target = new HybridCache();
+	public String baseUri = "http://www.geoknow.eu/";
 
+	private Set<String> polygonMertices = new HashSet<String>(Arrays.asList(
+			"hausdorff", 
+			"geomin", 
+			"geomax", 
+			"geoavg", 
+			"geolink", 
+			"geoquinlan", 
+			"geosummin", 
+			"surjection", 
+			"fairsurjection"));
 
 	/**
 	 * @return the geoPredicates
@@ -74,21 +90,97 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 	 * @see org.aksw.geoknow.assessment.GeoQualityMetric#generateResultsDataCube(java.lang.String)
 	 */
 	public Model generateResultsDataCube(String endpointUrl) {
-		sourceEndpoint = endpointUrl;
-		Map<Resource, Double> d = computePerClassAverageDistance("geomin", 0.7);
-		System.out.println(d);
-		return null;
+		DataCubeWriter dataCube = new DataCubeWriter();
+
+		// DataSet
+		//	<http://www.geoknow.eu/dataset/ds1> a qb:DataSet ;
+		//		dcterms:publisher "AKSW, GeoKnow" ;
+		//		rdfs:label "DataCube1 Results: Normal vs. Outlier Instances" ;
+		//		rdfs:comment "DataCube1 Results: Normal vs. Outlier Instances" ;
+		//		qb:structure <http://www.geoknow.eu/data-cube/dsd1> ;
+		//		dcterms:date "Mon Jun 30 16:37:52 CEST 2014". 
+		Resource dataset = ResourceFactory.createResource(baseUri + "avg_poly_dataset");
+		String dLabel = "Per class average polygons distances";
+		String dComment = "Average distance between polygons which represent the same resource";
+		String dPublisher = "AKSW, GeoKnow";
+		String dDate = (new Date()).toString();
+		Resource dsDef = ResourceFactory.createResource(baseUri + "avg_poly_data_struct_def");
+		dataCube.addDataset(dataset, dLabel, dComment, dPublisher, dDate, dsDef);
+
+		// Data Structure Definitions
+		//	<http://www.geoknow.eu/data-cube/dsd1> a qb:DataStructureDefinition ;
+		//		rdfs:label "A Data Structure Definition"@en ;
+		//		rdfs:comment "A Data Structure Definition for DataCube1" ;
+		//		qb:component <http://www.geoknow.eu/data-cube/dsd1/c1>,
+		//		<http://www.geoknow.eu/data-cube/dsd1/c2>,
+		//		<http://www.geoknow.eu/data-cube/dsd1/c3>,
+		//		<http://www.geoknow.eu/data-cube/dsd1/c4> .
+		String dsLabel = "A Data Structure Definition";
+		String dsComment = "A Data Structure Definition for " + dataset;
+		Resource compCls = ResourceFactory.createResource(baseUri + "avg_poly_comp_cls");
+		Resource compTime  = ResourceFactory.createResource(baseUri + "avg_poly_comp_time");
+		Resource compDist  = ResourceFactory.createResource(baseUri + "avg_poly_comp_dist");
+		Set<Resource> dsComponents = new HashSet<Resource>(Arrays.asList(compCls, compTime,compDist));
+		dsComponents.add(ResourceFactory.createResource(baseUri + "avg_poly_comp_time"));
+		dataCube.addDataStructureDefinition(dsDef, dsLabel, dsComment , dsComponents);
+
+		//	Component Specifications
+		// <http://www.geoknow.eu/data-cube/dsd1/c1> a qb:ComponentSpecification ;
+		//		 rdfs:label "Component Specification of IsOutlier " ;
+		//		 qb:dimension gk-dim:InstanceType . 
+		String clsLabel = "Component Specification of Class";
+		Property clsProperty = ResourceFactory.createProperty(baseUri + "avg_poly_cls_prop");
+		dataCube.addDimensionProperty(clsProperty, "Class Name");
+		dataCube.addDimensionSpecs(compCls, clsLabel, clsProperty);
+
+		String timeLabel = "Component Specification of Time Stamp";
+		Property timeProperty = ResourceFactory.createProperty(baseUri + "avg_poly_time_prop");
+		dataCube.addDimensionProperty(timeProperty, "Time Stamp");
+		dataCube.addDimensionSpecs(compTime, timeLabel, timeProperty);
+
+		String metricLabel = "Component Specification of Polygon Metric";
+		Property metricProperty = ResourceFactory.createProperty(baseUri + "avg_poly_metric_prop");
+		dataCube.addDimensionProperty(timeProperty, "Polygon Metric");
+		dataCube.addDimensionSpecs(compTime, metricLabel, metricProperty);
+
+		// <http://www.geoknow.eu/data-cube/dsd1/c4> a qb:ComponentSpecification ;
+		//		rdfs:label "Component Specification of Instance" ;
+		//		qb:measure sdmx-measure:InstanceCount .
+		String distLabel = "Average Polygon Distance";
+		Property distProperty = ResourceFactory.createProperty(baseUri + "avg_poly_dist_prop");
+		dataCube.addMeasureProperty(distProperty, distLabel);
+		dataCube.addMeasureSpecs(compDist, distLabel, distProperty);
+
+		// Observations
+		int i = 1, j = 1; 
+		for(String pm : polygonMertices ){
+			sourceEndpoint = endpointUrl;
+			Map<Resource, Double> avgDists = computePerClassAverageDistance(pm);
+			System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + avgDists.size());System.out.println(avgDists);
+			for(Resource c : avgDists.keySet()){
+				Resource observation = ResourceFactory.createResource(baseUri + "avg_poly_obv_" + i + "_" + j++);
+				DataCubeWriter.dataCubeModel.add(observation, RDF.type, QB.Observation);
+				DataCubeWriter.dataCubeModel.add(observation, QB.dataset, dataset);
+				DataCubeWriter.dataCubeModel.add(observation, clsProperty, c);
+				DataCubeWriter.dataCubeModel.add(observation, timeProperty, (new Date()).toString());
+				DataCubeWriter.dataCubeModel.add(observation, metricProperty, pm);
+				DataCubeWriter.dataCubeModel.add(observation, distProperty, avgDists.get(pm) + "");
+			}
+			j++;
+		}
+		return dataCube.getDataCubeModel();
 	}
 
-	public Map<Resource, Double> computePerClassAverageDistance(String measureType, double threshold) {
+	public Map<Resource, Double> computePerClassAverageDistance(String measureType) {
 		Map<Resource, Double> result = new HashMap<Resource, Double>();
 		List<Resource> classes = getSourceClasses();
 		int i = 0;
 		for(Resource c : classes){
 			logger.info("----- " + c.toString() + " Class -----");
 			readSourceTargetCache(c);
-			Mapping m = getMapping(threshold, measureType);
+			Mapping m = getMapping(DISTANCE_THRESHOULD, measureType);
 			Double avg = computeAverageSimilarity(m);
+			System.out.println(avg);
 			if(!avg.isNaN()){
 				result.put(c, avg);	
 			}
@@ -115,23 +207,6 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 	 * @see org.aksw.geoknow.assessment.GeoQualityMetric#run(com.hp.hpl.jena.rdf.model.Model)
 	 */
 	public Model generateResultsDataCube(Model inputModel) {
-		//		List<Resource> classes = getClasses(inputModel);
-		//		for(Resource c : classes){
-		//			List<Resource> instances = getGeoInstances(inputModel, c);
-		//			for(Resource r : instances){
-		//				List<Resource> sourcePointSet = getPointSet(inputModel, r);
-		//				if(!sourcePointSet.isEmpty()){
-		//					List<Resource> sameAsInstances = getSameAsInstances(inputModel, r);
-		//					for(Resource t : sameAsInstances){
-		//						List<Resource> targetPointSet = getPointSet(inputModel, t); //TODO find a way to read the target dataset
-		//						if(!targetPointSet.isEmpty()){
-		//							// Compute point set distance
-		//						}
-		//					}
-		//				}
-		//
-		//			}
-		//		}
 		return null;
 	}
 
@@ -350,12 +425,12 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 	 */
 	public static void main(String[] args) {
 		AveragePolygonsMetric m = new AveragePolygonsMetric();
-		//		System.out.println(m.getSourceTargetWKT(ResourceFactory.createResource("http://dbpedia.org/ontology/AdministrativeRegion")));
+		System.out.println(m.getSourceTargetWKT(ResourceFactory.createResource("http://dbpedia.org/ontology/AdministrativeRegion")));
 		m.targetAuthority = "http://linkedgeodata.org";
-		m.generateResultsDataCube("http://dbpedia.org/sparql");
-		//		m.readSourceTargetCache(ResourceFactory.createResource("http://dbpedia.org/ontology/AdministrativeRegion"));
-		//		System.out.println(AveragePolygonsMetric.source.toString());
-		//		System.out.println(AveragePolygonsMetric.target.toString());
+		m.generateResultsDataCube("http://dbpedia.org/sparql").write(System.out, "TTL");
+//		m.readSourceTargetCache(ResourceFactory.createResource("http://dbpedia.org/ontology/AdministrativeRegion"));
+//		System.out.println(AveragePolygonsMetric.source.toString());
+//		System.out.println(AveragePolygonsMetric.target.toString());
 	}
 
 
