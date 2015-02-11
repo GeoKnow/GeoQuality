@@ -1,7 +1,7 @@
 /**
  *
  */
-package org.aksw.geoknow.helper.vacabularies;
+package org.aksw.geoknow.helper.vocabularies;
 
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;

@@ -5,7 +5,7 @@ package org.aksw.geoknow.assessment.polygons;
 
 import java.util.List;
 
-import org.aksw.geoknow.helper.vacabularies.QB;
+import org.aksw.geoknow.helper.vocabularies.QB;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
