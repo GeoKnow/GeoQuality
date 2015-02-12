@@ -3,7 +3,6 @@
  */
 package org.aksw.geoknow.assessment.polygons;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -125,8 +124,6 @@ public class DataCubeWriter {
 		}
 	}
 
-
-	
 //	public void addDimensionObservation(Resource observation, Resource dataset, Property dimension, RDFNode value){
 //		dataCubeModel.add(observation, RDF.type, QB.Observation);
 //		dataCubeModel.add(observation, QB.dataset, dataset);
