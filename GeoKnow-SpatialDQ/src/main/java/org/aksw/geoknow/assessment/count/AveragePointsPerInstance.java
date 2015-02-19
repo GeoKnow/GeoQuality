@@ -15,7 +15,7 @@ import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.util.iterator.ExtendedIterator;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
-public class AveragePointsNumberOfPerInstance implements GeoQualityMetric {
+public class AveragePointsPerInstance implements GeoQualityMetric {
 
     private final Property property ;
     private Property Average;
@@ -23,7 +23,7 @@ public class AveragePointsNumberOfPerInstance implements GeoQualityMetric {
 
     private final String structureUri ;
 
-    public AveragePointsNumberOfPerInstance(Property p){
+    public AveragePointsPerInstance(Property p){
         this.property=p;
         this.structureUri = NAMESPACE + "metric/"+property.hashCode();
     }
@@ -58,7 +58,7 @@ public class AveragePointsNumberOfPerInstance implements GeoQualityMetric {
     private Model createModel() {
         Model cubeData = ModelFactory.createDefaultModel();
 
-        cubeData.createResource("",QB.MeasureProperty);
+        cubeData.createResource(NAMESPACE+"/structure/metric"+property.hashCode(),QB.MeasureProperty);
 
         Resource structure = cubeData.createResource(structureUri,QB.DataStructureDefinition);
 
