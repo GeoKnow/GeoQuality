@@ -1,9 +1,15 @@
 package org.aksw.geoknow.assessment.count;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import org.aksw.geoknow.assessment.GeoQualityMetric;
 import org.aksw.geoknow.helper.vocabularies.GK;
 import org.aksw.geoknow.helper.vocabularies.QB;
 
+import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
 import com.hp.hpl.jena.query.QuerySolution;
@@ -11,7 +17,6 @@ import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.ResourceFactory;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
 /**
@@ -86,6 +91,14 @@ public class InstancesNumberMetric implements GeoQualityMetric {
         Model model = qexec.execConstruct();
 
         return this.generateResultsDataCube(model);
+    }
+
+    public static void main(String[] args) throws IOException {
+        OntModel m = ModelFactory.createOntologyModel();
+        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/","TTL");
+        InstancesNumberMetric metric = new InstancesNumberMetric();
+        Model r = metric.generateResultsDataCube(m);
+        r.write(new FileWriter("dataquality/metric1.ttl"), "TTL");
     }
 
 }

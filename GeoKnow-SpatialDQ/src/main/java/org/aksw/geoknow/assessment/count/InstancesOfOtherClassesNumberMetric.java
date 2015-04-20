@@ -1,9 +1,14 @@
 package org.aksw.geoknow.assessment.count;
 
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import org.aksw.geoknow.assessment.GeoQualityMetric;
 import org.aksw.geoknow.helper.vocabularies.GK;
 import org.aksw.geoknow.helper.vocabularies.QB;
 
+import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.query.ParameterizedSparqlString;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
@@ -18,31 +23,32 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
 
     private static final String INSTANCE_CLASS = "Select distinct  ?class WHERE {?instance a ?class .}";
     private static final ParameterizedSparqlString OTHER_CLASSES = new ParameterizedSparqlString(
-            "SELECT (COUNT (DISTINCT ?instance) WHERE { ?instance a ?class . ?instance a ?originClass . FILTER(!(?class = ?originClass))}");
+            "SELECT (COUNT (DISTINCT ?instance) as ?count) WHERE { ?instance a ?class . ?instance a ?originClass . FILTER(!(?class = ?originClass))}");
 
     private static final String NAMESPACE = "http://www.geoknow.eu/data-cube/";
 
     private static final String STRUCTURE = NAMESPACE + "metric4";
     public Model generateResultsDataCube(Model inputModel) {
         Model cubeData=createModel();
-        Resource dataset=cubeData.createResource(NAMESPACE+"/dataset/4", QB.Dataset);
+        Resource dataset=cubeData.createResource(NAMESPACE+"dataset/4", QB.Dataset);
         QueryExecution qexec = QueryExecutionFactory.create(INSTANCE_CLASS,inputModel);
         QuerySolution solution=null;
         int i=0;
         for(ResultSet result=qexec.execSelect();result.hasNext();i++){
+            System.out.println(i);
              solution = result.next();
              Resource originClass = solution.getResource("class");
              OTHER_CLASSES.setIri("originClass", originClass.getURI());
              QueryExecution execCount = QueryExecutionFactory.create(OTHER_CLASSES.asQuery(),inputModel);
              ResultSet resultCount = execCount.execSelect();
              if(resultCount.hasNext()){
-                 Resource obs = cubeData.createResource(""+i, QB.Observation);
+                 Resource obs = cubeData.createResource("http://www.geoknow.eu/data-cube/metric4/observation"+i, QB.Observation);
                  obs.addProperty(GK.DIM.Class, originClass);
                  obs.addProperty(GK.MEASURE.OtherClassesCount, resultCount.next().getLiteral("count"));
                  obs.addProperty(QB.dataset, dataset);
              }
         }
-        return null;
+        return cubeData;
     }
 
     public Model generateResultsDataCube(String endpointUrl) {
@@ -71,6 +77,14 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
         cubeData.add(GK.MEASURE.OtherClassesCountStatements);
 
         return cubeData;
+    }
+
+    public static void main(String[] args) throws IOException {
+        OntModel m = ModelFactory.createOntologyModel();
+        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/","TTL");
+        GeoQualityMetric metric = new InstancesOfOtherClassesNumberMetric();
+        Model r = metric.generateResultsDataCube(m);
+        r.write(new FileWriter("dataquality/metric4.ttl"), "TTL");
     }
 
 }
