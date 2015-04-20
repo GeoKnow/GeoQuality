@@ -1,0 +1,119 @@
+<http://www.geoknow.eu/properties/measure/InstanceCount>
+      a       <http://purl.org/linked-data/cube#MeasureProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Instance Count"@en ;
+      <http://www.w3.org/2000/01/rdf-schema#range>
+              <http://www.w3.org/2001/XMLSchema#integer> ;
+      <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+              <http://purl.org/linked-data/sdmx/2009/measure#obs> .
+
+<http://www.geoknow.eu/data-cube/observation/8>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geovocab.org/geometry#MultiPolygon> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "145"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/3>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2000/01/rdf-schema#Datatype> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/4>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geovocab.org/geometry#LinearRing> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2465"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/5>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1927"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/2>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geovocab.org/geometry#Polygon> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2397"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/7>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "71210"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/6>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "14"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric1>
+      a       <http://purl.org/linked-data/cube#DataStructureDefinition> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "A Data Structure Definition for Instances Number Metric"@en ;
+      <http://purl.org/linked-data/cube#component>
+              <http://www.geoknow.eu/data-cube/metric1/c2> , <http://www.geoknow.eu/data-cube/metric1/c1> .
+
+<http://www.geoknow.eu/properties/Class>
+      a       <http://purl.org/linked-data/cube#DimensionProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "class of instance"@en .
+
+<http://www.geoknow.eu/data-cube/dataset/1>
+      <http://purl.org/linked-data/cube#structure>
+              <http://www.geoknow.eu/data-cube/metric1> .
+
+<http://www.geoknow.eu/data-cube/observation/1>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "71241"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/0>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "17"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric1/c2>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Number of Instances"@en ;
+      <http://purl.org/linked-data/cube#measure>
+              <http://www.geoknow.eu/properties/measure/InstanceCount> .
+
+<http://www.geoknow.eu/data-cube/metric1/c1>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Class"@en ;
+      <http://purl.org/linked-data/cube#dimension>
+              <http://www.geoknow.eu/properties/Class> .
