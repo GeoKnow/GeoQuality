@@ -19,6 +19,16 @@ import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
+/**
+*
+* This metric calculates the average number of polygons per classes.
+*
+*
+* @author Didier Cherix
+* </br> R & D, Unister GmbH, Leipzig, Germany</br>
+* This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
+*
+*/
 public class AveragePolygonsPerInstance implements GeoQualityMetric {
 
     private final String polygonClass;

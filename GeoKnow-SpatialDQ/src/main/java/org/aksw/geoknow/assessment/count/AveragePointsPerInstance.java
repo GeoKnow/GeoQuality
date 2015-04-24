@@ -25,6 +25,16 @@ import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.util.iterator.ExtendedIterator;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
+/**
+ *
+ * This metric calculates the average number of points per classes.
+ *
+ *
+ * @author Didier Cherix
+ * </br> R & D, Unister GmbH, Leipzig, Germany</br>
+ * This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
+ *
+ */
 public class AveragePointsPerInstance implements GeoQualityMetric {
 
     private final Property property;

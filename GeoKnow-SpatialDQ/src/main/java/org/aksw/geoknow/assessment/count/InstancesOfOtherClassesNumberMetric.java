@@ -19,6 +19,16 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
+/**
+ *
+ * This metric calculates the number of instances from other classes per classes.
+ *
+ *
+ * @author Didier Cherix
+ *         </br> R & D, Unister GmbH, Leipzig, Germany</br>
+ *         This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
+ *
+ */
 public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
 
     private static final String INSTANCE_CLASS = "Select distinct  ?class WHERE {?instance a ?class .}";
@@ -28,25 +38,27 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
     private static final String NAMESPACE = "http://www.geoknow.eu/data-cube/";
 
     private static final String STRUCTURE = NAMESPACE + "metric4";
+
     public Model generateResultsDataCube(Model inputModel) {
-        Model cubeData=createModel();
-        Resource dataset=cubeData.createResource(NAMESPACE+"dataset/4", QB.Dataset);
-        QueryExecution qexec = QueryExecutionFactory.create(INSTANCE_CLASS,inputModel);
-        QuerySolution solution=null;
-        int i=0;
-        for(ResultSet result=qexec.execSelect();result.hasNext();i++){
+        Model cubeData = createModel();
+        Resource dataset = cubeData.createResource(NAMESPACE + "dataset/4", QB.Dataset);
+        QueryExecution qexec = QueryExecutionFactory.create(INSTANCE_CLASS, inputModel);
+        QuerySolution solution = null;
+        int i = 0;
+        for (ResultSet result = qexec.execSelect(); result.hasNext(); i++) {
             System.out.println(i);
-             solution = result.next();
-             Resource originClass = solution.getResource("class");
-             OTHER_CLASSES.setIri("originClass", originClass.getURI());
-             QueryExecution execCount = QueryExecutionFactory.create(OTHER_CLASSES.asQuery(),inputModel);
-             ResultSet resultCount = execCount.execSelect();
-             if(resultCount.hasNext()){
-                 Resource obs = cubeData.createResource("http://www.geoknow.eu/data-cube/metric4/observation"+i, QB.Observation);
-                 obs.addProperty(GK.DIM.Class, originClass);
-                 obs.addProperty(GK.MEASURE.OtherClassesCount, resultCount.next().getLiteral("count"));
-                 obs.addProperty(QB.dataset, dataset);
-             }
+            solution = result.next();
+            Resource originClass = solution.getResource("class");
+            OTHER_CLASSES.setIri("originClass", originClass.getURI());
+            QueryExecution execCount = QueryExecutionFactory.create(OTHER_CLASSES.asQuery(), inputModel);
+            ResultSet resultCount = execCount.execSelect();
+            if (resultCount.hasNext()) {
+                Resource obs = cubeData.createResource("http://www.geoknow.eu/data-cube/metric4/observation" + i,
+                        QB.Observation);
+                obs.addProperty(GK.DIM.Class, originClass);
+                obs.addProperty(GK.MEASURE.OtherClassesCount, resultCount.next().getLiteral("count"));
+                obs.addProperty(QB.dataset, dataset);
+            }
         }
         return cubeData;
     }
@@ -69,7 +81,6 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
         c2.addProperty(QB.measure, GK.MEASURE.OtherClassesCount);
         c2.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Number of Other Classes", "en"));
 
-
         structure.addProperty(QB.component, c1);
         structure.addProperty(QB.component, c2);
 
@@ -81,7 +92,7 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
 
     public static void main(String[] args) throws IOException {
         OntModel m = ModelFactory.createOntologyModel();
-        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/","TTL");
+        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
         GeoQualityMetric metric = new InstancesOfOtherClassesNumberMetric();
         Model r = metric.generateResultsDataCube(m);
         r.write(new FileWriter("dataquality/metric4.ttl"), "TTL");

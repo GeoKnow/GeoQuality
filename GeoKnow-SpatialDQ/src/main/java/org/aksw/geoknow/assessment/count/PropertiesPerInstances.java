@@ -21,6 +21,16 @@ import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
+/**
+*
+* This metric calculates the average number of properties per classes.
+*
+*
+* @author Didier Cherix
+* </br> R & D, Unister GmbH, Leipzig, Germany</br>
+* This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
+*
+*/
 public class PropertiesPerInstances implements GeoQualityMetric {
 
     private final ParameterizedSparqlString NUMBER_OF_PROPERTIES = new ParameterizedSparqlString(

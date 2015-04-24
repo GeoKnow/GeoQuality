@@ -24,7 +24,16 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.Polygon;
 import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.io.WKTReader;
-
+/**
+*
+* This metric calculates the average surface per classes.
+*
+*
+* @author Didier Cherix
+* </br> R & D, Unister GmbH, Leipzig, Germany</br>
+* This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
+*
+*/
 public class AverageSurfaceMetric implements GeoQualityMetric {
 
     private static final String NAMESPACE = "http://www.geoknow.eu/data-cube/";

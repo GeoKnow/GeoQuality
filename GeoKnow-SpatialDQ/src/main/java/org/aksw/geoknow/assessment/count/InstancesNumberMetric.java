@@ -21,8 +21,9 @@ import com.hp.hpl.jena.vocabulary.RDFS;
 
 /**
  * This metric return the number of instance for each class in the data set.
- *
- * @author d.cherix
+ * @author Didier Cherix
+ * </br> R & D, Unister GmbH, Leipzig, Germany</br>
+ * This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
  *
  */
 public class InstancesNumberMetric implements GeoQualityMetric {
