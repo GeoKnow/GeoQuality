@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.aksw.geoknow.datacube.DataCubeGenerator;
+import org.aksw.geoknow.datacube.CrocusDataCube;
 import org.openrdf.query.MalformedQueryException;
 import org.openrdf.query.QueryEvaluationException;
 import org.openrdf.repository.RepositoryException;
@@ -57,7 +57,7 @@ public class Client {
             
         }
         System.out.println("Generating data cubes...");
-        DataCubeGenerator cbGenerator = new DataCubeGenerator(config.getEndpoint(),config.getOwlClass(),  new Date().toString());
+        CrocusDataCube cbGenerator = new CrocusDataCube(config.getEndpoint(),config.getOwlClass(),  new Date().toString());
         cbGenerator.generateDataCubes( result.getBody().toString());
     }
 }

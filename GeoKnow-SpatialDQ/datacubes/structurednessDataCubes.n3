@@ -1,0 +1,173 @@
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#>. 
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#>. 
+@prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#>. 
+@prefix qb: <http://purl.org/linked-data/cube#>. 
+@prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>.
+@prefix dcterms: <http://purl.org/dc/terms/>. 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>. 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema>. 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sdmx-metadata: <http://purl.org/linked-data/sdmx/2009/metadata#>.
+@prefix sdmx: <http://purl.org/linked-data/sdmx#>. 
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>.
+@prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#>. 
+@prefix gk-dim: <http://www.geoknow.eu/properties/>. 
+@prefix owl: <http://www.w3.org/2002/07/owl#>. 
+@prefix gk-measure: <http://www.geoknow.eu/measure/>. 
+
+<> a owl:Ontology ; 
+ rdfs:label "GeoKnow Spatical Data Qaluty DataCube Knowledge Base" ;
+ dc:description "This knowledgebase contains 3 different DataCubes with different dimensions and measures." .
+
+#
+ #Data Set 
+ # 
+<http://www.geoknow.eu/dataset/ds1>  a qb:DataSet ;
+	       dcterms:publisher "AKSW, GeoKnow" ; 
+	       rdfs:label " Dataset Class Coverage" ; 
+	       rdfs:comment "Dataset Class Coverage" ; 
+	       qb:structure <http://www.geoknow.eu/data-cube/dsd1> ;
+	       dcterms:date "Sun May 10 18:49:05 CEST 2015". 
+
+<http://www.geoknow.eu/dataset/ds2>  a qb:DataSet ;
+	       dcterms:publisher "AKSW, GeoKnow" ; 
+	       rdfs:label "Dataset Weighted Class Coverage" ; 
+	       rdfs:comment "Dataset Weighted Class Coverage" ; 
+	       qb:structure <http://www.geoknow.eu/data-cube/dsd2> ;
+	       dcterms:date "Sun May 10 18:49:05 CEST 2015". 
+
+<http://www.geoknow.eu/dataset/ds3>  a qb:DataSet ;
+	       dcterms:publisher "AKSW, GeoKnow" ; 
+	       rdfs:label "Dataset Structuredness" ; 
+	       rdfs:comment "Dataset Structuredness" ; 
+	       qb:structure <http://www.geoknow.eu/data-cube/dsd3> ;
+	       dcterms:date "Sun May 10 18:49:05 CEST 2015". 
+
+# 
+# Data Structure Definitions 
+ # 
+<http://www.geoknow.eu/data-cube/dsd1> a qb:DataStructureDefinition ; 
+                                       rdfs:label   "A Data Structure Definition"@en ;
+                                       rdfs:comment  "A Data Structure Definition for DataCube1" ;
+                                       qb:component <http://www.geoknow.eu/data-cube/dsd1/c1>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd1/c2>, 
+                                                     <http://www.geoknow.eu/data-cube/dsd1/c3> . 
+
+<http://www.geoknow.eu/data-cube/dsd2> a qb:DataStructureDefinition ; 
+                                       rdfs:label   "A Data Structure Definition"@en ;
+                                       rdfs:comment  "A Data Structure Definition for DataCube2" ;
+                                       qb:component <http://www.geoknow.eu/data-cube/dsd2/c1>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd2/c2>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd2/c3> . 
+
+<http://www.geoknow.eu/data-cube/dsd3> a qb:DataStructureDefinition ; 
+                                       rdfs:label   "A Data Structure Definition"@en ;
+                                       rdfs:comment  "A Data Structure Definition for DataCube3" ;
+                                       qb:component <http://www.geoknow.eu/data-cube/dsd3/c1>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd3/c2>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd3/c3> . 
+
+ # 
+ #Componenet Specifications
+ #
+ <http://www.geoknow.eu/data-cube/dsd1/c1> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Class " ;
+                                          qb:dimension gk-dim:Class . 
+<http://www.geoknow.eu/data-cube/dsd1/c2> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Time Stamp" ;
+                                          qb:dimension gk-dim:TimeStamp . 
+<http://www.geoknow.eu/data-cube/dsd1/c3> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Coverage" ;
+                                          qb:measure sdmx-measure:Coverage . 
+
+<http://www.geoknow.eu/data-cube/dsd2/c1> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Class" ;
+                                          qb:dimension gk-dim:Class . 
+<http://www.geoknow.eu/data-cube/dsd2/c2> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Time Stamp" ;
+                                          qb:dimension gk-dim:TimeStamp . 
+<http://www.geoknow.eu/data-cube/dsd2/c3> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Weighted Coverage" ;
+                                          qb:measure sdmx-measure:WeightedCoverage . 
+
+<http://www.geoknow.eu/data-cube/dsd3/c1> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Dataset" ;
+                                          qb:dimension gk-dim:Dataset . 
+<http://www.geoknow.eu/data-cube/dsd3/c2> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Time Stamp" ;
+                                          qb:dimension gk-dim:TimeStamp . 
+<http://www.geoknow.eu/data-cube/dsd3/c3> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Structuredness" ;
+                                          qb:measure sdmx-measure:Structuredness . 
+
+### 
+ ## Dimensions, Unit, and Measure
+##
+gk-dim:Class a qb:DimensionProperty ; 
+                 rdfs:label   "Class of a dataset"@en .
+gk-dim:TimeStamp a qb:DimensionProperty ; 
+                 rdfs:label   "Time Stamp"@en .
+gk-dim:Dataset a qb:DimensionProperty ; 
+                 rdfs:label   "Dataset name"@en .
+sdmx-measure:Coverage  a qb:MeasureProperty ; 
+                 rdfs:label   "Class Coverage"@en .
+sdmx-measure:WeightedCoverage  a qb:MeasureProperty ; 
+                 rdfs:label   "Class Weighted Coverage"@en .
+sdmx-measure:Structuredness a qb:DimensionProperty ; 
+                 rdfs:label   "Dataset Structuredness"@en .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs1> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geovocab.org/geometry#Polygon> ;
+	gk-dim:TimeStamp "Sun May 10 18:49:04 CEST 2015" ;
+	sdmx-measure:Coverage 0.5903212348769294 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs2> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geovocab.org/geometry#LinearRing> ;
+	gk-dim:TimeStamp "Sun May 10 18:49:04 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs3> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion> ;
+	gk-dim:TimeStamp "Sun May 10 18:49:04 CEST 2015" ;
+	sdmx-measure:Coverage 0.7983624517096235 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs4> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geovocab.org/geometry#MultiPolygon> ;
+	gk-dim:TimeStamp "Sun May 10 18:49:04 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs1> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geovocab.org/geometry#Polygon> ;
+	gk-dim:TimeStamp "Sun May 10 18:49:04 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.5903212348769294 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs2> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geovocab.org/geometry#LinearRing> ;
+	gk-dim:TimeStamp "Sun May 10 18:49:04 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs3> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion> ;
+	gk-dim:TimeStamp "Sun May 10 18:49:04 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.7983624517096235 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs4> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geovocab.org/geometry#MultiPolygon> ;
+	gk-dim:TimeStamp "Sun May 10 18:49:04 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs1> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Dataset "NUTS" ;
+	gk-dim:TimeStamp "Sun May 10 18:49:04 CEST 2015" ;
+	sdmx-measure:Structuredness 0.8023313671340426 ;
+	a qb:Observation .
+

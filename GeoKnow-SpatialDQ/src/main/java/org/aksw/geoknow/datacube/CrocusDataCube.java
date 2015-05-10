@@ -21,20 +21,20 @@ import org.openrdf.repository.http.HTTPRepository;
  * @author Saleem
  *
  */
-public class DataCubeGenerator {
+public class CrocusDataCube {
 	public static BufferedWriter bw ; 
 	public static String clsName=null;
 	public static String endpoint =null; 
 	public static String timeStamp =new Date().toString(); 
-	public DataCubeGenerator(String endpoint,String clsName, String tStmp)
+	public CrocusDataCube(String endpoint,String clsName, String tStmp)
 	{
-		DataCubeGenerator.clsName = clsName;
-		DataCubeGenerator.endpoint=endpoint;
-		DataCubeGenerator.timeStamp=tStmp;
+		CrocusDataCube.clsName = clsName;
+		CrocusDataCube.endpoint=endpoint;
+		CrocusDataCube.timeStamp=tStmp;
 	}
 	public static void main(String[] args) throws IOException, MalformedQueryException, QueryEvaluationException, RepositoryException {
 		System.out.println("Cube Generation Started ...");
-		DataCubeGenerator.generateDataCubes("crocusResults.rdf");
+		CrocusDataCube.generateDataCubes("crocusResults.rdf");
       
 	}
 /**
