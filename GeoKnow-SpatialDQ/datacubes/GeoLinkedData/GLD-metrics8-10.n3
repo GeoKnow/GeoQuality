@@ -1,0 +1,2417 @@
+@prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#>. 
+@prefix sdmx-attribute: <http://purl.org/linked-data/sdmx/2009/attribute#>. 
+@prefix sdmx-concept: <http://purl.org/linked-data/sdmx/2009/concept#>. 
+@prefix qb: <http://purl.org/linked-data/cube#>. 
+@prefix sdmx-code: <http://purl.org/linked-data/sdmx/2009/code#>.
+@prefix dcterms: <http://purl.org/dc/terms/>. 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>. 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema>. 
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix sdmx-metadata: <http://purl.org/linked-data/sdmx/2009/metadata#>.
+@prefix sdmx: <http://purl.org/linked-data/sdmx#>. 
+@prefix sdmx-dimension: <http://purl.org/linked-data/sdmx/2009/dimension#>.
+@prefix sdmx-subject: <http://purl.org/linked-data/sdmx/2009/subject#>. 
+@prefix gk-dim: <http://www.geoknow.eu/properties/>. 
+@prefix owl: <http://www.w3.org/2002/07/owl#>. 
+@prefix gk-measure: <http://www.geoknow.eu/measure/>. 
+
+<> a owl:Ontology ; 
+ rdfs:label "GeoKnow Spatical Data Qaluty DataCube Knowledge Base" ;
+ dc:description "This knowledgebase contains 3 different DataCubes with different dimensions and measures." .
+
+#
+ #Data Set 
+ # 
+<http://www.geoknow.eu/dataset/ds1>  a qb:DataSet ;
+	       dcterms:publisher "AKSW, GeoKnow" ; 
+	       rdfs:label " Dataset Class Coverage" ; 
+	       rdfs:comment "Dataset Class Coverage" ; 
+	       qb:structure <http://www.geoknow.eu/data-cube/dsd1> ;
+	       dcterms:date "Mon May 11 16:09:38 CEST 2015". 
+
+<http://www.geoknow.eu/dataset/ds2>  a qb:DataSet ;
+	       dcterms:publisher "AKSW, GeoKnow" ; 
+	       rdfs:label "Dataset Weighted Class Coverage" ; 
+	       rdfs:comment "Dataset Weighted Class Coverage" ; 
+	       qb:structure <http://www.geoknow.eu/data-cube/dsd2> ;
+	       dcterms:date "Mon May 11 16:09:38 CEST 2015". 
+
+<http://www.geoknow.eu/dataset/ds3>  a qb:DataSet ;
+	       dcterms:publisher "AKSW, GeoKnow" ; 
+	       rdfs:label "Dataset Structuredness" ; 
+	       rdfs:comment "Dataset Structuredness" ; 
+	       qb:structure <http://www.geoknow.eu/data-cube/dsd3> ;
+	       dcterms:date "Mon May 11 16:09:38 CEST 2015". 
+
+# 
+# Data Structure Definitions 
+ # 
+<http://www.geoknow.eu/data-cube/dsd1> a qb:DataStructureDefinition ; 
+                                       rdfs:label   "A Data Structure Definition"@en ;
+                                       rdfs:comment  "A Data Structure Definition for DataCube1" ;
+                                       qb:component <http://www.geoknow.eu/data-cube/dsd1/c1>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd1/c2>, 
+                                                     <http://www.geoknow.eu/data-cube/dsd1/c3> . 
+
+<http://www.geoknow.eu/data-cube/dsd2> a qb:DataStructureDefinition ; 
+                                       rdfs:label   "A Data Structure Definition"@en ;
+                                       rdfs:comment  "A Data Structure Definition for DataCube2" ;
+                                       qb:component <http://www.geoknow.eu/data-cube/dsd2/c1>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd2/c2>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd2/c3> . 
+
+<http://www.geoknow.eu/data-cube/dsd3> a qb:DataStructureDefinition ; 
+                                       rdfs:label   "A Data Structure Definition"@en ;
+                                       rdfs:comment  "A Data Structure Definition for DataCube3" ;
+                                       qb:component <http://www.geoknow.eu/data-cube/dsd3/c1>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd3/c2>, 
+                                                    <http://www.geoknow.eu/data-cube/dsd3/c3> . 
+
+ # 
+ #Componenet Specifications
+ #
+ <http://www.geoknow.eu/data-cube/dsd1/c1> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Class " ;
+                                          qb:dimension gk-dim:Class . 
+<http://www.geoknow.eu/data-cube/dsd1/c2> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Time Stamp" ;
+                                          qb:dimension gk-dim:TimeStamp . 
+<http://www.geoknow.eu/data-cube/dsd1/c3> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Coverage" ;
+                                          qb:measure sdmx-measure:Coverage . 
+
+<http://www.geoknow.eu/data-cube/dsd2/c1> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Class" ;
+                                          qb:dimension gk-dim:Class . 
+<http://www.geoknow.eu/data-cube/dsd2/c2> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Time Stamp" ;
+                                          qb:dimension gk-dim:TimeStamp . 
+<http://www.geoknow.eu/data-cube/dsd2/c3> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Weighted Coverage" ;
+                                          qb:measure sdmx-measure:WeightedCoverage . 
+
+<http://www.geoknow.eu/data-cube/dsd3/c1> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Dataset" ;
+                                          qb:dimension gk-dim:Dataset . 
+<http://www.geoknow.eu/data-cube/dsd3/c2> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Time Stamp" ;
+                                          qb:dimension gk-dim:TimeStamp . 
+<http://www.geoknow.eu/data-cube/dsd3/c3> a qb:ComponentSpecification ; 
+                                          rdfs:label   "Component Specification of Structuredness" ;
+                                          qb:measure sdmx-measure:Structuredness . 
+
+### 
+ ## Dimensions, Unit, and Measure
+##
+gk-dim:Class a qb:DimensionProperty ; 
+                 rdfs:label   "Class of a dataset"@en .
+gk-dim:TimeStamp a qb:DimensionProperty ; 
+                 rdfs:label   "Time Stamp"@en .
+gk-dim:Dataset a qb:DimensionProperty ; 
+                 rdfs:label   "Dataset name"@en .
+sdmx-measure:Coverage  a qb:MeasureProperty ; 
+                 rdfs:label   "Class Coverage"@en .
+sdmx-measure:WeightedCoverage  a qb:MeasureProperty ; 
+                 rdfs:label   "Class Weighted Coverage"@en .
+sdmx-measure:Structuredness a qb:DimensionProperty ; 
+                 rdfs:label   "Dataset Structuredness"@en .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs1> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Charca> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs2> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Rivera> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs3> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Lavajo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs4> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs5> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Reguera> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs6> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Rambla> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs7> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Alc%C3%A1zar> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs8> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Cueva> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8416030534351145 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs9> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Cascada> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9951100244498777 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs10> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Fuerte> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs11> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Cartuja> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9666666666666667 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs12> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.opengis.net/ont/sf#Point> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs13> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Confluencia> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs14> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Dep%C3%B3sito> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs15> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Regato> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs16> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Lago> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs17> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Parroquia> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs18> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/IslaFluvial> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs19> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Colegio> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8333333333333334 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs20> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Mercado> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs21> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Molino> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9789473684210527 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs22> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.w3.org/ns/prov#Organization> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.75 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs23> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Torrente> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs24> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Museo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9344262295081968 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs25> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Caz> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs26> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://purl.org/NET/scovo#Dataset> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs27> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Ruta> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs28> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Auditorio> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9166666666666666 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs29> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#QuadMapFText> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.5333333333333333 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs30> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Hospital> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8478260869565217 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs31> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Reguero> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs32> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#QuadStorage> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs33> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Garganta> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs34> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Monumento> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8410852713178295 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs35> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapATable> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs36> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Ojo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs37> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Sif%C3%B3n> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs38> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Glorieta> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs39> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Acuario> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs40> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Marisma> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs41> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Camino> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs42> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Templo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9047619047619048 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs43> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Colegiata> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9166666666666666 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs44> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Municipio> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.7775765518884785 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs45> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.w3.org/2002/07/owl#Ontology> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.37142857142857144 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs46> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Ca%C3%B1ada> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs47> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Traves%C3%ADa> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs48> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Torre> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8719512195121951 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs49> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Bas%C3%ADlica> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8859649122807017 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs50> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Ca%C3%B1o> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs51> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Desag%C3%BCe> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs52> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Fortaleza> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.875 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs53> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Toma> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs54> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Cortijo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs55> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Santuario> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8414239482200647 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs56> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.29536585365853657 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs57> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#QuadMapValue> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.7678571428571429 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs58> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/R%C3%ADa> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs59> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Sendero> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs60> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/CintaTransportadora> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs61> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Autopista> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs62> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Muralla> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8611111111111112 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs63> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Restos_arqueol%C3%B3gicos> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8235294117647058 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs64> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.w3.org/2002/07/owl#Restriction> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.25132275132275134 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs65> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Nacimiento> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs66> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Iglesia> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8474945533769063 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs67> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Azarbe> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs68> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Pa%C3%ADs> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs69> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Monasterio> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9189814814814815 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs70> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Puente> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9074074074074074 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs71> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Alberca> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs72> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Provincia> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8359788359788359 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs73> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Villa> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8333333333333334 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs74> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Barranco> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9977437247344176 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs75> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Gola> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs76> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Galacho> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs77> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Manantial> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs78> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Playa> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9965811965811966 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs79> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#array-of-string> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs80> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/A%C3%B1o> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs81> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://purl.org/NET/scovo#Item> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs82> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Castillo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8894955798231929 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs83> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Vertiente> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs84> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Pista> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs85> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Venaje> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs86> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Alcazaba> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs87> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Marjal> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs88> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Castro> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8199643493761141 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs89> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Faro> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs90> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Captaci%C3%B3n> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs91> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Acu%C3%ADfero> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs92> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Estaci%C3%B3nDeAutobuses> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs93> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs94> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Aer%C3%B3dromo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs95> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Abad%C3%ADa> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs96> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Embalse> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs97> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/R%C3%A1pido> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs98> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Acueducto> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9166666666666666 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs99> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Faro> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9166666666666666 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs100> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Balsa> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.994692144373673 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs101> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Ba%C3%B1os> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8611111111111112 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs102> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Teatro> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9242424242424242 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs103> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/LineString> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs104> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Termas> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8333333333333334 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs105> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Casa> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8649425287356322 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs106> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.w3.org/ns/prov#Activity> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.4375 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs107> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Nevero> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs108> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Aljibe> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs109> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Riacho> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs110> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Capilla> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8095238095238095 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs111> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Tuber%C3%ADa> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs112> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Parque> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9583333333333334 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs113> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Nava> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs114> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/BaseA%C3%A9rea> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs115> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Dolmen> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8645833333333334 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs116> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Lucio> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs117> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Parador> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs118> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Observatorio> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8571428571428571 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs119> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.opengis.net/ont/gml#Point> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs120> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Brazo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs121> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Catedral> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9696969696969697 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs122> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Poza> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs123> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Mar> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs124> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Mezquita> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs125> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Pozo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs126> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Arroyo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs127> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Mina> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs128> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.w3.org/2002/07/owl#Class> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.26824099303663335 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs129> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Plaza_de_toros> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9166666666666666 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs130> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Canal> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs131> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Universidad> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8888888888888888 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs132> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Conjunto_hist%C3%B3rico> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs133> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Estaci%C3%B3nDeFerrocarril> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs134> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Madre> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs135> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/CanalMarino> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs136> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Vado> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs137> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/B%C3%B3veda> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs138> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Puerto> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs139> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/R%C3%ADo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.6731517509727627 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs140> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.w3.org/ns/prov#Entity> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.3888888888888889 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs141> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Anfiteatro> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs142> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Meandro> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs143> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Aeropuerto> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs144> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Desembocadura> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs145> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Acequia> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs146> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Sumidero> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs147> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Ruinas> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8395061728395061 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs148> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#QuadMap> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs149> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Chorrera> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs150> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Piscina> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs151> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Yacimiento> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8416666666666667 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs152> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Curva> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs153> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Aeroclub> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs154> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Albufera> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs155> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#QuadMapATable> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs156> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/ComunidadAut%C3%B3noma> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs157> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Carretera> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs158> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Saladar> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs159> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs160> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.w3.org/ns/prov#Agent> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.75 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs161> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.w3.org/2003/01/geo/wgs84_pos#Point> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.993492567704295 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs162> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Biblioteca> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs163> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.w3.org/2002/07/owl#TransitiveProperty> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs164> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/F%C3%A1brica> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8125 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs165> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Ayuntamiento> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.925 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs166> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/FuenteNatural> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs167> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Ib%C3%B3n> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs168> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Vista_panor%C3%A1mica> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs169> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapColumn> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs170> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.42948717948717946 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs171> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.18292682926829268 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs172> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.w3.org/2002/07/owl#DataRange> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs173> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Salina> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs174> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Hotel> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs175> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Estero> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs176> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMap> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs177> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Organizaci%C3%B3n> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs178> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Mirador> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9846153846153847 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs179> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Convento> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8571428571428571 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs180> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Pazo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8298611111111112 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs181> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.298372513562387 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs182> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Ribera> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs183> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Laguna> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs184> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Bod%C3%B3n> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs185> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Palacio> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.8278985507246377 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs186> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Surgencia> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs187> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Estanque> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9965156794425087 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs188> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Oc%C3%A9ano> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs189> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Colector> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs190> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Humedal> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd1/obs191> qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Granja> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Coverage 0.9869565217391304 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs1> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Charca> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs2> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Rivera> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs3> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Lavajo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs4> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs5> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Reguera> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs6> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Rambla> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs7> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Alc%C3%A1zar> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs8> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Cueva> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8416030534351145 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs9> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Cascada> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9951100244498777 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs10> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Fuerte> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs11> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Cartuja> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9666666666666667 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs12> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.opengis.net/ont/sf#Point> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs13> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Confluencia> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs14> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Dep%C3%B3sito> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs15> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Regato> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs16> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Lago> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs17> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Parroquia> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs18> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/IslaFluvial> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs19> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Colegio> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8333333333333334 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs20> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Mercado> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs21> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Molino> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9789473684210527 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs22> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.w3.org/ns/prov#Organization> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.75 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs23> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Torrente> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs24> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Museo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9344262295081968 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs25> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Caz> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs26> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://purl.org/NET/scovo#Dataset> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs27> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Ruta> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs28> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Auditorio> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9166666666666666 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs29> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#QuadMapFText> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.5333333333333333 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs30> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Hospital> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8478260869565217 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs31> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Reguero> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs32> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#QuadStorage> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs33> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Garganta> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs34> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Monumento> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8410852713178295 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs35> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapATable> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs36> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Ojo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs37> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Sif%C3%B3n> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs38> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Glorieta> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs39> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Acuario> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs40> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Marisma> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs41> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Camino> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs42> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Templo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9047619047619048 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs43> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Colegiata> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9166666666666666 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs44> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Municipio> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.7775765518884785 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs45> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.w3.org/2002/07/owl#Ontology> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.37142857142857144 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs46> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Ca%C3%B1ada> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs47> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Traves%C3%ADa> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs48> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Torre> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8719512195121951 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs49> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Bas%C3%ADlica> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8859649122807017 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs50> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Ca%C3%B1o> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs51> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Desag%C3%BCe> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs52> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Fortaleza> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.875 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs53> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Toma> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs54> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Cortijo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs55> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Santuario> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8414239482200647 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs56> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.29536585365853657 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs57> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#QuadMapValue> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.7678571428571429 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs58> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/R%C3%ADa> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs59> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Sendero> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs60> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/CintaTransportadora> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs61> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Autopista> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs62> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Muralla> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8611111111111112 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs63> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Restos_arqueol%C3%B3gicos> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8235294117647058 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs64> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.w3.org/2002/07/owl#Restriction> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.25132275132275134 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs65> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Nacimiento> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs66> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Iglesia> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8474945533769063 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs67> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Azarbe> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs68> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Pa%C3%ADs> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs69> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Monasterio> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9189814814814815 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs70> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Puente> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9074074074074074 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs71> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Alberca> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs72> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Provincia> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8359788359788359 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs73> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Villa> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8333333333333334 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs74> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Barranco> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9977437247344176 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs75> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Gola> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs76> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Galacho> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs77> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Manantial> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs78> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Playa> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9965811965811966 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs79> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#array-of-string> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs80> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/A%C3%B1o> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs81> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://purl.org/NET/scovo#Item> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs82> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Castillo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8894955798231929 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs83> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Vertiente> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs84> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Pista> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs85> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Venaje> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs86> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Alcazaba> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs87> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Marjal> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs88> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Castro> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8199643493761141 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs89> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Faro> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs90> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Captaci%C3%B3n> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs91> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Acu%C3%ADfero> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs92> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Estaci%C3%B3nDeAutobuses> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs93> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs94> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Aer%C3%B3dromo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs95> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Abad%C3%ADa> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs96> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Embalse> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs97> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/R%C3%A1pido> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs98> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Acueducto> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9166666666666666 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs99> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Faro> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9166666666666666 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs100> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Balsa> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.994692144373673 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs101> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Ba%C3%B1os> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8611111111111112 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs102> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Teatro> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9242424242424242 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs103> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/LineString> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs104> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Termas> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8333333333333334 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs105> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Casa> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8649425287356322 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs106> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.w3.org/ns/prov#Activity> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.4375 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs107> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Nevero> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs108> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Aljibe> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs109> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Riacho> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs110> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Capilla> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8095238095238095 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs111> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Tuber%C3%ADa> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs112> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Parque> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9583333333333334 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs113> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Nava> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs114> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/BaseA%C3%A9rea> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs115> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Dolmen> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8645833333333334 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs116> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Lucio> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs117> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Parador> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs118> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Observatorio> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8571428571428571 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs119> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.opengis.net/ont/gml#Point> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs120> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Brazo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs121> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Catedral> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9696969696969697 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs122> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Poza> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs123> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Mar> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs124> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Mezquita> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs125> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Pozo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs126> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Arroyo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs127> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Mina> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs128> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.w3.org/2002/07/owl#Class> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.26824099303663335 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs129> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Plaza_de_toros> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9166666666666666 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs130> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Canal> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs131> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Universidad> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8888888888888888 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs132> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Conjunto_hist%C3%B3rico> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs133> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Estaci%C3%B3nDeFerrocarril> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs134> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Madre> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs135> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/CanalMarino> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs136> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Vado> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs137> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/B%C3%B3veda> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs138> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Puerto> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs139> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/R%C3%ADo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.6731517509727627 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs140> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.w3.org/ns/prov#Entity> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.3888888888888889 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs141> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Anfiteatro> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs142> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Meandro> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs143> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Aeropuerto> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs144> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Desembocadura> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs145> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Acequia> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs146> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Sumidero> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs147> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Ruinas> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8395061728395061 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs148> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#QuadMap> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs149> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Chorrera> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs150> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Piscina> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs151> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Yacimiento> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8416666666666667 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs152> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Curva> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs153> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Aeroclub> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs154> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Albufera> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs155> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#QuadMapATable> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs156> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/ComunidadAut%C3%B3noma> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs157> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Carretera> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs158> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Saladar> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs159> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs160> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.w3.org/ns/prov#Agent> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.75 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs161> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.w3.org/2003/01/geo/wgs84_pos#Point> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.993492567704295 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs162> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Biblioteca> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs163> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.w3.org/2002/07/owl#TransitiveProperty> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs164> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/F%C3%A1brica> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8125 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs165> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Ayuntamiento> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.925 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs166> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/FuenteNatural> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs167> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Ib%C3%B3n> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs168> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Vista_panor%C3%A1mica> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs169> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapColumn> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs170> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.42948717948717946 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs171> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.18292682926829268 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs172> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.w3.org/2002/07/owl#DataRange> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs173> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Salina> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs174> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Hotel> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs175> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Estero> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs176> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMap> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs177> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Organizaci%C3%B3n> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs178> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Mirador> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9846153846153847 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs179> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Convento> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8571428571428571 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs180> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Pazo> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8298611111111112 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs181> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.298372513562387 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs182> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Ribera> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs183> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Laguna> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs184> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Bod%C3%B3n> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs185> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Palacio> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.8278985507246377 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs186> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Surgencia> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs187> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Estanque> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9965156794425087 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs188> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Oc%C3%A9ano> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs189> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Colector> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs190> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://geo.linkeddata.es/ontology/Humedal> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 1.0 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd2/obs191> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Class <http://phenomenontology.linkeddata.es/ontology/Granja> ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:WeightedCoverage 0.9869565217391304 ;
+	a qb:Observation .
+
+<http://www.geoknow.eu/data-cube/dsd3/obs1> qb:dataSet <http://www.geoknow.eu/dataset/ds2> ; 
+	gk-dim:Dataset "GeoLinkedData" ;
+	gk-dim:TimeStamp "Mon May 11 16:04:59 CEST 2015" ;
+	sdmx-measure:Structuredness 0.992417184558037 ;
+	a qb:Observation .
+
