@@ -15,9 +15,9 @@
 <http://www.geoknow.eu/data-cube/metric/-1859460846/obs/0>
       a       <http://purl.org/linked-data/cube#Observation> ;
       <http://www.geoknow.eu/properties/Class>
-              <http://geovocab.org/geometry#Polygon> ;
+              <http://geovocab.org/geometry#LinearRing> ;
       <http://www.geoknow.eu/properties/measure/Average>
-              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+              "28.888032454361056"^^<http://www.w3.org/2001/XMLSchema#double> .
 
 <http://www.geoknow.eu/properties/Class>
       a       <http://purl.org/linked-data/cube#DimensionProperty> ;
@@ -27,9 +27,9 @@
 <http://www.geoknow.eu/data-cube/metric/-1859460846/obs/1>
       a       <http://purl.org/linked-data/cube#Observation> ;
       <http://www.geoknow.eu/properties/Class>
-              <http://geovocab.org/geometry#LinearRing> ;
+              <http://geovocab.org/geometry#Polygon> ;
       <http://www.geoknow.eu/properties/measure/Average>
-              "28.888032454361056"^^<http://www.w3.org/2001/XMLSchema#double> .
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 
 <http://www.geoknow.eu/data-cube/metric/-1859460846/c2>
       a       <http://purl.org/linked-data/cube#ComponentSpecification> ;

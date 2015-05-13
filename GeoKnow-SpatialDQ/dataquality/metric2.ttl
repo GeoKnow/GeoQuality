@@ -1,9 +1,18 @@
+<http://www.geoknow.eu/properties/measure/InstanceCount>
+      a       <http://purl.org/linked-data/cube#MeasureProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Property Count"@en ;
+      <http://www.w3.org/2000/01/rdf-schema#range>
+              <http://www.w3.org/2001/XMLSchema#integer> ;
+      <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+              <http://purl.org/linked-data/sdmx/2009/measure#obs> .
+
 <http://www.geoknow.eu/data-cube/metric2/observation1>
       a       <http://purl.org/linked-data/cube#Observation> ;
       <http://purl.org/linked-data/cube#dataset>
               <http://www.geoknow.eu/data-cube//dataset/2> ;
       <http://www.geoknow.eu/properties/Class>
-              <http://geovocab.org/geometry#LinearRing> ;
+              <http://geovocab.org/geometry#Polygon> ;
       <http://www.geoknow.eu/properties/measure/PropertyCount>
               0 .
 
@@ -44,7 +53,7 @@
       <http://purl.org/linked-data/cube#dataset>
               <http://www.geoknow.eu/data-cube//dataset/2> ;
       <http://www.geoknow.eu/properties/Class>
-              <http://geovocab.org/geometry#Polygon> ;
+              <http://geovocab.org/geometry#LinearRing> ;
       <http://www.geoknow.eu/properties/measure/PropertyCount>
               0 .
 

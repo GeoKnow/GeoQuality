@@ -32,7 +32,6 @@ import com.hp.hpl.jena.vocabulary.RDFS;
 public class AveragePolygonsPerInstance implements GeoQualityMetric {
 
     private final String polygonClass;
-    private Property Average;
     private static final String NAMESPACE = "http://www.geoknow.eu/data-cube/";
     private static final String GET_CLASSES = "SELECT distinct ?class WHERE {?x a ?class } ";
     private static final ParameterizedSparqlString COUNT = new ParameterizedSparqlString(
@@ -70,7 +69,7 @@ public class AveragePolygonsPerInstance implements GeoQualityMetric {
             }
             Resource obs = cube.createResource(structureUri + "/obs/" + obsCount, QB.Observation);
             double average = i == 0 ? 0 : sum / i;
-            obs.addProperty(Average, cube.createTypedLiteral(average));
+            obs.addProperty(GK.MEASURE.Average, cube.createTypedLiteral(average));
             obs.addProperty(GK.DIM.Class, owlClass);
             obsCount++;
         }
@@ -84,7 +83,6 @@ public class AveragePolygonsPerInstance implements GeoQualityMetric {
 
     private Model createModel() {
         Model cubeData = ModelFactory.createDefaultModel();
-        Average = cubeData.createProperty("http://www.geoknow.eu/data-cube/Average");
         cubeData.createResource(NAMESPACE + "/structure/metric" + polygonClass.hashCode(), QB.MeasureProperty);
 
         Resource structure = cubeData.createResource(structureUri, QB.DataStructureDefinition);
@@ -96,14 +94,14 @@ public class AveragePolygonsPerInstance implements GeoQualityMetric {
         Resource c2 = cubeData.createResource(structure + "/c2", QB.ComponentSpecification);
         c2.addProperty(RDFS.label,
                 cubeData.createLiteral("Component Specification of Average of " + polygonClass + " per Instance", "en"));
-        c2.addProperty(QB.measure, Average);
+        c2.addProperty(QB.measure, GK.MEASURE.Average);
 
         structure.addProperty(QB.component, c1);
         structure.addProperty(RDFS.label,
                 cubeData.createLiteral("A Data Structure Definition for Instances Number Metric", "en"));
         structure.addProperty(QB.component, c2);
 
-        cubeData.add(GK.MEASURE.InstanceCountStatements);
+        cubeData.add(GK.MEASURE.AverageStatements);
         cubeData.add(GK.DIM.ClassStatements);
 
         return cubeData;

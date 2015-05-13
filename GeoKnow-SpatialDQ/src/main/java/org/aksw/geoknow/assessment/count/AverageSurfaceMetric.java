@@ -39,7 +39,6 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
     private static final String NAMESPACE = "http://www.geoknow.eu/data-cube/";
 
     private static final String STRUCTURE = NAMESPACE + "metric3";
-    private Property Average;
 
     private String structureUri;
 
@@ -128,7 +127,7 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
             }
             Resource obs = cube.createResource(structureUri + "/obs/" + obsCount, QB.Observation);
             double average = i == 0 ? 0 : area / i;
-            obs.addProperty(Average, cube.createTypedLiteral(average));
+            obs.addProperty(GK.MEASURE.Average, cube.createTypedLiteral(average));
             obs.addProperty(GK.DIM.Class, owlClass);
             obsCount++;
         }
@@ -169,7 +168,6 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
 
     private Model createModel() {
         Model cubeData = ModelFactory.createDefaultModel();
-        Average = cubeData.createProperty("http://www.geoknow.eu/data-cube/Average");
         Resource structure = cubeData.createResource(STRUCTURE, QB.DataStructureDefinition);
 
         Resource c1 = cubeData.createResource(STRUCTURE + "/c1", QB.ComponentSpecification);
@@ -177,7 +175,7 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
         c1.addProperty(QB.dimension, GK.DIM.Instance);
 
         Resource c2 = cubeData.createResource(STRUCTURE + "/c2", QB.ComponentSpecification);
-        c2.addProperty(QB.measure, GK.MEASURE.PropertyCount);
+        c2.addProperty(QB.measure, GK.MEASURE.Average);
         c2.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Number of Properties", "en"));
 
         structure.addProperty(QB.component, c1);
@@ -185,6 +183,7 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
 
         cubeData.add(GK.DIM.ClassStatements);
         cubeData.add(GK.DIM.PropertyStatements);
+        cubeData.add(GK.MEASURE.AverageStatements);
 
         return cubeData;
     }

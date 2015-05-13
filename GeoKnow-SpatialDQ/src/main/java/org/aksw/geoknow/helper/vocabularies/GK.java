@@ -76,10 +76,12 @@ public class GK {
         public static final String prefix = "gk-measure";
 
         public static final Property InstanceCount = property(uri, "InstanceCount");
+        public static final Property Average = property(uri, "Average");
         public static final Property PropertyCount = property(uri, "PropertyCount");
         public static final Property OtherClassesCount = property(uri, "OtherClasses");
 
         public static List<Statement> InstanceCountStatements;
+        public static List<Statement> AverageStatements;
         public static List<Statement> PropertyCountStatements;
         public static List<Statement> OtherClassesCountStatements;
 
@@ -91,6 +93,14 @@ public class GK {
             InstanceCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.subPropertyOf,
                     SDMX.MEASURE.obs));
             InstanceCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.range, XSD.integer));
+
+            AverageStatements = new ArrayList<Statement>(4);
+            AverageStatements.add(ResourceFactory.createStatement(Average, RDF.type, QB.MeasureProperty));
+            AverageStatements.add(ResourceFactory.createStatement(Average, RDFS.label,
+                    ResourceFactory.createLangLiteral("Average", "en")));
+            AverageStatements.add(ResourceFactory.createStatement(Average, RDFS.subPropertyOf,
+                    SDMX.MEASURE.obs));
+            AverageStatements.add(ResourceFactory.createStatement(Average, RDFS.range, XSD.decimal));
 
             PropertyCountStatements = new ArrayList<Statement>(4);
             PropertyCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDF.type, QB.MeasureProperty));

@@ -89,6 +89,7 @@ public class PropertiesPerInstances implements GeoQualityMetric {
         cubeData.add(GK.DIM.ClassStatements);
         cubeData.add(GK.DIM.PropertyStatements);
         cubeData.add(GK.DIM.InstanceStatements);
+        cubeData.add(GK.MEASURE.PropertyCountStatements);
 
         return cubeData;
     }
