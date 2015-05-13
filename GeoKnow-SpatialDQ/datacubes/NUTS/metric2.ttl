@@ -1,0 +1,69 @@
+<http://www.geoknow.eu/data-cube/metric2/observation1>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geovocab.org/geometry#LinearRing> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric2/c1>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Class"@en ;
+      <http://purl.org/linked-data/cube#dimension>
+              <http://www.geoknow.eu/properties/Class> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation3>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geovocab.org/geometry#MultiPolygon> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation2>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric2/c2>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Number of Properties"@en ;
+      <http://purl.org/linked-data/cube#measure>
+              <http://www.geoknow.eu/properties/measure/PropertyCount> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation0>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geovocab.org/geometry#Polygon> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              0 .
+
+<http://www.geoknow.eu/properties/Class>
+      a       <http://purl.org/linked-data/cube#DimensionProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "class of instance"@en .
+
+<http://www.geoknow.eu/data-cube//dataset/2>
+      a       <http://purl.org/linked-data/cube#Dataset> ;
+      <http://purl.org/linked-data/cube#structure>
+              <http://www.geoknow.eu/data-cube/metric2> .
+
+<http://www.geoknow.eu/properties/Property>
+      a       <http://purl.org/linked-data/cube#DimensionProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Instance name"@en , "Property name"@en .
+
+<http://www.geoknow.eu/data-cube/metric2>
+      a       <http://purl.org/linked-data/cube#DataStructureDefinition> ;
+      <http://purl.org/linked-data/cube#component>
+              <http://www.geoknow.eu/data-cube/metric2/c1> , <http://www.geoknow.eu/data-cube/metric2/c2> .
