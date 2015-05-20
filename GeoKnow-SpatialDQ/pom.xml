@@ -96,7 +96,30 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>jena-tdb</artifactId>
+            <version>0.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>jena-core</artifactId>
+            <version>2.10.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jena</groupId>
+            <artifactId>jena-arq</artifactId>
+            <version>2.10.0</version>
+        </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <!-- DO NOT set id to "local" because it is reserved by Maven -->
+            <id>lib</id>
+            <url>file://${project.basedir}/lib</url>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>

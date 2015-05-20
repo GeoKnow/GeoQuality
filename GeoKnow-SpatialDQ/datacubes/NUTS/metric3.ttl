@@ -7,31 +7,31 @@
 
 <http://www.geoknow.eu/data-cube/metric/averageSurface/obs/1>
       a       <http://purl.org/linked-data/cube#Observation> ;
-      <http://www.geoknow.eu/data-cube/Average>
-              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
       <http://www.geoknow.eu/properties/Class>
-              <http://geovocab.org/geometry#LinearRing> .
+              <http://geovocab.org/geometry#LinearRing> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 
 <http://www.geoknow.eu/data-cube/metric/averageSurface/obs/3>
       a       <http://purl.org/linked-data/cube#Observation> ;
-      <http://www.geoknow.eu/data-cube/Average>
-              5.610448733748778E-4 ;
       <http://www.geoknow.eu/properties/Class>
-              <http://geovocab.org/geometry#MultiPolygon> .
+              <http://geovocab.org/geometry#MultiPolygon> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              5.610448733748778E-4 .
 
 <http://www.geoknow.eu/data-cube/metric/averageSurface/obs/2>
       a       <http://purl.org/linked-data/cube#Observation> ;
-      <http://www.geoknow.eu/data-cube/Average>
-              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> ;
       <http://www.geoknow.eu/properties/Class>
-              <http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion> .
+              <http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 
 <http://www.geoknow.eu/data-cube/metric/averageSurface/obs/0>
       a       <http://purl.org/linked-data/cube#Observation> ;
-      <http://www.geoknow.eu/data-cube/Average>
-              "1.0424757138283984"^^<http://www.w3.org/2001/XMLSchema#double> ;
       <http://www.geoknow.eu/properties/Class>
-              <http://geovocab.org/geometry#Polygon> .
+              <http://geovocab.org/geometry#Polygon> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "1.0424757138283984"^^<http://www.w3.org/2001/XMLSchema#double> .
 
 <http://www.geoknow.eu/properties/Class>
       a       <http://purl.org/linked-data/cube#DimensionProperty> ;
@@ -43,12 +43,21 @@
       <http://www.w3.org/2000/01/rdf-schema#label>
               "Component Specification of Number of Properties"@en ;
       <http://purl.org/linked-data/cube#measure>
-              <http://www.geoknow.eu/properties/measure/PropertyCount> .
+              <http://www.geoknow.eu/properties/measure/Average> .
 
 <http://www.geoknow.eu/data-cube/metric3>
       a       <http://purl.org/linked-data/cube#DataStructureDefinition> ;
       <http://purl.org/linked-data/cube#component>
               <http://www.geoknow.eu/data-cube/metric3/c1> , <http://www.geoknow.eu/data-cube/metric3/c2> .
+
+<http://www.geoknow.eu/properties/measure/Average>
+      a       <http://purl.org/linked-data/cube#MeasureProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Average"@en ;
+      <http://www.w3.org/2000/01/rdf-schema#range>
+              <http://www.w3.org/2001/XMLSchema#decimal> ;
+      <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+              <http://purl.org/linked-data/sdmx/2009/measure#obs> .
 
 <http://www.geoknow.eu/properties/Property>
       a       <http://purl.org/linked-data/cube#DimensionProperty> ;

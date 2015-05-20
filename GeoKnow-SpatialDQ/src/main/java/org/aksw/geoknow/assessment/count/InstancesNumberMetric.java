@@ -16,14 +16,16 @@ import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
 /**
  * This metric return the number of instance for each class in the data set.
+ *
  * @author Didier Cherix
- * </br> R & D, Unister GmbH, Leipzig, Germany</br>
- * This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
+ *         </br> R & D, Unister GmbH, Leipzig, Germany</br>
+ *         This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
  *
  */
 public class InstancesNumberMetric implements GeoQualityMetric {
@@ -36,23 +38,32 @@ public class InstancesNumberMetric implements GeoQualityMetric {
 
     public Model generateResultsDataCube(Model inputModel) {
 
+        return execute(inputModel, null);
+    }
+
+    private Model execute(Model inputModel, String endpoint) {
         Model cubeData = createModel();
         Resource dataSet = cubeData.createResource(NAMESPACE + "dataset/1");
 
         cubeData.add(cubeData.createStatement(dataSet, QB.structure,
                 cubeData.createResource(STRUCTURE)));
-
-        QueryExecution queryExec = QueryExecutionFactory.create(GET_CLASSES,
-                inputModel);
+        QueryExecution queryExec;
+        if (inputModel != null) {
+            queryExec = QueryExecutionFactory.create(GET_CLASSES,
+                    inputModel);
+        } else {
+            queryExec = QueryExecutionFactory.sparqlService(endpoint, GET_CLASSES);
+        }
         ResultSet result = queryExec.execSelect();
-        int i=0;
+        int i = 0;
         while (result.hasNext()) {
             QuerySolution solution = result.next();
-            Resource owlClass = solution.getResource("class");
+            System.out.println(solution);
+            RDFNode owlClass = solution.get("class");
             long instances = solution.getLiteral("count").getLong();
-            Resource obs = cubeData.createResource(NAMESPACE+"observation/"+i, QB.Observation);
+            Resource obs = cubeData.createResource(NAMESPACE + "observation/" + i, QB.Observation);
             obs.addLiteral(GK.MEASURE.InstanceCount, instances);
-            obs.addProperty(GK.DIM.Class, owlClass);
+            obs.addProperty(GK.DIM.Class, cubeData.createResource(owlClass.toString()));
             obs.addProperty(QB.dataset, dataSet);
             i++;
         }
@@ -65,11 +76,11 @@ public class InstancesNumberMetric implements GeoQualityMetric {
         Resource structure = cubeData.createResource(STRUCTURE,
                 QB.DataStructureDefinition);
 
-        Resource c1 = cubeData.createResource(STRUCTURE+"/c1",QB.ComponentSpecification);
+        Resource c1 = cubeData.createResource(STRUCTURE + "/c1", QB.ComponentSpecification);
         c1.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Class", "en"));
         c1.addProperty(QB.dimension, GK.DIM.Class);
 
-        Resource c2 = cubeData.createResource(STRUCTURE+"/c2",QB.ComponentSpecification);
+        Resource c2 = cubeData.createResource(STRUCTURE + "/c2", QB.ComponentSpecification);
         c2.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Number of Instances", "en"));
         c2.addProperty(QB.measure, GK.MEASURE.InstanceCount);
 
@@ -77,7 +88,6 @@ public class InstancesNumberMetric implements GeoQualityMetric {
         structure.addProperty(RDFS.label,
                 cubeData.createLiteral("A Data Structure Definition for Instances Number Metric", "en"));
         structure.addProperty(QB.component, c2);
-
 
         cubeData.add(GK.MEASURE.InstanceCountStatements);
         cubeData.add(GK.DIM.ClassStatements);
@@ -87,19 +97,13 @@ public class InstancesNumberMetric implements GeoQualityMetric {
 
     public Model generateResultsDataCube(String endpointUrl) {
 
-        QueryExecution qexec = QueryExecutionFactory.sparqlService(endpointUrl,
-                "CONSTRUCT {?s a ?o .} WHERE {?s a ?o .}");
-        Model model = qexec.execConstruct();
-
-        return this.generateResultsDataCube(model);
+       return this.execute(null, endpointUrl);
     }
 
     public static void main(String[] args) throws IOException {
-        OntModel m = ModelFactory.createOntologyModel();
-        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/","TTL");
         InstancesNumberMetric metric = new InstancesNumberMetric();
-        Model r = metric.generateResultsDataCube(m);
-        r.write(new FileWriter("dataquality/metric1.ttl"), "TTL");
+        Model r = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
+        r.write(new FileWriter("datacubes/LinkedGeoData/metric1.ttl"), "TTL");
     }
 
 }

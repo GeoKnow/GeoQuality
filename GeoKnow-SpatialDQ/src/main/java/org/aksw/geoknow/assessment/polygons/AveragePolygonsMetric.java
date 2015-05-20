@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.aksw.geoknow.assessment.polygons;
 
@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Set;
 
 import org.aksw.geoknow.assessment.GeoQualityMetric;
-import org.aksw.geoknow.helper.vacabularies.QB;
+import org.aksw.geoknow.helper.vocabularies.QB;
 import org.apache.log4j.Logger;
 
 import com.hp.hpl.jena.query.QueryExecution;
@@ -42,7 +42,7 @@ import de.uni_leipzig.simba.measures.pointsets.SetMeasureFactory.Type;
  * as a table it should be (the data in the second row is Just an example)
  * Metric 	 | Class 						| Time Stamp 					| averageDistance
  * Hausdorff | dbpedia-owl:PopulatedPlace	| Thu Feb 12 14:28:06 CET 2015	| 0.987
- * 
+ *
  * @author sherif
  *
  */
@@ -51,30 +51,30 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 	private static final double DISTANCE_THRESHOULD = 0.7;
 	private static final int 	MAX_CLASS_COUNT = 1; // set to a positive number for demo
 	private static final String BASE_URI = "http://www.geoknow.eu/";
-	
+
 	// Source dataset
 	private String sourceEndpoint = "http://live.dbpedia.org/sparql";
 	private String sourceAuthority = "http://dbpedia.org";
 	private String sourceGeoPredicate =  "<http://www.w3.org/2003/01/geo/wgs84_pos#geometry>";
 	private static Cache source = new HybridCache();
-	
+
 	// Target dataset
 	private String targetEndpoint = "http://linkedgeodata.org/sparql";
 	private String targetAuthority = "http://linkedgeodata.org";
 	private String targetGeoPredicate =  "<http://geovocab.org/geometry#geometry>/<http://www.opengis.net/ont/geosparql#asWKT>";
 	private static Cache target = new HybridCache();
-	
+
 	private Set<String> polygonMertices = new HashSet<String>(Arrays.asList(
-			"hausdorff", 
-			"geomin", 
-			"geomax", 
-			"geoavg", 
-			"geolink", 
-			"geoquinlan", 
-			"geosummin", 
-			"surjection", 
+			"hausdorff",
+			"geomin",
+			"geomax",
+			"geoavg",
+			"geolink",
+			"geoquinlan",
+			"geosummin",
+			"surjection",
 			"fairsurjection"));
-	
+
 
 	/* (non-Javadoc)
 	 * @see org.aksw.geoknow.assessment.GeoQualityMetric#generateResultsDataCube(java.lang.String)
@@ -124,7 +124,7 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 		dataCube.addMeasureSpecs(compDist, distLabel, distProperty);
 
 		// Observations
-		int i = 1, j = 1; 
+		int i = 1, j = 1;
 		for(String pm : polygonMertices ){
 			sourceEndpoint = endpointUrl;
 			Map<Resource, Double> avgDists = computePerClassAverageDistance(pm);
@@ -157,7 +157,7 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 			Mapping m = getMapping(distanceMetric);
 			Double avg = computeAverageSimilarity(m);
 			if(!avg.isNaN()){
-				result.put(c, avg);	
+				result.put(c, avg);
 			}
 			if(MAX_CLASS_COUNT > 0 && i++ == MAX_CLASS_COUNT){ // for demo
 				break;
@@ -176,7 +176,7 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 		result /= m.size();
 		return result;
 	}
-	
+
 
 	/**
 	 * @param threshold
@@ -223,7 +223,7 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 	public AveragePolygonsMetric() {
 		super();
 	}
-	
+
 	/**
 	 * @param sourceEndpoint
 	 * @param sourceAuthority
@@ -253,7 +253,7 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 	 */
 	public List<Resource> getSameAsInstances(Model m, Resource r){
 		List<Resource> results = new ArrayList<Resource>();
-		String sparqlQueryString = 
+		String sparqlQueryString =
 				"SELECT DISTINCT ?s " +
 						"{<" + r.toString() + "> <" + OWL.sameAs + "> ?q}";
 		QueryFactory.create(sparqlQueryString);
@@ -307,7 +307,7 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 					RDFNode tWKT = tqs.get("?tg");
 					if(!tWKT.equals(null)){
 						source.addTriple(s.toString(), sourceGeoPredicate, sWKT.toString());
-						target.addTriple(t.toString(), targetGeoPredicate, tWKT.toString());	
+						target.addTriple(t.toString(), targetGeoPredicate, tWKT.toString());
 					}
 				}
 				targetQExec.close() ;

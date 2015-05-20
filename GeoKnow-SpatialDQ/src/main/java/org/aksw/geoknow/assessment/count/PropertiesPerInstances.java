@@ -22,15 +22,15 @@ import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
 /**
-*
-* This metric calculates the average number of properties per classes.
-*
-*
-* @author Didier Cherix
-* </br> R & D, Unister GmbH, Leipzig, Germany</br>
-* This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
-*
-*/
+ *
+ * This metric calculates the average number of properties per classes.
+ *
+ *
+ * @author Didier Cherix
+ *         </br> R & D, Unister GmbH, Leipzig, Germany</br>
+ *         This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
+ *
+ */
 public class PropertiesPerInstances implements GeoQualityMetric {
 
     private final ParameterizedSparqlString NUMBER_OF_PROPERTIES = new ParameterizedSparqlString(
@@ -41,21 +41,37 @@ public class PropertiesPerInstances implements GeoQualityMetric {
     private static final String STRUCTURE = NAMESPACE + "metric2";
 
     public Model generateResultsDataCube(Model inputModel) {
+        return execute(inputModel, null);
+    }
+
+    private Model execute(Model inputModel, String endpoint) {
         Model cube = createModel();
-        Resource dataset = cube.createResource(NAMESPACE+"/dataset/2",QB.Dataset);
+        Resource dataset = cube.createResource(NAMESPACE + "/dataset/2", QB.Dataset);
         dataset.addProperty(QB.structure, cube.createResource(STRUCTURE));
 
-        QueryExecution qExec = QueryExecutionFactory.create(INSTANCES, inputModel);
+        QueryExecution qExec;
+        if (inputModel != null) {
+            qExec = QueryExecutionFactory.create(INSTANCES, inputModel);
+        } else {
+            qExec = QueryExecutionFactory.sparqlService(endpoint, INSTANCES);
+        }
         ResultSet result = qExec.execSelect();
-        int i=0;
+        int i = 0;
         while (result.hasNext()) {
             Resource owlClass = result.next().getResource("class");
             NUMBER_OF_PROPERTIES.setIri("class", owlClass.getURI());
-            QueryExecution propertiesQexec = QueryExecutionFactory.create(NUMBER_OF_PROPERTIES.asQuery(),inputModel);
+            QueryExecution propertiesQexec;
+            if (inputModel != null) {
+                propertiesQexec = QueryExecutionFactory.create(NUMBER_OF_PROPERTIES.asQuery(),
+                        inputModel);
+            } else {
+                propertiesQexec = QueryExecutionFactory.sparqlService(endpoint, NUMBER_OF_PROPERTIES.asQuery());
+            }
             ResultSet propertiesResult = propertiesQexec.execSelect();
-            if(propertiesResult.hasNext()){
+            if (propertiesResult.hasNext()) {
                 System.out.println(i);
-                Resource obs = cube.createResource("http://www.geoknow.eu/data-cube/metric2/observation"+i, QB.Observation);
+                Resource obs = cube.createResource("http://www.geoknow.eu/data-cube/metric2/observation" + i,
+                        QB.Observation);
                 obs.addProperty(QB.dataset, dataset);
                 obs.addProperty(GK.DIM.Class, owlClass);
                 obs.addLiteral(GK.MEASURE.PropertyCount, propertiesResult.next().getLiteral("count"));
@@ -66,25 +82,25 @@ public class PropertiesPerInstances implements GeoQualityMetric {
     }
 
     private Model createModel() {
-        Model cubeData= ModelFactory.createDefaultModel();
+        Model cubeData = ModelFactory.createDefaultModel();
 
         Resource structure = cubeData.createResource(STRUCTURE, QB.DataStructureDefinition);
 
-        Resource c1 = cubeData.createResource(STRUCTURE+"/c1",QB.ComponentSpecification);
+        Resource c1 = cubeData.createResource(STRUCTURE + "/c1", QB.ComponentSpecification);
         c1.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Class", "en"));
         c1.addProperty(QB.dimension, GK.DIM.Class);
 
-        Resource c2 = cubeData.createResource(STRUCTURE+"/c2",QB.ComponentSpecification);
+        Resource c2 = cubeData.createResource(STRUCTURE + "/c2", QB.ComponentSpecification);
         c2.addProperty(QB.measure, GK.MEASURE.PropertyCount);
         c2.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Number of Properties", "en"));
 
-//        Resource c3 = cubeData.createResource(STRUCTURE+"/c3",QB.ComponentSpecification);
-//        c3.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Instance", "en"));
-//        c3.addProperty(QB.dimension, GK.DIM.Instance);
+        // Resource c3 = cubeData.createResource(STRUCTURE+"/c3",QB.ComponentSpecification);
+        // c3.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Instance", "en"));
+        // c3.addProperty(QB.dimension, GK.DIM.Instance);
 
         structure.addProperty(QB.component, c1);
         structure.addProperty(QB.component, c2);
-//        structure.addProperty(QB.component, c3);
+        // structure.addProperty(QB.component, c3);
 
         cubeData.add(GK.DIM.ClassStatements);
         cubeData.add(GK.DIM.PropertyStatements);
@@ -95,16 +111,15 @@ public class PropertiesPerInstances implements GeoQualityMetric {
     }
 
     public Model generateResultsDataCube(String endpointUrl) {
-        // TODO Auto-generated method stub
-        return null;
+      return this.execute(null, endpointUrl);
     }
 
     public static void main(String[] args) throws IOException {
-        Model m = ModelFactory.createDefaultModel();
-        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/","TTL");
+//        Model m = ModelFactory.createDefaultModel();
+//        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
         GeoQualityMetric metric = new PropertiesPerInstances();
-        Model r = metric.generateResultsDataCube(m);
-        r.write(new FileWriter("dataquality/metric2.ttl"), "TTL");
+        Model r = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
+        r.write(new FileWriter("datacubes/LinkedGeoData/metric2.ttl"), "TTL");
     }
 
 }

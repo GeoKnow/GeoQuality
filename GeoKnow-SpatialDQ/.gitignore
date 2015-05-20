@@ -1,1 +1,6 @@
+.project
+.checkstyle
+.settings
+.classpath
+.springBeans
 target
