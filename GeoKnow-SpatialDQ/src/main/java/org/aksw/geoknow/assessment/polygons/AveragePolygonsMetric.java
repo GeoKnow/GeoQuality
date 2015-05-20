@@ -3,6 +3,9 @@
  */
 package org.aksw.geoknow.assessment.polygons;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -13,11 +16,20 @@ import java.util.Map;
 import java.util.Set;
 
 import org.aksw.geoknow.assessment.GeoQualityMetric;
-import org.aksw.geoknow.helper.vacabularies.QB;
+import org.aksw.geoknow.helper.vocabularies.QB;
+import org.aksw.jena_sparql_api.cache.core.QueryExecutionFactoryCacheEx;
+import org.aksw.jena_sparql_api.cache.extra.CacheCoreEx;
+import org.aksw.jena_sparql_api.cache.extra.CacheCoreH2;
+import org.aksw.jena_sparql_api.cache.extra.CacheEx;
+import org.aksw.jena_sparql_api.cache.extra.CacheExImpl;
+import org.aksw.jena_sparql_api.core.QueryExecutionFactory;
+import org.aksw.jena_sparql_api.delay.core.QueryExecutionFactoryDelay;
+import org.aksw.jena_sparql_api.http.QueryExecutionFactoryHttp;
+import org.aksw.jena_sparql_api.pagination.core.QueryExecutionFactoryPaginated;
+import org.aksw.jena_sparql_api.retry.core.QueryExecutionFactoryRetry;
 import org.apache.log4j.Logger;
 
 import com.hp.hpl.jena.query.QueryExecution;
-import com.hp.hpl.jena.query.QueryExecutionFactory;
 import com.hp.hpl.jena.query.QueryFactory;
 import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
@@ -35,6 +47,7 @@ import de.uni_leipzig.simba.data.Mapping;
 import de.uni_leipzig.simba.mapper.atomic.OrchidMapper;
 import de.uni_leipzig.simba.mapper.atomic.hausdorff.GeoHR3;
 import de.uni_leipzig.simba.mapper.atomic.hausdorff.Polygon;
+import de.uni_leipzig.simba.measures.pointsets.SetMeasureFactory;
 import de.uni_leipzig.simba.measures.pointsets.SetMeasureFactory.Type;
 
 /**
@@ -48,38 +61,127 @@ import de.uni_leipzig.simba.measures.pointsets.SetMeasureFactory.Type;
  */
 public class AveragePolygonsMetric implements GeoQualityMetric {
 	private static final Logger logger = Logger.getLogger(AveragePolygonsMetric.class.getName());
-	private static final double DISTANCE_THRESHOULD = 0.7;
-	private static final int 	MAX_CLASS_COUNT = 1; // set to a positive number for demo
+	private static final double DISTANCE_THRESHOULD = 0.0;
+	private static final int 	MAX_CLASS_COUNT = 100; // set to a positive number for demo
 	private static final String BASE_URI = "http://www.geoknow.eu/";
 	
 	// Source dataset
-	private String sourceEndpoint = "http://live.dbpedia.org/sparql";
-	private String sourceAuthority = "http://dbpedia.org";
-	private String sourceGeoPredicate =  "<http://www.w3.org/2003/01/geo/wgs84_pos#geometry>";
+	private String sourceEndpoint;
+	private String sourceAuthority;
+	private String sourceGeoPredicate ;
 	private static Cache source = new HybridCache();
+//	public QueryExecutionFactory sourceQEF;
 	
 	// Target dataset
-	private String targetEndpoint = "http://linkedgeodata.org/sparql";
-	private String targetAuthority = "http://linkedgeodata.org";
-	private String targetGeoPredicate =  "<http://geovocab.org/geometry#geometry>/<http://www.opengis.net/ont/geosparql#asWKT>";
+	private String targetEndpoint ;
+	private String targetAuthority ;
+	private String targetGeoPredicate ;
 	private static Cache target = new HybridCache();
+//	public QueryExecutionFactory targetQEF;
 	
 	private Set<String> polygonMertices = new HashSet<String>(Arrays.asList(
 			"hausdorff", 
 			"geomin", 
-			"geomax", 
+			"geomax",
+			"geomean",
 			"geoavg", 
 			"geolink", 
-			"geoquinlan", 
 			"geosummin", 
 			"surjection", 
-			"fairsurjection"));
+			"fairsurjection"
+			));
+	public boolean useOrchid = false;
+	private ArrayList<Resource> sourceClassesList = new ArrayList<Resource>();;
+	
+
+	public AveragePolygonsMetric() {
+		super();
+//		initializeSourceQEF();
+//		initializeTargetQEF();
+	}
+
+//	private void initializeSourceQEF() {
+//		QueryExecutionFactory sourceQEF = new QueryExecutionFactoryHttp(sourceEndpoint);
+//		sourceQEF = new QueryExecutionFactoryDelay(sourceQEF, 5000);
+//		sourceQEF = new QueryExecutionFactoryRetry(sourceQEF, 5, 10000);
+////		long timeToLive = 24l * 60l * 60l * 1000l; 
+////		CacheCoreEx sourceCacheBackend = null;
+////		try {
+////			sourceCacheBackend = CacheCoreH2.create("sparql", timeToLive, true);
+////		} catch (ClassNotFoundException | SQLException e) {
+////			e.printStackTrace();
+////		}
+////		CacheEx sourceCacheFrontend = new CacheExImpl(sourceCacheBackend);
+////		sourceQEF = new QueryExecutionFactoryCacheEx(sourceQEF, sourceCacheFrontend);
+//		sourceQEF = new QueryExecutionFactoryPaginated(sourceQEF, 900);
+//	}
+//	
+//	private void initializeTargetQEF() {
+//		targetQEF = new QueryExecutionFactoryHttp(targetEndpoint);
+//		targetQEF = new QueryExecutionFactoryDelay(targetQEF, 5000);
+//		targetQEF = new QueryExecutionFactoryRetry(targetQEF, 5, 10000);
+////		long timeToLive = 24l * 60l * 60l * 1000l; 
+////		CacheCoreEx targetcacheBackend = null;
+////		try {
+////			targetcacheBackend = CacheCoreH2.create("sparql", timeToLive, true);
+////		} catch (ClassNotFoundException | SQLException e) {
+////			e.printStackTrace();
+////		}
+////		CacheEx targetCacheFrontend = new CacheExImpl(targetcacheBackend);
+////		targetQEF = new QueryExecutionFactoryCacheEx(targetQEF, targetCacheFrontend);
+//		targetQEF = new QueryExecutionFactoryPaginated(targetQEF, 900);
+//	}
+	
+	/**
+	 * @param sourceEndpoint
+	 * @param sourceAuthority
+	 * @param sourceGeoPredicate
+	 * @param targetEndpoint
+	 * @param targetAuthority
+	 * @param targetGeoPredicate
+	 *@author sherif
+	 */
+	public AveragePolygonsMetric(
+			String sourceEndpoint, 
+			String sourceAuthority,
+			String sourceGeoPredicate, 
+			String targetEndpoint,
+			String targetAuthority,
+			String targetGeoPredicate) {
+		this();
+		this.sourceEndpoint = sourceEndpoint;
+		this.sourceAuthority = sourceAuthority;
+		this.sourceGeoPredicate = sourceGeoPredicate;
+		this.targetEndpoint = targetEndpoint;
+		this.targetAuthority = targetAuthority;
+		this.targetGeoPredicate = targetGeoPredicate;
+	}
+	
+	private QueryExecutionFactory initializeSourceQEF() {
+	QueryExecutionFactory qef = new QueryExecutionFactoryHttp(sourceEndpoint);
+	qef = new QueryExecutionFactoryDelay(qef, 5000);
+	qef = new QueryExecutionFactoryRetry(qef, 5, 10000);
+//	long timeToLive = 24l * 60l * 60l * 1000l; 
+//	CacheCoreEx sourceCacheBackend = null;
+//	try {
+//		sourceCacheBackend = CacheCoreH2.create("sparql", timeToLive, true);
+//	} catch (ClassNotFoundException | SQLException e) {
+//		e.printStackTrace();
+//	}
+//	CacheEx sourceCacheFrontend = new CacheExImpl(sourceCacheBackend);
+//	sourceQEF = new QueryExecutionFactoryCacheEx(sourceQEF, sourceCacheFrontend);
+	qef = new QueryExecutionFactoryPaginated(qef, 900);
+	return qef;
+}
 	
 
 	/* (non-Javadoc)
 	 * @see org.aksw.geoknow.assessment.GeoQualityMetric#generateResultsDataCube(java.lang.String)
 	 */
 	public Model generateResultsDataCube(String endpointUrl) {
+		if(!endpointUrl.equals("")){
+			sourceEndpoint = endpointUrl;
+		}
 		DataCubeWriter dataCube = new DataCubeWriter();
 
 		// DataSet
@@ -126,16 +228,15 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 		// Observations
 		int i = 1, j = 1; 
 		for(String pm : polygonMertices ){
-			sourceEndpoint = endpointUrl;
 			Map<Resource, Double> avgDists = computePerClassAverageDistance(pm);
-			for(Resource c : avgDists.keySet()){
+			for(Resource classUri : avgDists.keySet()){
 				Resource observation = ResourceFactory.createResource(BASE_URI + "avg_poly_obv_" + i + "_" + j++);
 				DataCubeWriter.dataCubeModel.add(observation, RDF.type, QB.Observation);
 				DataCubeWriter.dataCubeModel.add(observation, QB.dataset, dataset);
-				DataCubeWriter.dataCubeModel.add(observation, clsProperty, c);
+				DataCubeWriter.dataCubeModel.add(observation, clsProperty, classUri);
 				DataCubeWriter.dataCubeModel.add(observation, timeProperty, (new Date()).toString());
 				DataCubeWriter.dataCubeModel.add(observation, metricProperty, pm);
-				DataCubeWriter.dataCubeModel.add(observation, distProperty, avgDists.get(c) + "");
+				DataCubeWriter.dataCubeModel.add(observation, distProperty, avgDists.get(classUri) + "");
 			}
 			j++;
 		}
@@ -152,6 +253,9 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 		List<Resource> classes = getSourceClasses();
 		int i = 0;
 		for(Resource c : classes){
+		
+//		Resource c = ResourceFactory.createResource("http://geo.linkeddata.es/ontology/Provincia") ;
+		
 			logger.info("Processing class: " + c.toString());
 			readSourceTargetCache(c);
 			Mapping m = getMapping(distanceMetric);
@@ -159,10 +263,14 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 			if(!avg.isNaN()){
 				result.put(c, avg);	
 			}
+			else{
+				logger.warn("NO mapping for class: " + c);
+			}
 			if(MAX_CLASS_COUNT > 0 && i++ == MAX_CLASS_COUNT){ // for demo
 				break;
 			}
 		}
+		System.out.println("class2avg: " +result);
 		return result;
 	}
 
@@ -189,10 +297,14 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 		OrchidMapper mapper = new OrchidMapper();
 		Set<Polygon> sourcePolygons = mapper.getPolygons(source, sourceGeoPredicate);
 		Set<Polygon> targetPolygons = mapper.getPolygons(target, targetGeoPredicate);
-		float theta = (1 / (float) DISTANCE_THRESHOULD) - 1;
 		Type type = mapper.getTypeFromExpression(distanceMetric);
-		GeoHR3 orchid = new GeoHR3(theta, GeoHR3.DEFAULT_GRANULARITY, type);
-		return orchid.run(sourcePolygons, targetPolygons);
+		if(useOrchid ){
+			float theta = (1 / (float) DISTANCE_THRESHOULD) - 1;
+			GeoHR3 orchid = new GeoHR3(theta, GeoHR3.DEFAULT_GRANULARITY, type);
+			return orchid.run(sourcePolygons, targetPolygons);
+		}else{
+			return SetMeasureFactory.getMeasure(type).run(sourcePolygons, targetPolygons, Float.MAX_VALUE);
+		}
 	}
 
 
@@ -202,70 +314,53 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 	 * @author sherif
 	 */
 	public List<Resource> getSourceClasses(){
-		List<Resource> results = new ArrayList<Resource>();
+		if(!sourceClassesList.isEmpty()){
+			return sourceClassesList;
+		}
 		String sparqlQueryString = "SELECT DISTINCT ?c { ?s a ?c.}";
 		QueryFactory.create(sparqlQueryString);
 		logger.info("Querying " + sourceEndpoint  + " with: " + sparqlQueryString);
-		QueryExecution qexec = QueryExecutionFactory.sparqlService(sourceEndpoint, sparqlQueryString);
-		ResultSet queryResults = qexec.execSelect();
+		QueryExecutionFactory sourceQEF = initializeSourceQEF();
+		QueryExecution qe = sourceQEF.createQueryExecution(sparqlQueryString);
+		ResultSet queryResults = qe.execSelect();
+//		QueryExecution qexec = QueryExecutionFactory.sparqlService(sourceEndpoint, sparqlQueryString);
+//		ResultSet queryResults = qexec.execSelect();
 		while(queryResults.hasNext()){
 			QuerySolution qs = queryResults.nextSolution();
 			Resource c = qs.getResource("?c");
 			if(c.toString().startsWith(sourceAuthority)){
-				results.add(c);
+				sourceClassesList.add(c);
 			}
 		}
-		qexec.close() ;
-		return results;
+		qe.close() ;
+		logger.info("Found " + sourceClassesList.size() + " classes.");
+		return sourceClassesList;
 	}
 
-
-	public AveragePolygonsMetric() {
-		super();
-	}
 	
-	/**
-	 * @param sourceEndpoint
-	 * @param sourceAuthority
-	 * @param sourceGeoPredicate
-	 * @param targetEndpoint
-	 * @param targetAuthority
-	 * @param targetGeoPredicate
-	 *@author sherif
-	 */
-	public AveragePolygonsMetric(String sourceEndpoint, String sourceAuthority,
-			String sourceGeoPredicate, String targetEndpoint,
-			String targetAuthority, String targetGeoPredicate) {
-		super();
-		this.sourceEndpoint = sourceEndpoint;
-		this.sourceAuthority = sourceAuthority;
-		this.sourceGeoPredicate = sourceGeoPredicate;
-		this.targetEndpoint = targetEndpoint;
-		this.targetAuthority = targetAuthority;
-		this.targetGeoPredicate = targetGeoPredicate;
-	}
 
-	/**
-	 * @param m
-	 * @param r
-	 * @return
-	 * @author sherif
-	 */
-	public List<Resource> getSameAsInstances(Model m, Resource r){
-		List<Resource> results = new ArrayList<Resource>();
-		String sparqlQueryString = 
-				"SELECT DISTINCT ?s " +
-						"{<" + r.toString() + "> <" + OWL.sameAs + "> ?q}";
-		QueryFactory.create(sparqlQueryString);
-		QueryExecution qexec = QueryExecutionFactory.create(sparqlQueryString, m);
-		ResultSet queryResults = qexec.execSelect();
-		while(queryResults.hasNext()){
-			QuerySolution qs = queryResults.nextSolution();
-			results.add(qs.getResource("?q"));
-		}
-		qexec.close() ;
-		return results;
-	}
+//	/**
+//	 * @param m
+//	 * @param r
+//	 * @return
+//	 * @author sherif
+//	 */
+//	public List<Resource> getSameAsInstances(Model m, Resource r){
+//		List<Resource> results = new ArrayList<Resource>();
+//		String sparqlQueryString = 
+//				"SELECT DISTINCT ?s " +
+//						"{<" + r.toString() + "> <" + OWL.sameAs + "> ?q}";
+//		QueryFactory.create(sparqlQueryString);
+//		QueryExecution qexec = QueryExecutionFactory.create(sparqlQueryString, m);
+//		QueryExecution qe = sourceQEF.createQueryExecution(sparqlQueryString);
+//		ResultSet queryResults = qexec.execSelect();
+//		while(queryResults.hasNext()){
+//			QuerySolution qs = queryResults.nextSolution();
+//			results.add(qs.getResource("?q"));
+//		}
+//		qexec.close() ;
+//		return results;
+//	}
 
 
 	/**
@@ -278,34 +373,66 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 		target = new HybridCache();
 		// read source polygons
 		String sourceQueryString =
-				"SELECT DISTINCT ?s ?sg ?t ?tg "
+				"SELECT DISTINCT ?s ?sg ?t "
 						+ "WHERE { "
 						+ "?s a <" + className.toString() +"> . "
 						+ "?s <" + OWL.sameAs + "> ?t . "
 						+ "?s " + sourceGeoPredicate + " ?sg . "
+						+ "FILTER(regex(?t, \"^" + targetAuthority + "\")) "
 						+ "}";
 		logger.info("Querying " + sourceEndpoint  + " with SPARQL: " + sourceQueryString);
-		QueryExecution qexec = QueryExecutionFactory.sparqlService(sourceEndpoint, sourceQueryString);
-		ResultSet queryResults = qexec.execSelect();
+//		QueryExecution qexec = QueryExecutionFactory.sparqlService(sourceEndpoint, sourceQueryString);
+		QueryExecutionFactory sourceQEF = initializeSourceQEF();
+		QueryExecution qexec = sourceQEF.createQueryExecution(sourceQueryString);
+		ResultSet queryResults = qexec.execSelect(); 
 		while(queryResults.hasNext()){
 			QuerySolution qs = queryResults.nextSolution();
 			RDFNode s = qs.get("?s");
-			RDFNode sWKT = qs.get("?sg");
+			RDFNode sWKT = null;
+			if(qs.get("?sg").isLiteral()){
+				sWKT = qs.get("?sg");
+			}else{
+				String sGeo = qs.get("?sg").toString();
+				String swkQueryString =
+						"SELECT DISTINCT ?lat ?lon "
+								+ "WHERE { "
+								+ "<" + sGeo + "> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ?lat . "
+								+ "<" + sGeo + "> <http://www.w3.org/2003/01/geo/wgs84_pos#long> ?lon . "
+								+ "}";
+				logger.info("Querying " + sourceEndpoint  + " with SPARQL: " + swkQueryString);
+//				QueryExecution swkExec = QueryExecutionFactory.sparqlService(sourceEndpoint, swkQueryString);
+				QueryExecution swkExec = sourceQEF.createQueryExecution(swkQueryString);
+				ResultSet swkResults = swkExec.execSelect(); 
+				String wktStr = "";
+				while(swkResults.hasNext()){
+					QuerySolution swkSol = swkResults.nextSolution();
+					String lat = swkSol.get("?lat").toString();
+					lat = lat.toString().substring(0, lat.indexOf("^^"));
+					String lon = swkSol.get("?lon").toString();
+					lon = lon.substring(0, lon.indexOf("^^"));
+					wktStr += (wktStr.length() == 0)? "(" + lon + " " + lat + ")" : ",(" + lon + " " + lat + ")";
+				}
+				wktStr = (wktStr.contains(","))? "MULTIPOINT(" + wktStr + ")" : "POINT(" + wktStr + ")";
+				sWKT = ResourceFactory.createPlainLiteral(wktStr);
+				System.out.println(sWKT);
+			}
 			RDFNode t = qs.get("?t");
 			if(!t.equals(null) && !targetAuthority.equals(null) && t.toString().startsWith(targetAuthority)){
 				// read target polygons
 				String targetQueryString =
 						"SELECT DISTINCT ?tg "
 								+ "WHERE { "
-								+ "<" + t.toString() +"> " + targetGeoPredicate+ " ?tg . "
+								+ "<" + t.toString() +"> <" + targetGeoPredicate+ "> ?tg . "
 								+ "}";
 				logger.info("Querying " + targetEndpoint  + " with SPARQL: " + targetQueryString);
-				QueryExecution targetQExec = QueryExecutionFactory.sparqlService(targetEndpoint, targetQueryString);
+//				QueryExecution targetQExec = QueryExecutionFactory.sparqlService(targetEndpoint, targetQueryString);
+				QueryExecutionFactory targetQEF = initializeSourceQEF();
+				QueryExecution targetQExec = targetQEF.createQueryExecution(sourceQueryString);
 				ResultSet targetQueryResults = targetQExec.execSelect();
 				while(targetQueryResults.hasNext()){
 					QuerySolution tqs = targetQueryResults.nextSolution();
 					RDFNode tWKT = tqs.get("?tg");
-					if(!tWKT.equals(null)){
+					if(tWKT != null){
 						source.addTriple(s.toString(), sourceGeoPredicate, sWKT.toString());
 						target.addTriple(t.toString(), targetGeoPredicate, tWKT.toString());	
 					}
@@ -390,14 +517,49 @@ public class AveragePolygonsMetric implements GeoQualityMetric {
 	/**
 	 * @param args
 	 * @author sherif
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) {
-		AveragePolygonsMetric m = new AveragePolygonsMetric();
-		m.targetAuthority = "http://linkedgeodata.org";
-		m.generateResultsDataCube("http://dbpedia.org/sparql").write(System.out, "TTL");
-//		m.readSourceTargetCache(ResourceFactory.createResource("http://dbpedia.org/ontology/AdministrativeRegion"));
+	public static void main(String[] args) throws IOException {
+//		GLD
+//		AveragePolygonsMetric m = new AveragePolygonsMetric(
+//				"http://geo.linkeddata.es/sparql",
+//				"http://geo.linkeddata.es/",
+//				"http://www.w3.org/2003/01/geo/wgs84_pos#geometry",
+//				"http://dbpedia.org/sparql",
+//				"http://dbpedia.org/",
+//				"http://www.w3.org/2003/01/geo/wgs84_pos#geometry");
+		
+//		LGD
+		AveragePolygonsMetric m = new AveragePolygonsMetric(
+				"http://linkedgeodata.org/sparql",
+				"http://linkedgeodata.org",
+				"<http://geovocab.org/geometry#geometry>/<http://www.opengis.net/ont/geosparql#asWKT>",
+				"http://dbpedia.org/sparql",
+				"http://dbpedia.org/",
+				"http://www.w3.org/2003/01/geo/wgs84_pos#geometry");
+		
+//		m.targetAuthority = "http://linkedgeodata.org";
+		Model resultModel = m.generateResultsDataCube("");
+		resultModel.write(System.out, "TTL");
+		
+		logger.info("Saving dataset to " + args[0] + "...");
+		long starTime = System.currentTimeMillis();
+		FileWriter fileWriter = new FileWriter(args[0]);
+		resultModel.write(fileWriter, "TTL");
+		logger.info("Saving file done in " + (System.currentTimeMillis() - starTime) +"ms.");
+//		
+		m.readSourceTargetCache(ResourceFactory.createResource("http://dbpedia.org/ontology/AdministrativeRegion"));
 //		System.out.println(AveragePolygonsMetric.source.toString());
 //		System.out.println(AveragePolygonsMetric.target.toString());
+	}
+
+	/* (non-Javadoc)
+	 * @see org.aksw.geoknow.assessment.GeoQualityMetric#generateResultsDataCube(com.hp.hpl.jena.rdf.model.Model)
+	 */
+	@Override
+	public Model generateResultsDataCube(Model inputModel) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 
