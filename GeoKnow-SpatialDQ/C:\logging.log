@@ -1335,3 +1335,4 @@
 2015-05-19 09:33:48 INFO  AveragePointsPerInstance:94 - Proccesing class http://phenomenontology.linkeddata.es/ontology/Termas with geometry
 2015-05-19 09:33:59 INFO  AveragePointsPerInstance:74 - Proccesing class http://phenomenontology.linkeddata.es/ontology/Villa with list
 2015-05-19 09:33:59 INFO  AveragePointsPerInstance:94 - Proccesing class http://phenomenontology.linkeddata.es/ontology/Villa with geometry
+2015-05-20 09:41:53 INFO  AveragePointsPerInstance:74 - Proccesing class http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat with list

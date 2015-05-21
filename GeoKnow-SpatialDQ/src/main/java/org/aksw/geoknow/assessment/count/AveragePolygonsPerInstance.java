@@ -20,15 +20,15 @@ import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
 /**
-*
-* This metric calculates the average number of polygons per classes.
-*
-*
-* @author Didier Cherix
-* </br> R & D, Unister GmbH, Leipzig, Germany</br>
-* This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
-*
-*/
+ *
+ * This metric calculates the average number of polygons per classes.
+ *
+ *
+ * @author Didier Cherix
+ *         </br> R & D, Unister GmbH, Leipzig, Germany</br>
+ *         This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
+ *
+ */
 public class AveragePolygonsPerInstance implements GeoQualityMetric {
 
     private final String polygonClass;
@@ -36,24 +36,33 @@ public class AveragePolygonsPerInstance implements GeoQualityMetric {
     private static final String GET_CLASSES = "SELECT distinct ?class WHERE {?x a ?class } ";
     private static final ParameterizedSparqlString COUNT = new ParameterizedSparqlString(
             "PREFIX list: <http://jena.hpl.hp.com/ARQ/list#> "
-            + "SELECT ?instance (COUNT (DISTINCT ?polygon) as ?count) "
-            + "WHERE { ?instance a ?class . ?instance ?property ?polygon . ?polygon a ?polygonClass . } "
-            + "GROUP BY ?instance");
+                    + "SELECT ?instance (COUNT (DISTINCT ?polygon) as ?count) "
+                    + "WHERE { ?instance a ?class . ?instance ?property ?polygon . ?polygon a ?polygonClass . } "
+                    + "GROUP BY ?instance");
 
     private final String structureUri;
 
     public AveragePolygonsPerInstance(String polygonClass) {
-        this.polygonClass=polygonClass;
+        this.polygonClass = polygonClass;
         this.structureUri = NAMESPACE + "metric/" + polygonClass.hashCode();
     }
 
     public Model generateResultsDataCube(Model inputModel) {
+        return execute(inputModel, null);
+    }
+
+    private Model execute(Model inputModel, String endpoint) {
         Model cube = createModel();
         int obsCount = 0;
-        QueryExecution queryExec = QueryExecutionFactory.create(GET_CLASSES,
-                inputModel);
+        QueryExecution queryExec;
+        if (inputModel != null) {
+            queryExec = QueryExecutionFactory.create(GET_CLASSES,
+                    inputModel);
+        } else {
+            queryExec = QueryExecutionFactory.sparqlService(endpoint, GET_CLASSES);
+        }
 
-        for ( ResultSet result = queryExec.execSelect(); result.hasNext();) {
+        for (ResultSet result = queryExec.execSelect(); result.hasNext();) {
             QuerySolution solution = result.next();
             Resource owlClass = solution.getResource("class");
             System.out.println(owlClass);
@@ -61,8 +70,13 @@ public class AveragePolygonsPerInstance implements GeoQualityMetric {
             double i = 0;
             COUNT.setIri("class", owlClass.getURI());
             COUNT.setIri("polygonClass", polygonClass);
-            QueryExecution execCount = QueryExecutionFactory.create(COUNT.asQuery(),inputModel);
-           for( ResultSet resultCount = execCount.execSelect(); resultCount.hasNext();){
+            QueryExecution execCount;
+            if (inputModel != null) {
+                execCount = QueryExecutionFactory.create(COUNT.asQuery(), inputModel);
+            } else {
+                execCount = QueryExecutionFactory.sparqlService(endpoint, COUNT.asQuery());
+            }
+            for (ResultSet resultCount = execCount.execSelect(); resultCount.hasNext();) {
                 QuerySolution next = resultCount.next();
                 sum += next.get("count").asLiteral().getInt();
                 i++;
@@ -77,8 +91,7 @@ public class AveragePolygonsPerInstance implements GeoQualityMetric {
     }
 
     public Model generateResultsDataCube(String endpointUrl) {
-        // TODO Auto-generated method stub
-        return null;
+        return this.execute(null, endpointUrl);
     }
 
     private Model createModel() {
@@ -108,11 +121,11 @@ public class AveragePolygonsPerInstance implements GeoQualityMetric {
     }
 
     public static void main(String[] args) throws IOException {
-        Model m = ModelFactory.createDefaultModel();
-        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
+//        Model m = ModelFactory.createDefaultModel();
+//        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
         GeoQualityMetric metric = new AveragePolygonsPerInstance("http://geovocab.org/geometry#Polygon");
-        Model r = metric.generateResultsDataCube(m);
-        r.write(new FileWriter("dataquality/metric6.ttl"), "TTL");
+        Model r = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
+        r.write(new FileWriter("datacubes/GeoLinkedData/metric6.ttl"), "TTL");
     }
 
 }

@@ -155,7 +155,7 @@ public class AveragePointsPerInstance implements GeoQualityMetric {
         // Model m = ModelFactory.createDefaultModel();
         // m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
         GeoQualityMetric metric = new AveragePointsPerInstance(new PropertyImpl("http://www.w3.org/2003/01/geo/wgs84_pos#geometry"));
-        Model r = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
+        Model r = metric.generateResultsDataCube("http://linkedgeodata.org/sparql");
         r.write(new FileWriter("datacubes/LinkedGeoData/metric5.ttl"), "TTL");
     }
 

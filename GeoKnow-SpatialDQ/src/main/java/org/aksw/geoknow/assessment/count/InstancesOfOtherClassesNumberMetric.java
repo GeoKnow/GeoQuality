@@ -107,7 +107,7 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
 //        OntModel m = ModelFactory.createOntologyModel();
 //        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
         GeoQualityMetric metric = new InstancesOfOtherClassesNumberMetric();
-        Model r = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
+        Model r = metric.generateResultsDataCube("http://linkedgeodata.org/sparql");
         r.write(new FileWriter("datacubes/LinkedGeoData/metric4.ttl"), "TTL");
     }
 

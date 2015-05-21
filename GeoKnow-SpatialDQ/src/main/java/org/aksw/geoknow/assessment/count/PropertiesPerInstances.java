@@ -1,24 +1,20 @@
 package org.aksw.geoknow.assessment.count;
 
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
 import org.aksw.geoknow.assessment.GeoQualityMetric;
 import org.aksw.geoknow.helper.vocabularies.GK;
 import org.aksw.geoknow.helper.vocabularies.QB;
+import org.apache.http.HttpException;
 
-import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.query.ParameterizedSparqlString;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.StmtIterator;
-import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
 /**
@@ -34,7 +30,7 @@ import com.hp.hpl.jena.vocabulary.RDFS;
 public class PropertiesPerInstances implements GeoQualityMetric {
 
     private final ParameterizedSparqlString NUMBER_OF_PROPERTIES = new ParameterizedSparqlString(
-            "SELECT (COUNT(DISTINCT ?properties) as ?count) WHERE { ?s ?p ?o . ?s a ?class }");
+            "SELECT (COUNT(DISTINCT ?p) as ?count) WHERE { ?s ?p ?o . ?s a ?class }");
     private final String INSTANCES = "SELECT distinct ?class WHERE { ?instance a ?class .}";
     private static final String NAMESPACE = "http://www.geoknow.eu/data-cube/";
 
@@ -66,17 +62,31 @@ public class PropertiesPerInstances implements GeoQualityMetric {
                         inputModel);
             } else {
                 propertiesQexec = QueryExecutionFactory.sparqlService(endpoint, NUMBER_OF_PROPERTIES.asQuery());
+                System.out.println(NUMBER_OF_PROPERTIES.asQuery());
             }
-            ResultSet propertiesResult = propertiesQexec.execSelect();
-            if (propertiesResult.hasNext()) {
+            try {
+                ResultSet propertiesResult = propertiesQexec.execSelect();
+                if (propertiesResult.hasNext()) {
+                    System.out.println(i);
+                    Resource obs = cube.createResource("http://www.geoknow.eu/data-cube/metric2/observation" + i,
+                            QB.Observation);
+                    obs.addProperty(QB.dataset, dataset);
+                    obs.addProperty(GK.DIM.Class, owlClass);
+                    obs.addLiteral(GK.MEASURE.PropertyCount, propertiesResult.next().getLiteral("count"));
+
+                    i++;
+                }
+            } catch (Exception e) {
                 System.out.println(i);
                 Resource obs = cube.createResource("http://www.geoknow.eu/data-cube/metric2/observation" + i,
                         QB.Observation);
                 obs.addProperty(QB.dataset, dataset);
                 obs.addProperty(GK.DIM.Class, owlClass);
-                obs.addLiteral(GK.MEASURE.PropertyCount, propertiesResult.next().getLiteral("count"));
+                obs.addLiteral(GK.MEASURE.PropertyCount, -1);
+                obs.addLiteral(RDFS.comment, e.getMessage());
                 i++;
             }
+
         }
         return cube;
     }
@@ -111,14 +121,14 @@ public class PropertiesPerInstances implements GeoQualityMetric {
     }
 
     public Model generateResultsDataCube(String endpointUrl) {
-      return this.execute(null, endpointUrl);
+        return this.execute(null, endpointUrl);
     }
 
     public static void main(String[] args) throws IOException {
-//        Model m = ModelFactory.createDefaultModel();
-//        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
+        // Model m = ModelFactory.createDefaultModel();
+        // m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
         GeoQualityMetric metric = new PropertiesPerInstances();
-        Model r = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
+        Model r = metric.generateResultsDataCube("http://linkedgeodata.org/sparql");
         r.write(new FileWriter("datacubes/LinkedGeoData/metric2.ttl"), "TTL");
     }
 
