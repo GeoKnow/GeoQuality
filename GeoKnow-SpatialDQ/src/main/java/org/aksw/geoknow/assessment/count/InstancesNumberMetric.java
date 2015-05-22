@@ -102,7 +102,7 @@ public class InstancesNumberMetric implements GeoQualityMetric {
 
     public static void main(String[] args) throws IOException {
         InstancesNumberMetric metric = new InstancesNumberMetric();
-        Model r = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
+        Model r = metric.generateResultsDataCube("http://linkedgeodata.org/sparql");
         r.write(new FileWriter("datacubes/LinkedGeoData/metric1.ttl"), "TTL");
     }
 
