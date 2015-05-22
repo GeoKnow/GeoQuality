@@ -1,0 +1,1757 @@
+<http://www.geoknow.eu/data-cube/observation/101>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Puente> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "9"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/98>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Oc%C3%A9ano> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/140>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "82"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/111>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Captaci%C3%B3n> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/160>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Galacho> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "7"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/131>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Caz> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "69"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/121>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Estanque> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "287"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/dataset/1>
+      <http://purl.org/linked-data/cube#structure>
+              <http://www.geoknow.eu/data-cube/metric1> .
+
+<http://www.geoknow.eu/data-cube/observation/180>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Museo> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "61"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/154>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "82"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/174>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Manantial> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "570"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/99>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Biblioteca> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/102>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapATable> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/112>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Ontology> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "5"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric1>
+      a       <http://purl.org/linked-data/cube#DataStructureDefinition> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "A Data Structure Definition for Instances Number Metric"@en ;
+      <http://purl.org/linked-data/cube#component>
+              <http://www.geoknow.eu/data-cube/metric1/c2> , <http://www.geoknow.eu/data-cube/metric1/c1> .
+
+<http://www.geoknow.eu/data-cube/observation/132>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Cartuja> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "5"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/153>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Torrente> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1358"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/122>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMap> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/173>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/ns/prov#Organization> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/152>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Hotel> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/78>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Abad%C3%ADa> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/113>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#DataRange> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "24"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/59>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Garganta> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "392"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/142>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Arroyo> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "14483"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/133>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Castro> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "187"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/162>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Mina> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "4"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/182>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/ns/prov#Agent> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/172>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Torre> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "82"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/151>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Muralla> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "12"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/100>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Ruta> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "3684"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/39>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Camino> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "315"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/79>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Balsa> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "942"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/114>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Reguera> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "97"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/141>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Parador> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/134>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapValue> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "8"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/161>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Chorrera> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "28"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/19>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Casa> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "58"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/171>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Fortaleza> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "4"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/181>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Sendero> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "3684"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/120>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Marisma> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "124"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/164>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Universidad> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "6"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/178>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Capilla> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "21"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/94>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Organizaci%C3%B3n> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/150>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Gola> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "36"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/139>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Vado> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "43"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/66>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Castillo> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "641"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/125>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Palacio> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "92"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/18>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Monumento> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "43"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/135>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Traves%C3%ADa> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/190>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Ib%C3%B3n> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "100"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/56>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Colegiata> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/28>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Cueva> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "262"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/58>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Salina> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "219"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/95>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapFText> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/177>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Rambla> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1708"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/67>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Estaci%C3%B3nDeAutobuses> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "33"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/17>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Ca%C3%B1o> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "131"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/126>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Pazo> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "48"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/163>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Bod%C3%B3n> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "26"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/136>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Hospital> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "23"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/27>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Riacho> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/57>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Aljibe> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "8"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/166>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Acequia> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1145"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/81>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "114"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/69>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/B%C3%B3veda> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/96>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Parque> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "4"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/176>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "52"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/16>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/ns/prov#Entity> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/68>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Madre> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "15"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/123>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Aeroclub> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "18"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/1>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Restos_arqueol%C3%B3gicos> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "17"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/54>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Poza> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "29"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/40>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/CintaTransportadora> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/137>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Mirador> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "13"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/165>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Playa> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2925"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/80>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Yacimiento> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "20"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/110>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Desembocadura> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "81"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/175>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Pozo> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "468"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/97>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Lucio> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "59"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/124>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "79"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/15>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Pa%C3%ADs> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/55>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Ayuntamiento> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "20"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/0>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Mar> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/29>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Confluencia> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "449"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/138>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Monasterio> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "144"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/41>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/NET/scovo#Dataset> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/43>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/R%C3%ADo> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "7196"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/148>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Termas> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/3>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Templo> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "7"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/53>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/LineString> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "100"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/118>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Meandro> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "102"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/128>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadStorage> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/63>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Glorieta> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "26"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/14>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2003/01/geo/wgs84_pos#Point> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "4277929"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/33>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Catedral> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "55"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/83>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Molino> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "19"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/108>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Pista> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "24"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/187>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Class> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "367"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/properties/Class>
+      a       <http://purl.org/linked-data/cube#DimensionProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "class of instance"@en .
+
+<http://www.geoknow.eu/data-cube/observation/13>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Estero> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "26"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/168>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Colegio> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/23>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-string> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/90>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapATable> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/73>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Nava> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "119"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/properties/measure/InstanceCount>
+      a       <http://purl.org/linked-data/cube#MeasureProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Instance Count"@en ;
+      <http://www.w3.org/2000/01/rdf-schema#range>
+              <http://www.w3.org/2001/XMLSchema#integer> ;
+      <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+              <http://purl.org/linked-data/sdmx/2009/measure#obs> .
+
+<http://www.geoknow.eu/data-cube/observation/147>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Toma> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "89"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/42>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Tuber%C3%ADa> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "5"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/127>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMap> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/2>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/CanalMarino> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "34"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/117>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Provincia> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "54"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/52>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Brazo> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "14"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/62>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Teatro> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "11"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/32>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/IslaFluvial> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "121"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/107>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Dep%C3%B3sito> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "43"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/12>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Ba%C3%B1os> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "6"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/188>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Aer%C3%B3dromo> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "64"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/22>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Acuario> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/72>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Convento> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "98"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/167>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/ns/prov#Activity> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "4"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/82>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Anfiteatro> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/91>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Cascada> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "409"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/26>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Granja> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "46"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/51>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/NET/scovo#Item> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "575"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/5>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Puerto> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "327"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/45>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#TransitiveProperty> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/65>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Ruinas> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "81"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/31>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Sif%C3%B3n> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "24"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/116>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Nacimiento> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "483"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/11>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Piscina> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "39"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/189>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/A%C3%B1o> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "13"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/85>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Plaza_de_toros> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/71>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.opengis.net/ont/gml#Point> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2653"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/92>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Curva> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "17164"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/50>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Barranco> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "10637"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/25>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Humedal> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "639"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/4>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Mezquita> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/149>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Iglesia> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "306"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/44>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Desag%C3%BCe> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "102"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/159>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Sumidero> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "10"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/115>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Laguna> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1439"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/30>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Vertiente> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "164"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/64>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Acueducto> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "4"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/129>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Rivera> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "206"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/10>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Alcazaba> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/179>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Nevero> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "4"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/109>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Faro> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "127"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/84>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Acu%C3%ADfero> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "113"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/70>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Villa> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "9"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/93>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Observatorio> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "14"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/24>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Lago> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "122"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/169>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Canal> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "719"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/183>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Santuario> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "103"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/158>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Colector> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "98"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/7>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Restriction> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "189"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/144>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Bas%C3%ADlica> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "19"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/77>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Embalse> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1644"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/48>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Auditorio> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/104>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Surgencia> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "9"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/38>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Alberca> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "6"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/87>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Marjal> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "21"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/184>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Conjunto_hist%C3%B3rico> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/170>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Alc%C3%A1zar> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "6"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/157>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/ComunidadAut%C3%B3noma> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "17"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/46>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Aeropuerto> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "78"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/6>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/F%C3%A1brica> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "72"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/143>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Ca%C3%B1ada> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "568"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/76>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Faro> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/103>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Charca> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "352"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/47>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Venaje> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/37>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Ojo> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "27"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/86>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Municipio> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "8393"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric1/c2>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Number of Instances"@en ;
+      <http://purl.org/linked-data/cube#measure>
+              <http://www.geoknow.eu/properties/measure/InstanceCount> .
+
+<http://www.geoknow.eu/data-cube/observation/9>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Carretera> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "5"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/35>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Vista_panor%C3%A1mica> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/61>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Regato> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1119"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/156>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/R%C3%A1pido> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/185>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Dolmen> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "16"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/146>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Albufera> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "11"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/75>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "8"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/21>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Saladar> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "15"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/89>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.opengis.net/ont/sf#Point> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "3197"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric1/c1>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Class"@en ;
+      <http://purl.org/linked-data/cube#dimension>
+              <http://www.geoknow.eu/properties/Class> .
+
+<http://www.geoknow.eu/data-cube/observation/106>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/R%C3%ADa> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "84"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/36>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Estaci%C3%B3nDeFerrocarril> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/34>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapColumn> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "8"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/8>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Parroquia> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "4"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/155>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Fuerte> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/145>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Azarbe> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "121"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/119>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Ribera> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "248"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/60>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/BaseA%C3%A9rea> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "10"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/20>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Mercado> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "4"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/105>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Reguero> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "743"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/49>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Autopista> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/74>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Cortijo> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "4"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/130>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Lavajo> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "89"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/88>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/FuenteNatural> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2467"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/186>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube/dataset/1> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "5"^^<http://www.w3.org/2001/XMLSchema#long> .

@@ -40,9 +40,18 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
     private static final String STRUCTURE = NAMESPACE + "metric4";
 
     public Model generateResultsDataCube(Model inputModel) {
+        return execute(inputModel, null);
+    }
+
+    private Model execute(Model inputModel, String endpoint) {
         Model cubeData = createModel();
         Resource dataset = cubeData.createResource(NAMESPACE + "dataset/4", QB.Dataset);
-        QueryExecution qexec = QueryExecutionFactory.create(INSTANCE_CLASS, inputModel);
+        QueryExecution qexec;
+        if (inputModel != null) {
+            qexec = QueryExecutionFactory.create(INSTANCE_CLASS, inputModel);
+        } else {
+            qexec = QueryExecutionFactory.sparqlService(endpoint, INSTANCE_CLASS);
+        }
         QuerySolution solution = null;
         int i = 0;
         for (ResultSet result = qexec.execSelect(); result.hasNext(); i++) {
@@ -50,7 +59,12 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
             solution = result.next();
             Resource originClass = solution.getResource("class");
             OTHER_CLASSES.setIri("originClass", originClass.getURI());
-            QueryExecution execCount = QueryExecutionFactory.create(OTHER_CLASSES.asQuery(), inputModel);
+            QueryExecution execCount;
+            if (inputModel != null) {
+                execCount = QueryExecutionFactory.create(OTHER_CLASSES.asQuery(), inputModel);
+            } else {
+                execCount = QueryExecutionFactory.sparqlService(endpoint, OTHER_CLASSES.asQuery());
+            }
             ResultSet resultCount = execCount.execSelect();
             if (resultCount.hasNext()) {
                 Resource obs = cubeData.createResource("http://www.geoknow.eu/data-cube/metric4/observation" + i,
@@ -64,8 +78,7 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
     }
 
     public Model generateResultsDataCube(String endpointUrl) {
-        // TODO Auto-generated method stub
-        return null;
+        return this.execute(null, endpointUrl);
     }
 
     private Model createModel() {
@@ -91,11 +104,11 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
     }
 
     public static void main(String[] args) throws IOException {
-        OntModel m = ModelFactory.createOntologyModel();
-        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
+//        OntModel m = ModelFactory.createOntologyModel();
+//        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
         GeoQualityMetric metric = new InstancesOfOtherClassesNumberMetric();
-        Model r = metric.generateResultsDataCube(m);
-        r.write(new FileWriter("dataquality/metric4.ttl"), "TTL");
+        Model r = metric.generateResultsDataCube("http://linkedgeodata.org/sparql");
+        r.write(new FileWriter("datacubes/LinkedGeoData/metric4.ttl"), "TTL");
     }
 
 }

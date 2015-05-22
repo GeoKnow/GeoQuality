@@ -1,0 +1,1761 @@
+<http://www.geoknow.eu/data-cube/metric2/observation52>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Garganta> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation87>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Meandro> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation77>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Bod%C3%B3n> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2>
+      a       <http://purl.org/linked-data/cube#DataStructureDefinition> ;
+      <http://purl.org/linked-data/cube#component>
+              <http://www.geoknow.eu/data-cube/metric2/c1> , <http://www.geoknow.eu/data-cube/metric2/c2> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation66>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Nevero> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation97>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Provincia> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              8 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation108>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/BaseA%C3%A9rea> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation12>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Ontology> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              8 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation2>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMap> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation157>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Cueva> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation39>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Torrente> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation118>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Puerto> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation147>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Monumento> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation26>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Ojo> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation51>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Azarbe> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation169>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Alcazaba> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation148>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Pazo> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation88>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Poza> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation120>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Ruta> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation130>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Ba%C3%B1os> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation65>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Saladar> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation78>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Acu%C3%ADfero> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation98>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-string> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              1 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation3>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapValue> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              8 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation11>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Class> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              10 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation158>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Mirador> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation107>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Aer%C3%B3dromo> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation189>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Termas> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation117>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Estaci%C3%B3nDeAutobuses> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation50>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Charca> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation25>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Nacimiento> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation89>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Gola> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation54>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Estanque> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube//dataset/2>
+      a       <http://purl.org/linked-data/cube#Dataset> ;
+      <http://purl.org/linked-data/cube#structure>
+              <http://www.geoknow.eu/data-cube/metric2> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation64>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Confluencia> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation94>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Playa> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation131>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Colegio> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation75>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Dep%C3%B3sito> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation159>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Monasterio> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation106>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/ComunidadAut%C3%B3noma> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              5 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation14>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation0>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              51 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation24>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Sumidero> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation145>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Hospital> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation53>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Madre> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation95>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Ib%C3%B3n> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation63>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Humedal> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation76>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Tuber%C3%ADa> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation132>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Faro> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation105>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/R%C3%ADa> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation1>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation13>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              1 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation62>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Organizaci%C3%B3n> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation96>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Estaci%C3%B3nDeFerrocarril> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation119>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Aeropuerto> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation23>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Salina> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation146>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Molino> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation133>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Hotel> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation123>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Camino> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation166>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/ns/prov#Agent> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/properties/Property>
+      a       <http://purl.org/linked-data/cube#DimensionProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Instance name"@en , "Property name"@en .
+
+<http://www.geoknow.eu/data-cube/metric2/observation114>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/LineString> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation82>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Observatorio> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation22>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Desembocadura> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/c1>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Class"@en ;
+      <http://purl.org/linked-data/cube#dimension>
+              <http://www.geoknow.eu/properties/Class> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation143>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/B%C3%B3veda> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation153>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Casa> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation61>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/A%C3%B1o> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation42>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Lago> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation104>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Desag%C3%BCe> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation72>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Toma> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation40>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Colector> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation103>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/NET/scovo#Dataset> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              2 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation74>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Sif%C3%B3n> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation134>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Iglesia> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation179>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Restos_arqueol%C3%B3gicos> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation124>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Faro> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation165>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/ns/prov#Organization> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation113>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/FuenteNatural> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation144>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Dolmen> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation83>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Mar> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation21>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Marisma> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation60>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Captaci%C3%B3n> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation154>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Castillo> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation73>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Venaje> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation41>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Barranco> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation135>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Muralla> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation178>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Mina> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation102>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Municipio> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation121>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Sendero> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation85>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Aljibe> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation168>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.opengis.net/ont/sf#Point> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              2 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation141>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Alc%C3%A1zar> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation30>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Reguero> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation84>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Manantial> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation116>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Carretera> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation20>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Surgencia> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation70>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Reguera> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation10>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMap> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              1 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation155>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Castro> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation99>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2003/01/geo/wgs84_pos#Point> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              4 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation177>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Mercado> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation136>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Parador> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation101>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/NET/scovo#Item> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              5 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation86>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Pozo> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation167>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.opengis.net/ont/gml#Point> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              2 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation122>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Glorieta> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation190>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Villa> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation142>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Acuario> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation115>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Pista> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/c2>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Number of Properties"@en ;
+      <http://purl.org/linked-data/cube#measure>
+              <http://www.geoknow.eu/properties/measure/PropertyCount> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation156>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Convento> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation180>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Teatro> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation71>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Riacho> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation137>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Parque> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation45>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Estero> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation181>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Acueducto> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation150>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Torre> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation140>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Vista_panor%C3%A1mica> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation127>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Aeroclub> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation31>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Ribera> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation59>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Oc%C3%A9ano> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation110>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/R%C3%A1pido> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/properties/Class>
+      a       <http://purl.org/linked-data/cube#DimensionProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "class of instance"@en .
+
+<http://www.geoknow.eu/data-cube/metric2/observation100>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Curva> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation175>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Fuerte> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation161>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Palacio> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/properties/measure/InstanceCount>
+      a       <http://purl.org/linked-data/cube#MeasureProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Property Count"@en ;
+      <http://www.w3.org/2000/01/rdf-schema#range>
+              <http://www.w3.org/2001/XMLSchema#integer> ;
+      <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
+              <http://purl.org/linked-data/sdmx/2009/measure#obs> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation138>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Parroquia> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation46>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Albufera> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation182>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Auditorio> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation19>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#DataRange> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              2 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation32>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Embalse> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation128>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/ns/prov#Entity> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation162>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Ruinas> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation176>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Granja> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation183>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Bas%C3%ADlica> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation152>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Ayuntamiento> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation43>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Lucio> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation139>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Plaza_de_toros> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation80>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Capilla> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation33>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Laguna> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation112>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/CanalMarino> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation125>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/CintaTransportadora> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation163>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Templo> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation173>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Conjunto_hist%C3%B3rico> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation9>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadStorage> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              4 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation151>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Yacimiento> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation44>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Rambla> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation126>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Autopista> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation184>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Cartuja> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation81>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Catedral> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation34>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Nava> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation111>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/IslaFluvial> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation164>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Universidad> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation8>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapFText> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation174>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Fortaleza> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation49>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Balsa> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation35>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Arroyo> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation109>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Traves%C3%ADa> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation185>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Cortijo> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation16>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#ObjectProperty> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation7>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapATable> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation69>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Galacho> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation92>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Vado> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation171>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Biblioteca> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation55>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/R%C3%ADo> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              4 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation36>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Canal> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation186>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/F%C3%A1brica> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation29>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Lavajo> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation15>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Restriction> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              9 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation93>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Vertiente> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation6>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapATable> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              2 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation172>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Colegiata> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation56>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Pa%C3%ADs> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              4 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation18>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#TransitiveProperty> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation129>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/ns/prov#Activity> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              5 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation187>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Mezquita> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation37>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Acequia> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation47>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Regato> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation28>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Chorrera> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation5>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation67>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Cascada> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation90>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Marjal> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation149>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Santuario> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation57>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Ca%C3%B1o> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation188>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Puente> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation17>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#DatatypeProperty> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              8 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation48>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Brazo> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation38>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Rivera> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation4>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapColumn> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              2 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation27>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Caz> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation68>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Alberca> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation160>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Museo> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation79>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Abad%C3%ADa> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation91>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Piscina> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation170>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://phenomenontology.linkeddata.es/ontology/Anfiteatro> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation58>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataset>
+              <http://www.geoknow.eu/data-cube//dataset/2> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geo.linkeddata.es/ontology/Ca%C3%B1ada> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .

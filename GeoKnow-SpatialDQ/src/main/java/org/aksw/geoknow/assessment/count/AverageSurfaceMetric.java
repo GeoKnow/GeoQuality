@@ -24,16 +24,17 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.Polygon;
 import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.io.WKTReader;
+
 /**
-*
-* This metric calculates the average surface per classes.
-*
-*
-* @author Didier Cherix
-* </br> R & D, Unister GmbH, Leipzig, Germany</br>
-* This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
-*
-*/
+ *
+ * This metric calculates the average surface per classes.
+ *
+ *
+ * @author Didier Cherix
+ *         </br> R & D, Unister GmbH, Leipzig, Germany</br>
+ *         This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
+ *
+ */
 public class AverageSurfaceMetric implements GeoQualityMetric {
 
     private static final String NAMESPACE = "http://www.geoknow.eu/data-cube/";
@@ -71,8 +72,17 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
 
     public Model generateResultsDataCube(Model inputModel) {
 
+        return execute(inputModel,null);
+    }
+
+    private Model execute(Model inputModel, String endpoint) {
         Model cube = createModel();
-        QueryExecution qExec = QueryExecutionFactory.create(GET_CLASSES, inputModel);
+        QueryExecution qExec;
+        if (inputModel != null) {
+            qExec = QueryExecutionFactory.create(GET_CLASSES, inputModel);
+        } else {
+            qExec = QueryExecutionFactory.sparqlService(endpoint, GET_CLASSES);
+        }
         ResultSet result = qExec.execSelect();
         int obsCount = 0;
         while (result.hasNext()) {
@@ -82,7 +92,12 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
             System.out.println(owlClass);
             GET_INSTANCES.setIri("class", owlClass.getURI());
 
-            QueryExecution qexecInstances = QueryExecutionFactory.create(GET_INSTANCES.asQuery(), inputModel);
+            QueryExecution qexecInstances;
+            if (inputModel != null) {
+                qexecInstances = QueryExecutionFactory.create(GET_INSTANCES.asQuery(), inputModel);
+            } else {
+                qexecInstances = QueryExecutionFactory.sparqlService(endpoint, GET_INSTANCES.asQuery());
+            }
             for (ResultSet instancesResult = qexecInstances.execSelect(); instancesResult.hasNext();) {
 
                 QuerySolution next = instancesResult.next();
@@ -91,7 +106,12 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
                     continue;
                 }
                 POLYGON.setIri("instance", instance);
-                QueryExecution qexecMember = QueryExecutionFactory.create(POLYGON.asQuery(), inputModel);
+                QueryExecution qexecMember;
+                if (inputModel != null) {
+                    qexecMember = QueryExecutionFactory.create(POLYGON.asQuery(), inputModel);
+                } else {
+                    qexecMember = QueryExecutionFactory.sparqlService(endpoint, POLYGON.asQuery());
+                }
                 StringBuilder polygonBuilder = new StringBuilder();
                 firstLat = null;
                 firstLong = null;
@@ -106,8 +126,12 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
                     this.firstLat = null;
                     this.firstLong = null;
                     MULTI_POLYGON.setIri("instance", instance);
-                    QueryExecution qexecMultiPolygon = QueryExecutionFactory
-                            .create(MULTI_POLYGON.asQuery(), inputModel);
+                    QueryExecution qexecMultiPolygon;
+                    if (inputModel != null) {
+                        qexecMultiPolygon = QueryExecutionFactory.create(MULTI_POLYGON.asQuery(), inputModel);
+                    } else {
+                        qexecMultiPolygon = QueryExecutionFactory.sparqlService(endpoint, MULTI_POLYGON.asQuery());
+                    }
                     String polygonName = "";
                     for (ResultSet latLong = qexecMultiPolygon.execSelect(); latLong.hasNext();) {
                         QuerySolution solution = latLong.next();
@@ -162,8 +186,7 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
     }
 
     public Model generateResultsDataCube(String endpointUrl) {
-        // TODO Auto-generated method stub
-        return null;
+        return this.execute(null, endpointUrl);
     }
 
     private Model createModel() {
@@ -189,11 +212,11 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
     }
 
     public static void main(String[] args) throws IOException {
-        Model m = ModelFactory.createDefaultModel();
-        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
+//        Model m = ModelFactory.createDefaultModel();
+//        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
         GeoQualityMetric metric = new AverageSurfaceMetric();
-        Model r = metric.generateResultsDataCube(m);
-        r.write(new FileWriter("dataquality/metric3.ttl"), "TTL");
+        Model r = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
+        r.write(new FileWriter("datacubes/GeoLinkedData/metric3.ttl"), "TTL");
     }
 
 }
