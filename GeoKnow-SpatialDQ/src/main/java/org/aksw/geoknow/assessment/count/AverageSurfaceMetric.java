@@ -3,6 +3,8 @@ package org.aksw.geoknow.assessment.count;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 import org.aksw.geoknow.assessment.GeoQualityMetric;
 import org.aksw.geoknow.helper.vocabularies.GK;
@@ -19,6 +21,7 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDFS;
 import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.Polygon;
@@ -77,6 +80,18 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
 
     private Model execute(Model inputModel, String endpoint) {
         Model cube = createModel();
+
+        Resource dataset ;
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+        dataset = cube.createResource(GK.uri + "Average_Surface"+calendar.getTimeInMillis(), QB.Dataset);
+        dataset.addLiteral(RDFS.comment, "Properties per instance");
+        dataset.addLiteral(DCTerms.date, cube.createTypedLiteral(calendar));
+        dataset.addLiteral(DCTerms.publisher, "R & D, Unister GmbH, Geoknow");
+        dataset.addProperty(QB.structure, cube.createResource(STRUCTURE));
+        if (endpoint != null) {
+            dataset.addProperty(DCTerms.source, endpoint);
+        }
+
         QueryExecution qExec;
         if (inputModel != null) {
             qExec = QueryExecutionFactory.create(GET_CLASSES, inputModel);
@@ -153,6 +168,7 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
             double average = i == 0 ? 0 : area / i;
             obs.addProperty(GK.MEASURE.Average, cube.createTypedLiteral(average));
             obs.addProperty(GK.DIM.Class, owlClass);
+            obs.addProperty(QB.dataset, dataset);
             obsCount++;
         }
         return cube;

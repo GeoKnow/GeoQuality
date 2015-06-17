@@ -2,6 +2,8 @@ package org.aksw.geoknow.assessment.count;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 import org.aksw.geoknow.assessment.GeoQualityMetric;
 import org.aksw.geoknow.helper.vocabularies.GK;
@@ -15,6 +17,7 @@ import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
 /**
@@ -42,7 +45,12 @@ public class PropertiesPerInstances implements GeoQualityMetric {
 
     private Model execute(Model inputModel, String endpoint) {
         Model cube = createModel();
-        Resource dataset = cube.createResource(NAMESPACE + "/dataset/2", QB.Dataset);
+        Resource dataset;
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+        dataset = cube.createResource(GK.uri + "Properties_per_Instance"+calendar.getTimeInMillis(), QB.Dataset);
+        dataset.addLiteral(RDFS.comment, "Properties per instance");
+        dataset.addLiteral(DCTerms.date, cube.createTypedLiteral(calendar));
+        dataset.addLiteral(DCTerms.publisher, "R & D, Unister GmbH, Geoknow");
         dataset.addProperty(QB.structure, cube.createResource(STRUCTURE));
 
         QueryExecution qExec;

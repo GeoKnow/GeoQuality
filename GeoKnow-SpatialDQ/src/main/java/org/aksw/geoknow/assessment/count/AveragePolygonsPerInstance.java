@@ -3,6 +3,8 @@ package org.aksw.geoknow.assessment.count;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 import org.aksw.geoknow.assessment.GeoQualityMetric;
 import org.aksw.geoknow.helper.vocabularies.GK;
@@ -17,6 +19,7 @@ import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
 /**
@@ -53,6 +56,18 @@ public class AveragePolygonsPerInstance implements GeoQualityMetric {
 
     private Model execute(Model inputModel, String endpoint) {
         Model cube = createModel();
+
+        Resource dataset;
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+        dataset = cube.createResource(GK.uri + "AveragePolygon" + calendar.getTimeInMillis(), QB.Dataset);
+        dataset.addLiteral(RDFS.comment, "Properties per instance");
+        dataset.addLiteral(DCTerms.date, cube.createTypedLiteral(calendar));
+        dataset.addLiteral(DCTerms.publisher, "R & D, Unister GmbH, Geoknow");
+        dataset.addProperty(QB.structure, cube.createResource(structureUri));
+        if (endpoint != null) {
+            dataset.addProperty(DCTerms.source, endpoint);
+        }
+
         int obsCount = 0;
         QueryExecution queryExec;
         if (inputModel != null) {
@@ -85,6 +100,7 @@ public class AveragePolygonsPerInstance implements GeoQualityMetric {
             double average = i == 0 ? 0 : sum / i;
             obs.addProperty(GK.MEASURE.Average, cube.createTypedLiteral(average));
             obs.addProperty(GK.DIM.Class, owlClass);
+            obs.addProperty(QB.dataset, dataset);
             obsCount++;
         }
         return cube;
@@ -121,8 +137,8 @@ public class AveragePolygonsPerInstance implements GeoQualityMetric {
     }
 
     public static void main(String[] args) throws IOException {
-//        Model m = ModelFactory.createDefaultModel();
-//        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
+        // Model m = ModelFactory.createDefaultModel();
+        // m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
         GeoQualityMetric metric = new AveragePolygonsPerInstance("http://geovocab.org/geometry#Polygon");
         Model r = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
         r.write(new FileWriter("datacubes/GeoLinkedData/metric6.ttl"), "TTL");

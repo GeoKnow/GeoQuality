@@ -3,6 +3,8 @@ package org.aksw.geoknow.assessment.count;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 import org.aksw.geoknow.assessment.GeoQualityMetric;
 import org.aksw.geoknow.helper.vocabularies.GK;
@@ -17,6 +19,7 @@ import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
 /**
@@ -45,7 +48,16 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
 
     private Model execute(Model inputModel, String endpoint) {
         Model cubeData = createModel();
-        Resource dataset = cubeData.createResource(NAMESPACE + "dataset/4", QB.Dataset);
+        Resource dataset;
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+        dataset = cubeData.createResource(GK.uri + "Instance_of_other_classes_Count_"+calendar.getTimeInMillis(), QB.Dataset);
+        dataset.addLiteral(RDFS.comment, "Number of instances of other classes for a class");
+        dataset.addLiteral(DCTerms.date, cubeData.createTypedLiteral(calendar));
+        dataset.addLiteral(DCTerms.publisher, "R & D, Unister GmbH, Geoknow");
+        if (endpoint != null) {
+            dataset.addProperty(DCTerms.source, endpoint);
+        }
+
         QueryExecution qexec;
         if (inputModel != null) {
             qexec = QueryExecutionFactory.create(INSTANCE_CLASS, inputModel);

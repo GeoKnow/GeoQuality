@@ -2,6 +2,8 @@ package org.aksw.geoknow.assessment.count;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 import org.aksw.geoknow.assessment.GeoQualityMetric;
 import org.aksw.geoknow.helper.vocabularies.GK;
@@ -19,6 +21,7 @@ import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.impl.PropertyImpl;
+import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
 /**
@@ -68,6 +71,18 @@ public class AveragePointsPerInstance implements GeoQualityMetric {
     private Model execute(Model inputModel, QueryExecution queryExec, String endpoint) {
         int obsCount = 0;
         Model cube = createModel();
+
+        Resource dataset;
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+        dataset = cube.createResource(GK.uri + "AveragePolygon" + calendar.getTimeInMillis(), QB.Dataset);
+        dataset.addLiteral(RDFS.comment, "Properties per instance");
+        dataset.addLiteral(DCTerms.date, cube.createTypedLiteral(calendar));
+        dataset.addLiteral(DCTerms.publisher, "R & D, Unister GmbH, Geoknow");
+        dataset.addProperty(QB.structure, cube.createResource(structureUri));
+        if (endpoint != null) {
+            dataset.addProperty(DCTerms.source, endpoint);
+        }
+
         for (ResultSet result = queryExec.execSelect(); result.hasNext();) {
             QuerySolution solution = result.next();
             Resource owlClass = solution.getResource("class");
@@ -114,6 +129,7 @@ public class AveragePointsPerInstance implements GeoQualityMetric {
 
             obs.addProperty(GK.MEASURE.Average, cube.createTypedLiteral(average));
             obs.addProperty(GK.DIM.Class, owlClass);
+            obs.addProperty(QB.dataset, dataset);
             obsCount++;
         }
         return cube;

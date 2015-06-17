@@ -1,23 +1,25 @@
 package org.aksw.geoknow.assessment.count;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
 
 import org.aksw.geoknow.assessment.GeoQualityMetric;
 import org.aksw.geoknow.helper.vocabularies.GK;
 import org.aksw.geoknow.helper.vocabularies.QB;
 
-import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
 import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
+import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
+import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
 /**
@@ -34,7 +36,7 @@ public class InstancesNumberMetric implements GeoQualityMetric {
 
     private static final String NAMESPACE = "http://www.geoknow.eu/data-cube/";
 
-    private static final String STRUCTURE = NAMESPACE + "metric1";
+    private static final String STRUCTURE = NAMESPACE + "structure/metric1";
 
     public Model generateResultsDataCube(Model inputModel) {
 
@@ -43,7 +45,16 @@ public class InstancesNumberMetric implements GeoQualityMetric {
 
     private Model execute(Model inputModel, String endpoint) {
         Model cubeData = createModel();
-        Resource dataSet = cubeData.createResource(NAMESPACE + "dataset/1");
+        Resource dataSet;
+
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+        dataSet = cubeData.createResource(GK.uri + "Instance_Count_"+calendar.getTimeInMillis(), QB.Dataset);
+        dataSet.addLiteral(RDFS.comment, "Number of instances for a class");
+        dataSet.addLiteral(DCTerms.date, cubeData.createTypedLiteral(calendar));
+        dataSet.addLiteral(DCTerms.publisher, "R & D, Unister GmbH, Geoknow");
+        if (endpoint != null) {
+            dataSet.addProperty(DCTerms.source, endpoint);
+        }
 
         cubeData.add(cubeData.createStatement(dataSet, QB.structure,
                 cubeData.createResource(STRUCTURE)));
@@ -58,7 +69,6 @@ public class InstancesNumberMetric implements GeoQualityMetric {
         int i = 0;
         while (result.hasNext()) {
             QuerySolution solution = result.next();
-            System.out.println(solution);
             RDFNode owlClass = solution.get("class");
             long instances = solution.getLiteral("count").getLong();
             Resource obs = cubeData.createResource(NAMESPACE + "observation/" + i, QB.Observation);
@@ -72,6 +82,7 @@ public class InstancesNumberMetric implements GeoQualityMetric {
 
     private Model createModel() {
         Model cubeData = ModelFactory.createDefaultModel();
+
 
         Resource structure = cubeData.createResource(STRUCTURE,
                 QB.DataStructureDefinition);
@@ -91,19 +102,18 @@ public class InstancesNumberMetric implements GeoQualityMetric {
 
         cubeData.add(GK.MEASURE.InstanceCountStatements);
         cubeData.add(GK.DIM.ClassStatements);
-
         return cubeData;
     }
 
     public Model generateResultsDataCube(String endpointUrl) {
 
-       return this.execute(null, endpointUrl);
+        return this.execute(null, endpointUrl);
     }
 
     public static void main(String[] args) throws IOException {
         InstancesNumberMetric metric = new InstancesNumberMetric();
-        Model r = metric.generateResultsDataCube("http://linkedgeodata.org/sparql");
-        r.write(new FileWriter("datacubes/LinkedGeoData/metric1.ttl"), "TTL");
+        Model r = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
+        r.write(new FileWriter("datacubes/GeoLinkedData/metric1b.ttl"), "TTL");
     }
 
 }
