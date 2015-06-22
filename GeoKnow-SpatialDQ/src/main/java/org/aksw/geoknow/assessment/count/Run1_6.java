@@ -16,11 +16,11 @@ public class Run1_6 {
     private static List<GeoQualityMetric> metrics = new LinkedList<GeoQualityMetric>();
 
     static {
-//        metrics.add(new InstancesNumberMetric());
-//        metrics.add(new InstancesOfOtherClassesNumberMetric());
-//        metrics.add(new PropertiesPerInstances());
-//        metrics.add(new AveragePointsPerInstance(new PropertyImpl("http://www.w3.org/2003/01/geo/wgs84_pos#geometry")));
-//        metrics.add(new AveragePolygonsPerInstance("http://geovocab.org/geometry#Polygon"));
+        metrics.add(new InstancesNumberMetric());
+        metrics.add(new InstancesOfOtherClassesNumberMetric());
+        metrics.add(new PropertiesPerInstances());
+        metrics.add(new AveragePointsPerInstance(new PropertyImpl("http://www.w3.org/2003/01/geo/wgs84_pos#geometry")));
+        metrics.add(new AveragePolygonsPerInstance("http://geovocab.org/geometry#Polygon"));
         metrics.add(new AverageSurfaceMetric());
     }
 
@@ -28,9 +28,9 @@ public class Run1_6 {
         Model model =  ModelFactory.createDefaultModel();;
         for(GeoQualityMetric metric :metrics){
             System.out.println("######### Starting "+metric.getClass().getSimpleName()+" ############");
-            Model generateResultsDataCube = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
+            Model generateResultsDataCube = metric.generateResultsDataCube("http://linkedgeodata.org/vsparql");
             model.add(generateResultsDataCube);
-            generateResultsDataCube.write(new FileWriter("datacubes/GeoLinkedData/"+metric.getClass().getSimpleName()+".ttl"), "TTL");
+            generateResultsDataCube.write(new FileWriter("datacubes/linkedgeodata/"+metric.getClass().getSimpleName()+".ttl"), "TTL");
             System.out.println("######### Terminated "+metric.getClass().getSimpleName()+" ############");
         }
         model.write(new FileWriter("datacubes/GeoLinkedData/GLD-metric1-6.ttl"), "TTL");
