@@ -4,6 +4,7 @@
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix qb:    <http://purl.org/linked-data/cube#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/>. 
 
 <> a owl:Ontology ; 
  rdfs:label "GeoKnow Spatical Data Qaluty DataCube Knowledge Base" ;
