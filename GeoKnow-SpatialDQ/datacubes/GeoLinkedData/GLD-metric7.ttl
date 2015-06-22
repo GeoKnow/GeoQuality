@@ -5,22 +5,78 @@
 @prefix qb:    <http://purl.org/linked-data/cube#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
+<> a owl:Ontology ; 
+ rdfs:label "GeoKnow Spatical Data Qaluty DataCube Knowledge Base" ;
+ dc:description "This knowledgebase contains 3 different DataCubes with different dimensions and measures." .
+
+#
+#Data Set 
+# 
+gk:avg_poly_dataset  a     qb:Dataset ;
+        rdfs:comment       "Average distance between polygons which represent the same resource" ;
+        rdfs:label         "Per class average polygons distances" ;
+        dcterms:date       "Wed May 20 11:17:13 CEST 2015" ;
+        dcterms:publisher  "AKSW, GeoKnow" ;
+        qb:structure       gk:avg_poly_data_struct_def .
+
+# 
+# Data Structure Definitions 
+# 
+gk:avg_poly_data_struct_def
+        a             qb:DataStructureDefinition ;
+        rdfs:comment  "A Data Structure Definition for http://www.geoknow.eu/avg_poly_dataset" ;
+        rdfs:label    "A Data Structure Definition" ;
+        qb:component  gk:avg_poly_comp_time , gk:avg_poly_comp_dist , gk:avg_poly_comp_cls , gk:avg_poly_comp_metric .
+
+# 
+#Componenet Specifications
+#
+gk:avg_poly_comp_metric
+        a             qb:ComponentSpecification ;
+        rdfs:label    "Component Specification of Polygon Metric" ;
+        qb:dimension  gk:avg_poly_metric_prop .
+
+gk:avg_poly_comp_cls  a  qb:ComponentSpecification ;
+        rdfs:label    "Component Specification of Class" ;
+        qb:dimension  gk:avg_poly_cls_prop .
+
+
+gk:avg_poly_comp_time
+        a             qb:ComponentSpecification ;
+        rdfs:label    "Component Specification of Time Stamp" ;
+        qb:dimension  gk:avg_poly_time_prop .
+
 gk:avg_poly_comp_dist
         a           qb:ComponentSpecification ;
         rdfs:label  "Average Polygon Distance" ;
         qb:measure  gk:avg_poly_dist_prop .
 
+# 
+# Dimensions, Unit, and Measure
+#
+gk:avg_poly_dist_prop
+        a           qb:MeasureProperty ;
+        rdfs:label  "Average Polygon Distance" .
+
+gk:avg_poly_time_prop
+        a           qb:DimensionProperty ;
+        rdfs:label  "Time Stamp" .
+
+gk:avg_poly_cls_prop  a  qb:DimensionProperty ;
+        rdfs:label  "Class Name" .
+
+gk:avg_poly_metric_prop  a  qb:DimensionProperty ;
+        rdfs:label  "Polygon Metric" .
+
+# 
+# Observation
+#
 gk:avg_poly_obv_1_13  a          qb:Observation ;
         qb:dataset               gk:avg_poly_dataset ;
         gk:avg_poly_cls_prop     <http://geo.linkeddata.es/ontology/Provincia> ;
         gk:avg_poly_dist_prop    "1304.2261978897095" ;
         gk:avg_poly_metric_prop  "fairsurjection" ;
         gk:avg_poly_time_prop    "Wed May 20 11:21:28 CEST 2015" .
-
-gk:avg_poly_comp_metric
-        a             qb:ComponentSpecification ;
-        rdfs:label    "Component Specification of Polygon Metric" ;
-        qb:dimension  gk:avg_poly_metric_prop .
 
 gk:avg_poly_obv_1_5  a           qb:Observation ;
         qb:dataset               gk:avg_poly_dataset ;
@@ -43,12 +99,6 @@ gk:avg_poly_obv_1_17  a          qb:Observation ;
         gk:avg_poly_metric_prop  "geoavg" ;
         gk:avg_poly_time_prop    "Wed May 20 11:22:40 CEST 2015" .
 
-gk:avg_poly_data_struct_def
-        a             qb:DataStructureDefinition ;
-        rdfs:comment  "A Data Structure Definition for http://www.geoknow.eu/avg_poly_dataset" ;
-        rdfs:label    "A Data Structure Definition" ;
-        qb:component  gk:avg_poly_comp_time , gk:avg_poly_comp_dist , gk:avg_poly_comp_cls , gk:avg_poly_comp_metric .
-
 gk:avg_poly_obv_1_3  a           qb:Observation ;
         qb:dataset               gk:avg_poly_dataset ;
         gk:avg_poly_cls_prop     <http://geo.linkeddata.es/ontology/Provincia> ;
@@ -63,39 +113,12 @@ gk:avg_poly_obv_1_9  a           qb:Observation ;
         gk:avg_poly_metric_prop  "surjection" ;
         gk:avg_poly_time_prop    "Wed May 20 11:20:18 CEST 2015" .
 
-gk:avg_poly_dist_prop
-        a           qb:MeasureProperty ;
-        rdfs:label  "Average Polygon Distance" .
-
-gk:avg_poly_comp_cls  a  qb:ComponentSpecification ;
-        rdfs:label    "Component Specification of Class" ;
-        qb:dimension  gk:avg_poly_cls_prop .
-
-gk:avg_poly_dataset  a     qb:Dataset ;
-        rdfs:comment       "Average distance between polygons which represent the same resource" ;
-        rdfs:label         "Per class average polygons distances" ;
-        dcterms:date       "Wed May 20 11:17:13 CEST 2015" ;
-        dcterms:publisher  "AKSW, GeoKnow" ;
-        qb:structure       gk:avg_poly_data_struct_def .
-
-gk:avg_poly_comp_time
-        a             qb:ComponentSpecification ;
-        rdfs:label    "Component Specification of Time Stamp" ;
-        qb:dimension  gk:avg_poly_time_prop .
-
 gk:avg_poly_obv_1_15  a          qb:Observation ;
         qb:dataset               gk:avg_poly_dataset ;
         gk:avg_poly_cls_prop     <http://geo.linkeddata.es/ontology/Provincia> ;
         gk:avg_poly_dist_prop    "1304.2261978897095" ;
         gk:avg_poly_metric_prop  "geolink" ;
         gk:avg_poly_time_prop    "Wed May 20 11:22:03 CEST 2015" .
-
-gk:avg_poly_time_prop
-        a           qb:DimensionProperty ;
-        rdfs:label  "Polygon Metric" , "Time Stamp" .
-
-gk:avg_poly_cls_prop  a  qb:DimensionProperty ;
-        rdfs:label  "Class Name" .
 
 gk:avg_poly_obv_1_1  a           qb:Observation ;
         qb:dataset               gk:avg_poly_dataset ;
