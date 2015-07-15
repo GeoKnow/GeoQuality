@@ -112,8 +112,8 @@ public class InstancesNumberMetric implements GeoQualityMetric {
 
     public static void main(String[] args) throws IOException {
         InstancesNumberMetric metric = new InstancesNumberMetric();
-        Model r = metric.generateResultsDataCube("http://linkedgeodata.org/sparql");
-        r.write(new FileWriter("datacubes/linkeddata/metric1.ttl"), "TTL");
+        Model r = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
+        r.write(new FileWriter("datacubes/GeoLinkedData/metric1.ttl"), "TTL");
     }
 
 }

@@ -84,6 +84,7 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
                 obs.addProperty(GK.DIM.Class, originClass);
                 obs.addProperty(GK.MEASURE.OtherClassesCount, resultCount.next().getLiteral("count"));
                 obs.addProperty(QB.dataset, dataset);
+                obs.addProperty(GK.DIM.TimeStamp, cubeData.createTypedLiteral(calendar));
             }
         }
         return cubeData;
@@ -106,11 +107,16 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
         c2.addProperty(QB.measure, GK.MEASURE.OtherClassesCount);
         c2.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Number of Other Classes", "en"));
 
+        Resource c3 = cubeData.createResource(STRUCTURE + "/c3", QB.ComponentSpecification);
+        c3.addProperty(QB.dimension, GK.DIM.TimeStamp);
+        c3.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Timestamp", "en"));
+
         structure.addProperty(QB.component, c1);
         structure.addProperty(QB.component, c2);
 
         cubeData.add(GK.DIM.ClassStatements);
         cubeData.add(GK.MEASURE.OtherClassesCountStatements);
+        cubeData.add(GK.DIM.TimeStampStatements);
 
         return cubeData;
     }
@@ -120,7 +126,7 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
 //        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
         GeoQualityMetric metric = new InstancesOfOtherClassesNumberMetric();
         Model r = metric.generateResultsDataCube("http://linkedgeodata.org/sparql");
-        r.write(new FileWriter("datacubes/LinkedGeoData/metric4.ttl"), "TTL");
+        r.write(new FileWriter("datacubes/GeoLinkedData/metric4.ttl"), "TTL");
     }
 
 }
