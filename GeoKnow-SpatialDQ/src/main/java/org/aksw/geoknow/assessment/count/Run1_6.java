@@ -16,12 +16,12 @@ public class Run1_6 {
     private static List<GeoQualityMetric> metrics = new LinkedList<GeoQualityMetric>();
 
     static {
-        metrics.add(new InstancesNumberMetric());
-        metrics.add(new InstancesOfOtherClassesNumberMetric());
-        metrics.add(new PropertiesPerInstances());
-        metrics.add(new AveragePointsPerInstance(new PropertyImpl("http://www.w3.org/2003/01/geo/wgs84_pos#geometry")));
-        metrics.add(new AveragePolygonsPerInstance("http://geovocab.org/geometry#Polygon"));
-//        metrics.add(new AverageSurfaceMetric());
+//        metrics.add(new InstancesNumberMetric());
+//        metrics.add(new InstancesOfOtherClassesNumberMetric());
+//        metrics.add(new PropertiesPerInstances());
+//        metrics.add(new AveragePointsPerInstance(new PropertyImpl("http://www.w3.org/2003/01/geo/wgs84_pos#geometry")));
+//        metrics.add(new AveragePolygonsPerInstance("http://geovocab.org/geometry#Polygon"));
+        metrics.add(new AverageSurfaceMetric());
     }
 
     public static void main(String[] args) throws IOException {
@@ -33,6 +33,6 @@ public class Run1_6 {
             generateResultsDataCube.write(new FileWriter("datacubes/LinkedGeoData/"+metric.getClass().getSimpleName()+".ttl"), "TTL");
             System.out.println("######### Terminated "+metric.getClass().getSimpleName()+" ############");
         }
-        model.write(new FileWriter("datacubes/LinkedGeoData/GLD-metric1-5.ttl"), "TTL");
+        model.write(new FileWriter("datacubes/LinkedGeoData/GLD-metric6.ttl"), "TTL");
     }
 }
