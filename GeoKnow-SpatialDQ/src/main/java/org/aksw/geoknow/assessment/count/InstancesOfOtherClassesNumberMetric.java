@@ -50,7 +50,7 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
         Model cubeData = createModel();
         Resource dataset;
         Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-        dataset = cubeData.createResource(GK.uri + "Instance_of_other_classes_Count_"+calendar.getTimeInMillis(), QB.Dataset);
+        dataset = cubeData.createResource(GK.uri + "Instance_of_other_classes_Count", QB.Dataset);
         dataset.addLiteral(RDFS.comment, "Number of instances of other classes for a class");
         dataset.addLiteral(DCTerms.date, cubeData.createTypedLiteral(calendar));
         dataset.addLiteral(DCTerms.publisher, "R & D, Unister GmbH, Geoknow");
@@ -67,9 +67,9 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
         QuerySolution solution = null;
         int i = 0;
         for (ResultSet result = qexec.execSelect(); result.hasNext(); i++) {
-            System.out.println(i);
             solution = result.next();
             Resource originClass = solution.getResource("class");
+            System.out.println(originClass);
             OTHER_CLASSES.setIri("originClass", originClass.getURI());
             QueryExecution execCount;
             if (inputModel != null) {
@@ -122,11 +122,11 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
     }
 
     public static void main(String[] args) throws IOException {
-//        OntModel m = ModelFactory.createOntologyModel();
-//        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
+        OntModel m = ModelFactory.createOntologyModel();
+        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
         GeoQualityMetric metric = new InstancesOfOtherClassesNumberMetric();
-        Model r = metric.generateResultsDataCube("http://linkedgeodata.org/sparql");
-        r.write(new FileWriter("datacubes/GeoLinkedData/metric4.ttl"), "TTL");
+        Model r = metric.generateResultsDataCube(m);
+        r.write(new FileWriter("nuts.ttl"), "TTL");
     }
 
 }

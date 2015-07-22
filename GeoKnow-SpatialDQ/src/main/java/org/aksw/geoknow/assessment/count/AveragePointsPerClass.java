@@ -34,9 +34,9 @@ import com.hp.hpl.jena.vocabulary.RDFS;
  *         This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
  *
  */
-public class AveragePointsPerInstance implements GeoQualityMetric {
+public class AveragePointsPerClass implements GeoQualityMetric {
 
-    private static final Logger logger = LoggerFactory.getLogger(AveragePointsPerInstance.class);
+    private static final Logger logger = LoggerFactory.getLogger(AveragePointsPerClass.class);
     private final Property property;
     private static final String NAMESPACE = "http://www.geoknow.eu/data-cube/";
     private static final String GET_CLASSES = "SELECT distinct ?class WHERE {?x a ?class } ";
@@ -48,13 +48,13 @@ public class AveragePointsPerInstance implements GeoQualityMetric {
 
     private static final ParameterizedSparqlString COUNT_GEO = new ParameterizedSparqlString(
             "SELECT ?instance (COUNT (DISTINCT ?geo) as ?count) "
-                    + "WHERE { ?instance a ?class . ?instance ?property ?geo . ?geo a ?type . } "
+                    + "WHERE { ?instance a ?class . ?instance ?property ?geo . } "
                     + "GROUP BY ?instance");
 
     private final String structureUri;
     private final static String type ="http://www.w3.org/2003/01/geo/wgs84_pos#Point";
 
-    public AveragePointsPerInstance(Property p) {
+    public AveragePointsPerClass(Property p) {
         this.property = p;
         this.structureUri = NAMESPACE + "metric/" + property.hashCode();
     }
@@ -74,8 +74,8 @@ public class AveragePointsPerInstance implements GeoQualityMetric {
 
         Resource dataset;
         Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-        dataset = cube.createResource(GK.uri + "AveragePolygon" + calendar.getTimeInMillis(), QB.Dataset);
-        dataset.addLiteral(RDFS.comment, "Properties per instance");
+        dataset = cube.createResource(GK.uri + "AveragePoints", QB.Dataset);
+        dataset.addLiteral(RDFS.comment, "Points per class");
         dataset.addLiteral(DCTerms.date, cube.createTypedLiteral(calendar));
         dataset.addLiteral(DCTerms.publisher, "R & D, Unister GmbH, Geoknow");
         dataset.addProperty(QB.structure, cube.createResource(structureUri));
@@ -111,7 +111,7 @@ public class AveragePointsPerInstance implements GeoQualityMetric {
                 i = 0;
                 COUNT_GEO.setIri("class", owlClass.getURI());
                 COUNT_GEO.setIri("property", property.getURI());
-                COUNT_GEO.setIri("type", type);
+//                COUNT_GEO.setIri("type", type);
                 execCount = null;
                 if (inputModel != null) {
                     execCount = QueryExecutionFactory.create(COUNT_GEO.asQuery(), inputModel);
@@ -170,7 +170,7 @@ public class AveragePointsPerInstance implements GeoQualityMetric {
     public static void main(String[] args) throws IOException {
         // Model m = ModelFactory.createDefaultModel();
         // m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
-        GeoQualityMetric metric = new AveragePointsPerInstance(new PropertyImpl("http://www.w3.org/2003/01/geo/wgs84_pos#geometry"));
+        GeoQualityMetric metric = new AveragePointsPerClass(new PropertyImpl("http://www.w3.org/2003/01/geo/wgs84_pos#lat_long"));
         Model r = metric.generateResultsDataCube("http://linkedgeodata.org/sparql");
         r.write(new FileWriter("datacubes/LinkedGeoData/metric5.ttl"), "TTL");
     }

@@ -48,7 +48,7 @@ public class InstancesNumberMetric implements GeoQualityMetric {
         Resource dataSet;
 
         Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-        dataSet = cubeData.createResource(GK.uri + "Instance_Count_"+calendar.getTimeInMillis(), QB.Dataset);
+        dataSet = cubeData.createResource(GK.uri + "Instance_Count_", QB.Dataset);
         dataSet.addLiteral(RDFS.comment, "Number of instances for a class");
         dataSet.addLiteral(DCTerms.date, cubeData.createTypedLiteral(calendar));
         dataSet.addLiteral(DCTerms.publisher, "R & D, Unister GmbH, Geoknow");

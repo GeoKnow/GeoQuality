@@ -79,8 +79,8 @@ public class AverageSurfaceMetricLOGD implements GeoQualityMetric {
 
         Resource dataset;
         Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-        dataset = cube.createResource(GK.uri + "Average_Surface" + calendar.getTimeInMillis(), QB.Dataset);
-        dataset.addLiteral(RDFS.comment, "Properties per instance");
+        dataset = cube.createResource(GK.uri + "Average_Surface", QB.Dataset);
+        dataset.addLiteral(RDFS.comment, "Average Surface");
         dataset.addLiteral(DCTerms.date, cube.createTypedLiteral(calendar));
         dataset.addLiteral(DCTerms.publisher, "R & D, Unister GmbH, Geoknow");
         dataset.addProperty(QB.structure, cube.createResource(STRUCTURE));

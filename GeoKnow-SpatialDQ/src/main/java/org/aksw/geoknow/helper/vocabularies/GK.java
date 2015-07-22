@@ -114,8 +114,8 @@ public class GK {
 
             OtherClassesCountStatements = new ArrayList<Statement>(2);
             OtherClassesCountStatements.add(ResourceFactory
-                    .createStatement(InstanceCount, RDF.type, QB.MeasureProperty));
-            OtherClassesCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.label,
+                    .createStatement(OtherClassesCount, RDF.type, QB.MeasureProperty));
+            OtherClassesCountStatements.add(ResourceFactory.createStatement(OtherClassesCount, RDFS.label,
                     ResourceFactory.createLangLiteral("Other Classes Count", "en")));
             // OtherClassesCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.subPropertyOf,
             // SDMX.MEASURE.obs));

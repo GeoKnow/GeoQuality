@@ -32,7 +32,7 @@ import com.hp.hpl.jena.vocabulary.RDFS;
  *         This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
  *
  */
-public class AveragePolygonsPerInstance implements GeoQualityMetric {
+public class AveragePolygonsPerClass implements GeoQualityMetric {
 
     private final String polygonClass;
     private static final String NAMESPACE = "http://www.geoknow.eu/data-cube/";
@@ -45,7 +45,7 @@ public class AveragePolygonsPerInstance implements GeoQualityMetric {
 
     private final String structureUri;
 
-    public AveragePolygonsPerInstance(String polygonClass) {
+    public AveragePolygonsPerClass(String polygonClass) {
         this.polygonClass = polygonClass;
         this.structureUri = NAMESPACE + "metric/" + polygonClass.hashCode();
     }
@@ -59,8 +59,8 @@ public class AveragePolygonsPerInstance implements GeoQualityMetric {
 
         Resource dataset;
         Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-        dataset = cube.createResource(GK.uri + "AveragePolygon" + calendar.getTimeInMillis(), QB.Dataset);
-        dataset.addLiteral(RDFS.comment, "Properties per instance");
+        dataset = cube.createResource(GK.uri + "AveragePolygon", QB.Dataset);
+        dataset.addLiteral(RDFS.comment, "Polygons per Class");
         dataset.addLiteral(DCTerms.date, cube.createTypedLiteral(calendar));
         dataset.addLiteral(DCTerms.publisher, "R & D, Unister GmbH, Geoknow");
         dataset.addProperty(QB.structure, cube.createResource(structureUri));
@@ -139,7 +139,7 @@ public class AveragePolygonsPerInstance implements GeoQualityMetric {
     public static void main(String[] args) throws IOException {
         // Model m = ModelFactory.createDefaultModel();
         // m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
-        GeoQualityMetric metric = new AveragePolygonsPerInstance("http://geovocab.org/geometry#Polygon");
+        GeoQualityMetric metric = new AveragePolygonsPerClass("http://geovocab.org/geometry#Polygon");
         Model r = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
         r.write(new FileWriter("datacubes/GeoLinkedData/metric6.ttl"), "TTL");
     }

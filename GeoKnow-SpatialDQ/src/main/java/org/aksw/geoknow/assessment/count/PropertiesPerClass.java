@@ -30,7 +30,7 @@ import com.hp.hpl.jena.vocabulary.RDFS;
  *         This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
  *
  */
-public class PropertiesPerInstances implements GeoQualityMetric {
+public class PropertiesPerClass implements GeoQualityMetric {
 
     private final ParameterizedSparqlString NUMBER_OF_PROPERTIES = new ParameterizedSparqlString(
             "SELECT (COUNT(DISTINCT ?p) as ?count) WHERE { ?s ?p ?o . ?s a ?class }");
@@ -47,8 +47,8 @@ public class PropertiesPerInstances implements GeoQualityMetric {
         Model cube = createModel();
         Resource dataset;
         Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-        dataset = cube.createResource(GK.uri + "Properties_per_Instance"+calendar.getTimeInMillis(), QB.Dataset);
-        dataset.addLiteral(RDFS.comment, "Properties per instance");
+        dataset = cube.createResource(GK.uri + "Properties_per_Class"+calendar.getTimeInMillis(), QB.Dataset);
+        dataset.addLiteral(RDFS.comment, "Properties per class");
         dataset.addLiteral(DCTerms.date, cube.createTypedLiteral(calendar));
         dataset.addLiteral(DCTerms.publisher, "R & D, Unister GmbH, Geoknow");
         dataset.addProperty(QB.structure, cube.createResource(STRUCTURE));
@@ -135,7 +135,7 @@ public class PropertiesPerInstances implements GeoQualityMetric {
     public static void main(String[] args) throws IOException {
         // Model m = ModelFactory.createDefaultModel();
         // m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
-        GeoQualityMetric metric = new PropertiesPerInstances();
+        GeoQualityMetric metric = new PropertiesPerClass();
         Model r = metric.generateResultsDataCube("http://linkedgeodata.org/sparql");
         r.write(new FileWriter("datacubes/LinkedGeoData/metric2.ttl"), "TTL");
     }
