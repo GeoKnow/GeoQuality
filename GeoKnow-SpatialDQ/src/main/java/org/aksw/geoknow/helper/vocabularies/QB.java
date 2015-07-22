@@ -30,10 +30,10 @@ public class QB {
 	public static final Property component	 = property("component");
 	public static final Property dimension	 = property("dimension");
 	public static final Property measure	 = property("measure");
-	public static final Property dataset	 = property("dataset");
+	public static final Property dataset	 = property("dataSet");
 
 	
-	public static final Resource Dataset				 = resource( "Dataset" );
+	public static final Resource Dataset				 = resource( "DataSet" );
 	public static final Resource DataStructureDefinition = resource( "DataStructureDefinition" );
 	public static final Resource ComponentSpecification	 = resource( "ComponentSpecification" );
 	public static final Resource DimensionProperty		 = resource( "DimensionProperty" );

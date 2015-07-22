@@ -48,6 +48,7 @@ public class SDMX {
 		public static final Property obs = property(uri, "obs");
 		public static final Property occupation = property(uri, "occupation");
 		public static final Property sex = property(uri, "sex");
+		public static final Property avgPly = property(uri, "avg_poly_dist_prop");
 
 	}
 
