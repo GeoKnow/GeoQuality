@@ -1,15 +1,21 @@
 package org.aksw.geoknow.assessment.count;
 
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.TimeZone;
 
 import org.aksw.geoknow.assessment.GeoQualityMetric;
 import org.aksw.geoknow.helper.vocabularies.GK;
 import org.aksw.geoknow.helper.vocabularies.QB;
 import org.geotools.geometry.jts.JTSFactoryFinder;
+import org.springframework.util.StopWatch;
+import org.springframework.util.StopWatch.TaskInfo;
 
 import com.hp.hpl.jena.query.ParameterizedSparqlString;
 import com.hp.hpl.jena.query.QueryExecution;
@@ -18,8 +24,6 @@ import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDFS;
@@ -40,7 +44,7 @@ import com.vividsolutions.jts.io.WKTReader;
  *         This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
  *
  */
-public class AverageSurfaceMetricLOGD implements GeoQualityMetric {
+public class AverageSurfaceMetricWKT implements GeoQualityMetric {
 
     private static final String NAMESPACE = "http://www.geoknow.eu/data-cube/";
 
@@ -63,8 +67,13 @@ public class AverageSurfaceMetricLOGD implements GeoQualityMetric {
                     + "SELECT ?geometry  "
                     + "WHERE { { ?instance <http://www.opengis.net/ont/geosparql#asWKT> ?geometry . } "
                     + "UNION { ?instance ngeo:geometry ?g . ?g <http://www.opengis.net/ont/geosparql#asWKT> ?geometry .} }");
+    private static List<String> blacklist = new ArrayList();
 
-    public AverageSurfaceMetricLOGD() {
+    static {
+        blacklist.add("http://www.w3.org/2003/01/geo/wgs84_pos#Point");
+    }
+
+    public AverageSurfaceMetricWKT() {
         this.structureUri = NAMESPACE + "metric/averageSurface";
         this.geometryFactory = JTSFactoryFinder.getGeometryFactory(null);
     }
@@ -75,6 +84,8 @@ public class AverageSurfaceMetricLOGD implements GeoQualityMetric {
     }
 
     private Model execute(Model inputModel, String endpoint) {
+        StopWatch watch = new StopWatch();
+        watch.start("cube-structure");
         Model cube = createModel();
 
         Resource dataset;
@@ -87,7 +98,8 @@ public class AverageSurfaceMetricLOGD implements GeoQualityMetric {
         if (endpoint != null) {
             dataset.addProperty(DCTerms.source, endpoint);
         }
-
+        watch.stop();
+        watch.start("get-classes");
         QueryExecution qExec;
         if (inputModel != null) {
             qExec = QueryExecutionFactory.create(GET_CLASSES, inputModel);
@@ -96,46 +108,60 @@ public class AverageSurfaceMetricLOGD implements GeoQualityMetric {
         }
         ResultSet result = qExec.execSelect();
         int obsCount = 0;
+
         while (result.hasNext()) {
+
             double area = 0;
             int i = 0;
             Resource owlClass = result.next().get("class").asResource();
-            System.out.println(owlClass);
-            GET_INSTANCES.setIri("class", owlClass.getURI());
-
-            QueryExecution qexecInstances;
-            if (inputModel != null) {
-                qexecInstances = QueryExecutionFactory.create(GET_INSTANCES.asQuery(), inputModel);
-            } else {
-                qexecInstances = QueryExecutionFactory.sparqlService(endpoint, GET_INSTANCES.asQuery());
-            }
-            for (ResultSet instancesResult = qexecInstances.execSelect(); instancesResult.hasNext();) {
-
-                QuerySolution next = instancesResult.next();
-                String instance = next.get("instance").asResource().getURI();
-                if (instance == null) {
-                    continue;
-                }
-                POLYGON.setIri("instance", instance);
-                QueryExecution qexecMember;
+            if (!blacklist.contains(owlClass.toString())) {
+                watch.stop();
+                watch.start(owlClass.getURI());
+                StopWatch watchInstances = new StopWatch("instances");
+                System.out.println(owlClass);
+                GET_INSTANCES.setIri("class", owlClass.getURI());
+                watchInstances.start("get-Instances");
+                QueryExecution qexecInstances;
                 if (inputModel != null) {
-                    qexecMember = QueryExecutionFactory.create(POLYGON.asQuery(), inputModel);
+                    qexecInstances = QueryExecutionFactory.create(GET_INSTANCES.asQuery(), inputModel);
                 } else {
-                    qexecMember = QueryExecutionFactory.sparqlService(endpoint, POLYGON.asQuery());
+                    qexecInstances = QueryExecutionFactory.sparqlService(endpoint, GET_INSTANCES.asQuery());
                 }
 
-                try {
-                    ResultSet wkt = qexecMember.execSelect();
-                    if (wkt.hasNext()) {
-                        String geometry = wkt.next().get("geometry").asLiteral().getString();
+                for (ResultSet instancesResult = qexecInstances.execSelect(); instancesResult.hasNext();) {
 
-                        area += calculateArea(geometry);
+                    watchInstances.stop();
+                    watchInstances.start("instance");
+                    QuerySolution next = instancesResult.next();
+                    String instance = next.get("instance").asResource().getURI();
+                    if (instance == null) {
+                        continue;
                     }
-                } catch (Exception e) {
-                    System.out.println(POLYGON.asQuery());
-                    e.printStackTrace();
+                    POLYGON.setIri("instance", instance);
+                    QueryExecution qexecMember;
+                    if (inputModel != null) {
+                        qexecMember = QueryExecutionFactory.create(POLYGON.asQuery(), inputModel);
+                    } else {
+                        qexecMember = QueryExecutionFactory.sparqlService(endpoint, POLYGON.asQuery());
+                    }
+
+                    try {
+                        ResultSet wkt = qexecMember.execSelect();
+                        if (wkt.hasNext()) {
+                            watchInstances.stop();
+                            watchInstances.start("area");
+
+                            String geometry = wkt.next().get("geometry").asLiteral().getString();
+
+                            area += calculateArea(geometry);
+                        }
+                    } catch (Exception e) {
+                        System.out.println(POLYGON.asQuery());
+                        e.printStackTrace();
+                    }
+                    i++;
                 }
-                i++;
+                System.out.println(prettyPrint(watchInstances));
             }
             Resource obs = cube.createResource(structureUri + "/obs/" + obsCount, QB.Observation);
             double average = i == 0 ? 0 : area / i;
@@ -143,7 +169,9 @@ public class AverageSurfaceMetricLOGD implements GeoQualityMetric {
             obs.addProperty(GK.DIM.Class, owlClass);
             obs.addProperty(QB.dataset, dataset);
             obsCount++;
+
         }
+        System.out.println(prettyPrint(watch));
         return cube;
     }
 
@@ -192,9 +220,41 @@ public class AverageSurfaceMetricLOGD implements GeoQualityMetric {
     public static void main(String[] args) throws IOException {
         // Model m = ModelFactory.createDefaultModel();
         // m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
-        GeoQualityMetric metric = new AverageSurfaceMetricLOGD();
+        GeoQualityMetric metric = new AverageSurfaceMetricWKT();
         Model r = metric.generateResultsDataCube("http://akswnc3.informatik.uni-leipzig.de:8850/sparql");
         r.write(new FileWriter("datacubes/LinkedGeoData/metric3b.ttl"), "TTL");
+    }
+
+    private String prettyPrint(StopWatch watch) {
+        StringBuilder sb = new StringBuilder(watch.shortSummary());
+        sb.append('\n');
+
+        sb.append("-----------------------------------------\n");
+        sb.append("ms     %     Task name\n");
+        sb.append("-----------------------------------------\n");
+        NumberFormat nf = NumberFormat.getNumberInstance();
+        nf.setMinimumIntegerDigits(5);
+        nf.setGroupingUsed(false);
+        NumberFormat pf = NumberFormat.getPercentInstance();
+        pf.setMinimumIntegerDigits(3);
+        pf.setGroupingUsed(false);
+        Map<String, Double[]> tasks = new HashMap<String, Double[]>();
+        for (TaskInfo task : watch.getTaskInfo()) {
+            String name = task.getTaskName();
+            if (!tasks.containsKey(name)) {
+                tasks.put(name, new Double[] { 0d, 0d });
+            }
+            Double[] values = tasks.get(name);
+            values[0] += task.getTimeMillis();
+            values[1] += task.getTimeSeconds();
+        }
+        for (String name : tasks.keySet()) {
+            sb.append(nf.format(tasks.get(name)[0])).append("  ");
+            sb.append(pf.format(tasks.get(name)[1] / watch.getTotalTimeSeconds())).append("  ");
+            sb.append(name).append("\n");
+        }
+
+        return sb.toString();
     }
 
 }

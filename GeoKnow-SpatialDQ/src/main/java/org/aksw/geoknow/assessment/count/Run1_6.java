@@ -3,10 +3,19 @@ package org.aksw.geoknow.assessment.count;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import org.aksw.geoknow.assessment.GeoQualityMetric;
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.DefaultParser;
+import org.apache.commons.cli.HelpFormatter;
+import org.apache.commons.cli.Option;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
 
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.rdf.model.Model;
@@ -17,26 +26,111 @@ public class Run1_6 {
 
     private static List<GeoQualityMetric> metrics = new LinkedList<GeoQualityMetric>();
 
-    static {
-        metrics.add(new InstancesNumberMetric());
-        metrics.add(new InstancesOfOtherClassesNumberMetric());
-        metrics.add(new PropertiesPerClass());
-        metrics.add(new AveragePointsPerClass(new PropertyImpl("http://geovocab.org/geometry#long")));
-        metrics.add(new AveragePolygonsPerClass("http://geovocab.org/geometry#Polygon"));
-        metrics.add(new AverageSurfaceMetric());
-    }
+    // static {
+    // metrics.add(new InstancesNumberMetric());
+    // metrics.add(new InstancesOfOtherClassesNumberMetric());
+    // metrics.add(new PropertiesPerClass());
+    // metrics.add(new AveragePointsPerClass(new PropertyImpl("http://geovocab.org/geometry#long")));
+    // metrics.add(new AveragePolygonsPerClass("http://geovocab.org/geometry#Polygon"));
+    // metrics.add(new AverageSurfaceMetric());
+    // }
 
     public static void main(String[] args) throws IOException {
-        Model model =  ModelFactory.createDefaultModel();;
-        for(GeoQualityMetric metric :metrics){
-            OntModel m = ModelFactory.createOntologyModel();
-            m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
-            System.out.println("######### Starting "+metric.getClass().getSimpleName()+" ############");
-            Model generateResultsDataCube = metric.generateResultsDataCube(m);
-            model.add(generateResultsDataCube);
-            generateResultsDataCube.write(new FileWriter("/tmp/nuts-"+metric.getClass().getSimpleName()+".ttl"), "TTL");
-            System.out.println("######### Terminated "+metric.getClass().getSimpleName()+" ############");
+
+        Options options = new Options();
+        options.addOption(Option.builder("o").argName("file").desc("output file").longOpt("output")
+                .hasArg(true).required(true).build());
+        options.addOption(Option.builder("h").desc("print this message").longOpt("help")
+                .hasArg(false).required(false).build());
+        options.addOption(
+                Option.builder("m").argName("1,2").desc("metrics to use as 1,2 to run metics 1 and 2").longOpt("metric")
+                        .hasArg(true).required(true).build());
+        options.addOption(Option.builder("p").desc("predicate for points").longOpt("pointsPredicate")
+                .hasArg(true).build());
+        options.addOption(Option.builder("pC").desc("class for points id needed").longOpt("pointsClass")
+                .hasArg(true).build());
+        options.addOption(Option.builder("c").desc("predicate for polygons").longOpt("polygonsClass")
+                .hasArg(true).build());
+        options.addOption(Option.builder("e").desc("sparql endpoint").longOpt("endpoint")
+                .hasArg(true).required(true).build());
+        options.addOption(Option.builder("w").desc("use wkt for polygon description").longOpt("wkt")
+                .hasArg(false).required(false).build());
+        options.addOption(Option.builder("f")
+                .desc("output format possible values:\n\tRDF/XML (default)\n\tRDF/XML-ABBREV\n\tN-TRIPLE\n\tTURTLE or\tTTL\n\tN3")
+                .longOpt("format")
+                .hasArg(true).required(true).build());
+
+        String endpoint = "";
+        String output = "";
+        String format = null;
+        boolean wkt = true;
+
+        CommandLineParser parser = new DefaultParser();
+        try {
+            // parse the command line arguments
+            CommandLine line = parser.parse(options, args);
+
+            String polygonClass = line.getOptionValue('c', "http://geovocab.org/geometry#Polygon");
+            String pointPredicate = line.getOptionValue('p', "http://geovocab.org/geometry#long");
+            String pointClass = line.getOptionValue("pC");
+            endpoint = line.getOptionValue('e');
+            output = line.getOptionValue('o');
+            wkt = line.getOptionValue('w') == null ? true : Boolean.parseBoolean(line.getOptionValue('w'));
+
+            String[] metricsName = line.getOptionValues('m');
+            Set<String> metricsCode = new HashSet<String>();
+            for (String s : metricsName) {
+                for (String x : s.split(",")) {
+                    metricsCode.add(x);
+                }
+            }
+            for (String metricCode : metricsCode) {
+                switch (metricCode) {
+                case "1":
+                    metrics.add(new InstancesNumberMetric());
+                    break;
+                case "2":
+                    metrics.add(new PropertiesPerClass());
+                    break;
+                case "3":
+                    if (wkt) {
+                        metrics.add(new AverageSurfaceMetricWKT());
+                    } else {
+                        metrics.add(new AverageSurfaceMetric());
+                    }
+                    break;
+                case "4":
+                    metrics.add(new InstancesOfOtherClassesNumberMetric());
+                    break;
+                case "5":
+                    if (pointClass != null) {
+                        metrics.add(new AveragePointsPerClass(new PropertyImpl(pointPredicate), pointClass));
+                    } else {
+                        metrics.add(new AveragePointsPerClass(new PropertyImpl(pointPredicate)));
+                    }
+                    break;
+                case "6":
+                    metrics.add(new AveragePolygonsPerClass(polygonClass));
+                    break;
+                }
+            }
+
+        } catch (ParseException exp) {
+            // automatically generate the help statement
+            HelpFormatter formatter = new HelpFormatter();
+            formatter.printHelp("qm", options);
+            exp.printStackTrace();
         }
-        model.write(new FileWriter("datacubes/NUTS/NUTS-metric1-6.ttl"), "TTL");
+
+        Model model = ModelFactory.createDefaultModel();
+        for (GeoQualityMetric metric : metrics) {
+            System.out.println("######### Starting " + metric.getClass().getSimpleName() + " ############");
+            Model generateResultsDataCube = metric.generateResultsDataCube(endpoint);
+            model.add(generateResultsDataCube);
+            generateResultsDataCube.write(new FileWriter("/tmp/nuts-" + metric.getClass().getSimpleName() + ".ttl"),
+                    "TTL");
+            System.out.println("######### Terminated " + metric.getClass().getSimpleName() + " ############");
+        }
+        model.write(new FileWriter(output), format);
     }
 }

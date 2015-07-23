@@ -1,9 +1,10 @@
 package org.aksw.geoknow.assessment.count;
 
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.TimeZone;
 
 import org.aksw.geoknow.assessment.GeoQualityMetric;
@@ -18,8 +19,6 @@ import com.hp.hpl.jena.query.QuerySolution;
 import com.hp.hpl.jena.query.ResultSet;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.RDFNode;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.vocabulary.DCTerms;
 import com.hp.hpl.jena.vocabulary.RDFS;
@@ -34,7 +33,8 @@ import com.vividsolutions.jts.io.WKTReader;
  *
  *
  * @author Didier Cherix
- *         </br> R & D, Unister GmbH, Leipzig, Germany</br>
+ *         </br>
+ *         R & D, Unister GmbH, Leipzig, Germany</br>
  *         This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
  *
  */
@@ -73,15 +73,21 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
         this.geometryFactory = JTSFactoryFinder.getGeometryFactory(null);
     }
 
+    private static List<String> blacklist = new ArrayList();
+
+    static {
+        blacklist.add("http://www.w3.org/2003/01/geo/wgs84_pos#Point");
+    }
+
     public Model generateResultsDataCube(Model inputModel) {
 
-        return execute(inputModel,null);
+        return execute(inputModel, null);
     }
 
     private Model execute(Model inputModel, String endpoint) {
         Model cube = createModel();
 
-        Resource dataset ;
+        Resource dataset;
         Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
         dataset = cube.createResource(GK.uri + "Average_Surface", QB.Dataset);
         dataset.addLiteral(RDFS.comment, "Average Surface per class");
@@ -101,68 +107,73 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
         ResultSet result = qExec.execSelect();
         int obsCount = 0;
         while (result.hasNext()) {
+
             double area = 0;
             int i = 0;
             Resource owlClass = result.next().get("class").asResource();
-            System.out.println(owlClass);
-            GET_INSTANCES.setIri("class", owlClass.getURI());
 
-            QueryExecution qexecInstances;
-            if (inputModel != null) {
-                qexecInstances = QueryExecutionFactory.create(GET_INSTANCES.asQuery(), inputModel);
-            } else {
-                qexecInstances = QueryExecutionFactory.sparqlService(endpoint, GET_INSTANCES.asQuery());
-            }
-            for (ResultSet instancesResult = qexecInstances.execSelect(); instancesResult.hasNext();) {
+            if (!blacklist.contains(owlClass.toString())) {
 
-                QuerySolution next = instancesResult.next();
-                String instance = next.get("instance").asResource().getURI();
-                if (instance == null) {
-                    continue;
-                }
-                POLYGON.setIri("instance", instance);
-                QueryExecution qexecMember;
+                System.out.println(owlClass);
+                GET_INSTANCES.setIri("class", owlClass.getURI());
+
+                QueryExecution qexecInstances;
                 if (inputModel != null) {
-                    qexecMember = QueryExecutionFactory.create(POLYGON.asQuery(), inputModel);
+                    qexecInstances = QueryExecutionFactory.create(GET_INSTANCES.asQuery(), inputModel);
                 } else {
-                    qexecMember = QueryExecutionFactory.sparqlService(endpoint, POLYGON.asQuery());
+                    qexecInstances = QueryExecutionFactory.sparqlService(endpoint, GET_INSTANCES.asQuery());
                 }
-                StringBuilder polygonBuilder = new StringBuilder();
-                firstLat = null;
-                firstLong = null;
-                for (ResultSet latLong = qexecMember.execSelect(); latLong.hasNext();) {
-                    processPoint(latLong.next(), polygonBuilder);
-                }
-                if (polygonBuilder.length() > 0) {
-                    area += calculateArea(polygonBuilder);
-                } else {
-                    area = 0;
-                    polygonBuilder.setLength(0);
-                    this.firstLat = null;
-                    this.firstLong = null;
-                    MULTI_POLYGON.setIri("instance", instance);
-                    QueryExecution qexecMultiPolygon;
+                for (ResultSet instancesResult = qexecInstances.execSelect(); instancesResult.hasNext();) {
+
+                    QuerySolution next = instancesResult.next();
+                    String instance = next.get("instance").asResource().getURI();
+                    if (instance == null) {
+                        continue;
+                    }
+                    POLYGON.setIri("instance", instance);
+                    QueryExecution qexecMember;
                     if (inputModel != null) {
-                        qexecMultiPolygon = QueryExecutionFactory.create(MULTI_POLYGON.asQuery(), inputModel);
+                        qexecMember = QueryExecutionFactory.create(POLYGON.asQuery(), inputModel);
                     } else {
-                        qexecMultiPolygon = QueryExecutionFactory.sparqlService(endpoint, MULTI_POLYGON.asQuery());
+                        qexecMember = QueryExecutionFactory.sparqlService(endpoint, POLYGON.asQuery());
                     }
-                    String polygonName = "";
-                    for (ResultSet latLong = qexecMultiPolygon.execSelect(); latLong.hasNext();) {
-                        QuerySolution solution = latLong.next();
-                        if (!polygonName.equals(solution.get("polygon").asNode().getBlankNodeLabel())) {
-                            if (polygonBuilder.length() > 0) {
-                                area += calculateArea(polygonBuilder);
-                            }
-                            this.firstLat = null;
-                            this.firstLong = null;
-                            polygonBuilder.setLength(0);
+                    StringBuilder polygonBuilder = new StringBuilder();
+                    firstLat = null;
+                    firstLong = null;
+                    for (ResultSet latLong = qexecMember.execSelect(); latLong.hasNext();) {
+                        processPoint(latLong.next(), polygonBuilder);
+                    }
+                    if (polygonBuilder.length() > 0) {
+                        area += calculateArea(polygonBuilder);
+                    } else {
+                        area = 0;
+                        polygonBuilder.setLength(0);
+                        this.firstLat = null;
+                        this.firstLong = null;
+                        MULTI_POLYGON.setIri("instance", instance);
+                        QueryExecution qexecMultiPolygon;
+                        if (inputModel != null) {
+                            qexecMultiPolygon = QueryExecutionFactory.create(MULTI_POLYGON.asQuery(), inputModel);
+                        } else {
+                            qexecMultiPolygon = QueryExecutionFactory.sparqlService(endpoint, MULTI_POLYGON.asQuery());
                         }
-                        polygonName = solution.get("polygon").asNode().getBlankNodeLabel();
-                        processPoint(solution, polygonBuilder);
+                        String polygonName = "";
+                        for (ResultSet latLong = qexecMultiPolygon.execSelect(); latLong.hasNext();) {
+                            QuerySolution solution = latLong.next();
+                            if (!polygonName.equals(solution.get("polygon").asNode().getBlankNodeLabel())) {
+                                if (polygonBuilder.length() > 0) {
+                                    area += calculateArea(polygonBuilder);
+                                }
+                                this.firstLat = null;
+                                this.firstLong = null;
+                                polygonBuilder.setLength(0);
+                            }
+                            polygonName = solution.get("polygon").asNode().getBlankNodeLabel();
+                            processPoint(solution, polygonBuilder);
+                        }
                     }
+                    i++;
                 }
-                i++;
             }
             Resource obs = cube.createResource(structureUri + "/obs/" + obsCount, QB.Observation);
             double average = i == 0 ? 0 : area / i;
@@ -228,8 +239,8 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
     }
 
     public static void main(String[] args) throws IOException {
-//        Model m = ModelFactory.createDefaultModel();
-//        m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
+        // Model m = ModelFactory.createDefaultModel();
+        // m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
         GeoQualityMetric metric = new AverageSurfaceMetric();
         Model r = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
         r.write(new FileWriter("datacubes/GeoLinkedData/metric3.ttl"), "TTL");

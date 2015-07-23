@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.hp.hpl.jena.query.ParameterizedSparqlString;
+import com.hp.hpl.jena.query.Query;
 import com.hp.hpl.jena.query.QueryExecution;
 import com.hp.hpl.jena.query.QueryExecutionFactory;
 import com.hp.hpl.jena.query.QuerySolution;
@@ -30,7 +31,8 @@ import com.hp.hpl.jena.vocabulary.RDFS;
  *
  *
  * @author Didier Cherix
- *         </br> R & D, Unister GmbH, Leipzig, Germany</br>
+ *         </br>
+ *         R & D, Unister GmbH, Leipzig, Germany</br>
  *         This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
  *
  */
@@ -38,6 +40,7 @@ public class AveragePointsPerClass implements GeoQualityMetric {
 
     private static final Logger logger = LoggerFactory.getLogger(AveragePointsPerClass.class);
     private final Property property;
+    private String type = null;
     private static final String NAMESPACE = "http://www.geoknow.eu/data-cube/";
     private static final String GET_CLASSES = "SELECT distinct ?class WHERE {?x a ?class } ";
     private static final ParameterizedSparqlString COUNT_LIST = new ParameterizedSparqlString(
@@ -48,17 +51,25 @@ public class AveragePointsPerClass implements GeoQualityMetric {
 
     private static final ParameterizedSparqlString COUNT_GEO = new ParameterizedSparqlString(
             "SELECT ?instance (COUNT (DISTINCT ?geo) as ?count) "
-                    + "WHERE { ?instance a ?class . ?instance ?property ?geo . } "
+                    + "WHERE { ?instance a ?class . ?instance ?property ?geo .} "
+                    + "GROUP BY ?instance");
+
+    private static final ParameterizedSparqlString COUNT_GEO_TYPE = new ParameterizedSparqlString(
+            "SELECT ?instance (COUNT (DISTINCT ?geo) as ?count) "
+                    + "WHERE { ?instance a ?class . ?instance ?property ?geo . ?geo a ?type . } "
                     + "GROUP BY ?instance");
 
     private final String structureUri;
-    private final static String type ="http://www.w3.org/2003/01/geo/wgs84_pos#Point";
 
     public AveragePointsPerClass(Property p) {
         this.property = p;
         this.structureUri = NAMESPACE + "metric/" + property.hashCode();
     }
 
+    public AveragePointsPerClass(Property p, String type) {
+        this(p);
+        this.type = type;
+    }
 
     public Model generateResultsDataCube(Model inputModel) {
 
@@ -105,18 +116,26 @@ public class AveragePointsPerClass implements GeoQualityMetric {
             }
             Resource obs = cube.createResource(structureUri + "/obs/" + obsCount, QB.Observation);
             double average = i == 0 ? 0 : sum / i;
-            if(average == 0){
+            if (average == 0) {
                 logger.info("Proccesing class {} with geometry", owlClass);
                 sum = 0;
                 i = 0;
-                COUNT_GEO.setIri("class", owlClass.getURI());
-                COUNT_GEO.setIri("property", property.getURI());
-//                COUNT_GEO.setIri("type", type);
+                Query query;
+                if (type != null) {
+                    COUNT_GEO_TYPE.setIri("class", owlClass.getURI());
+                    COUNT_GEO_TYPE.setIri("property", property.getURI());
+                    COUNT_GEO_TYPE.setIri("type", type);
+                    query = COUNT_GEO_TYPE.asQuery();
+                } else {
+                    COUNT_GEO.setIri("class", owlClass.getURI());
+                    COUNT_GEO.setIri("property", property.getURI());
+                    query = COUNT_GEO.asQuery();
+                }
                 execCount = null;
                 if (inputModel != null) {
-                    execCount = QueryExecutionFactory.create(COUNT_GEO.asQuery(), inputModel);
+                    execCount = QueryExecutionFactory.create(query, inputModel);
                 } else {
-                    execCount = QueryExecutionFactory.sparqlService(endpoint, COUNT_GEO.asQuery());
+                    execCount = QueryExecutionFactory.sparqlService(endpoint, query);
                 }
                 for (ResultSet resultCount = execCount.execSelect(); resultCount.hasNext();) {
                     QuerySolution next = resultCount.next();
@@ -170,7 +189,8 @@ public class AveragePointsPerClass implements GeoQualityMetric {
     public static void main(String[] args) throws IOException {
         // Model m = ModelFactory.createDefaultModel();
         // m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
-        GeoQualityMetric metric = new AveragePointsPerClass(new PropertyImpl("http://www.w3.org/2003/01/geo/wgs84_pos#lat_long"));
+        GeoQualityMetric metric = new AveragePointsPerClass(
+                new PropertyImpl("http://www.w3.org/2003/01/geo/wgs84_pos#lat_long"));
         Model r = metric.generateResultsDataCube("http://linkedgeodata.org/sparql");
         r.write(new FileWriter("datacubes/LinkedGeoData/metric5.ttl"), "TTL");
     }
