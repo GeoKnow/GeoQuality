@@ -69,6 +69,11 @@ public class Run1_6 {
         try {
             // parse the command line arguments
             CommandLine line = parser.parse(options, args);
+            if (line.hasOption('h')){
+                HelpFormatter formatter = new HelpFormatter();
+                formatter.printHelp("java -jar metrics.jar", options,true);
+                return;
+            }
 
             String polygonClass = line.getOptionValue('c', "http://geovocab.org/geometry#Polygon");
             String pointPredicate = line.getOptionValue('p', "http://geovocab.org/geometry#long");
@@ -116,10 +121,9 @@ public class Run1_6 {
             }
 
         } catch (ParseException exp) {
-            // automatically generate the help statement
             HelpFormatter formatter = new HelpFormatter();
-            formatter.printHelp("qm", options);
-            exp.printStackTrace();
+            formatter.printHelp("java -jar metrics.jar", options,true);
+            return;
         }
 
         Model model = ModelFactory.createDefaultModel();
