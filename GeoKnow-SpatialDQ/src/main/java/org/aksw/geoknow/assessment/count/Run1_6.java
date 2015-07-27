@@ -17,6 +17,7 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
+import com.google.common.collect.Lists;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
@@ -55,6 +56,8 @@ public class Run1_6 {
                 .hasArg(true).required(true).build());
         options.addOption(Option.builder("w").desc("use wkt for polygon description").longOpt("wkt")
                 .hasArg(false).required(false).build());
+        options.addOption(Option.builder("g").desc("graph to use").longOpt("graph")
+                .hasArg(true).required(false).build());
         options.addOption(Option.builder("f")
                 .desc("output format possible values:\n\tRDF/XML (default)\n\tRDF/XML-ABBREV\n\tN-TRIPLE\n\tTURTLE or\tTTL\n\tN3")
                 .longOpt("format")
@@ -64,6 +67,7 @@ public class Run1_6 {
         String output = "";
         String format = null;
         boolean wkt = true;
+        List<String> defaultGraphs = null;
 
         CommandLineParser parser = new DefaultParser();
         try {
@@ -81,6 +85,13 @@ public class Run1_6 {
             endpoint = line.getOptionValue('e');
             output = line.getOptionValue('o');
             wkt = line.getOptionValue('w') == null ? true : Boolean.parseBoolean(line.getOptionValue('w'));
+            format = (String) (line.getOptionValue('f') == null ? true : line.getOptionValue('f'));
+            if(line.getOptionValues('g')!=null){
+                defaultGraphs = Lists.newLinkedList();
+                for(String g : line.getOptionValues('g')){
+                    defaultGraphs.add(g);
+                }
+            }
 
             String[] metricsName = line.getOptionValues('m');
             Set<String> metricsCode = new HashSet<String>();
@@ -92,30 +103,30 @@ public class Run1_6 {
             for (String metricCode : metricsCode) {
                 switch (metricCode) {
                 case "1":
-                    metrics.add(new InstancesNumberMetric());
+                    metrics.add(new InstancesNumberMetric(defaultGraphs));
                     break;
                 case "2":
-                    metrics.add(new PropertiesPerClass());
+                    metrics.add(new PropertiesPerClass(defaultGraphs));
                     break;
                 case "3":
                     if (wkt) {
-                        metrics.add(new AverageSurfaceMetricWKT());
+                        metrics.add(new AverageSurfaceMetricWKT(defaultGraphs));
                     } else {
-                        metrics.add(new AverageSurfaceMetric());
+                        metrics.add(new AverageSurfaceMetric(defaultGraphs));
                     }
                     break;
                 case "4":
-                    metrics.add(new InstancesOfOtherClassesNumberMetric());
+                    metrics.add(new InstancesOfOtherClassesNumberMetric(defaultGraphs));
                     break;
                 case "5":
                     if (pointClass != null) {
-                        metrics.add(new AveragePointsPerClass(new PropertyImpl(pointPredicate), pointClass));
+                        metrics.add(new AveragePointsPerClass(new PropertyImpl(pointPredicate), pointClass,defaultGraphs));
                     } else {
-                        metrics.add(new AveragePointsPerClass(new PropertyImpl(pointPredicate)));
+                        metrics.add(new AveragePointsPerClass(new PropertyImpl(pointPredicate),defaultGraphs));
                     }
                     break;
                 case "6":
-                    metrics.add(new AveragePolygonsPerClass(polygonClass));
+                    metrics.add(new AveragePolygonsPerClass(polygonClass, defaultGraphs));
                     break;
                 }
             }

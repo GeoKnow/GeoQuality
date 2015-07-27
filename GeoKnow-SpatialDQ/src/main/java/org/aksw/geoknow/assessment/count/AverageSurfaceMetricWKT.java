@@ -50,37 +50,89 @@ public class AverageSurfaceMetricWKT implements GeoQualityMetric {
 
     private static final String STRUCTURE = NAMESPACE + "metric3";
 
-    private String structureUri;
-
-    private GeometryFactory geometryFactory;
-
-    private Double firstLong;
-    private Double firstLat;
-
     private static final ParameterizedSparqlString GET_INSTANCES = new ParameterizedSparqlString(
             "SELECT distinct ?instance WHERE {?instance a ?class}");
+
     private static final String GET_CLASSES = "SELECT distinct ?class WHERE {?x a ?class } ";
+
     private static final ParameterizedSparqlString POLYGON = new ParameterizedSparqlString(
             "PREFIX list: <http://jena.hpl.hp.com/ARQ/list#> "
                     + "prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> "
                     + "prefix ngeo: <http://geovocab.org/geometry#> "
                     + "SELECT ?geometry  "
                     + "WHERE { { ?instance <http://www.opengis.net/ont/geosparql#asWKT> ?geometry . } "
-                    + "UNION { ?instance ngeo:geometry ?g . ?g <http://www.opengis.net/ont/geosparql#asWKT> ?geometry .} }");
+                    + "UNION { ?instance ngeo:geometry ?g . ?g <http://www.opengis.net/ont/geosparql#asWKT> ?geometry .} UNION "
+                    + "  { ?instance <http://www.w3.org/2003/01/geo/wgs84_pos#Geometry> ?geometry . } "
+                    + "UNION { ?instance ngeo:geometry ?g . ?g <http://www.w3.org/2003/01/geo/wgs84_pos#Geometry> ?geometry .}}");
     private static List<String> blacklist = new ArrayList();
-
     static {
         blacklist.add("http://www.w3.org/2003/01/geo/wgs84_pos#Point");
     }
+
+    public static void main(String[] args) throws IOException {
+        // Model m = ModelFactory.createDefaultModel();
+        // m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
+        GeoQualityMetric metric = new AverageSurfaceMetricWKT();
+        Model r = metric.generateResultsDataCube("http://akswnc3.informatik.uni-leipzig.de:8850/sparql");
+        r.write(new FileWriter("datacubes/LinkedGeoData/metric3b.ttl"), "TTL");
+    }
+    private String structureUri;
+    private GeometryFactory geometryFactory;
+    private Double firstLong;
+
+    private Double firstLat;
+
+    private List<String> defaultGraphs = null;
+
+
 
     public AverageSurfaceMetricWKT() {
         this.structureUri = NAMESPACE + "metric/averageSurface";
         this.geometryFactory = JTSFactoryFinder.getGeometryFactory(null);
     }
 
-    public Model generateResultsDataCube(Model inputModel) {
 
-        return execute(inputModel, null);
+
+    public AverageSurfaceMetricWKT(List<String> defaultGraphs) {
+        this();
+        this.defaultGraphs = defaultGraphs;
+    }
+
+    private double calculateArea(String wktString) {
+        WKTReader reader = new WKTReader(geometryFactory);
+
+        try {
+            Geometry geometry = reader.read(wktString);
+            if (geometry instanceof Polygon) {
+                double polygonArea = ((Polygon) geometry).getArea();
+                return polygonArea;
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    private Model createModel() {
+        Model cubeData = ModelFactory.createDefaultModel();
+        Resource structure = cubeData.createResource(STRUCTURE, QB.DataStructureDefinition);
+
+        Resource c1 = cubeData.createResource(STRUCTURE + "/c1", QB.ComponentSpecification);
+        c1.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Instance", "en"));
+        c1.addProperty(QB.dimension, GK.DIM.Instance);
+
+        Resource c2 = cubeData.createResource(STRUCTURE + "/c2", QB.ComponentSpecification);
+        c2.addProperty(QB.measure, GK.MEASURE.Average);
+        c2.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Number of Properties", "en"));
+
+        structure.addProperty(QB.component, c1);
+        structure.addProperty(QB.component, c2);
+
+        cubeData.add(GK.DIM.ClassStatements);
+        cubeData.add(GK.DIM.PropertyStatements);
+        cubeData.add(GK.MEASURE.AverageStatements);
+
+        return cubeData;
     }
 
     private Model execute(Model inputModel, String endpoint) {
@@ -104,7 +156,7 @@ public class AverageSurfaceMetricWKT implements GeoQualityMetric {
         if (inputModel != null) {
             qExec = QueryExecutionFactory.create(GET_CLASSES, inputModel);
         } else {
-            qExec = QueryExecutionFactory.sparqlService(endpoint, GET_CLASSES);
+            qExec = QueryExecutionFactory.sparqlService(endpoint, GET_CLASSES, defaultGraphs, defaultGraphs);
         }
         ResultSet result = qExec.execSelect();
         int obsCount = 0;
@@ -125,7 +177,8 @@ public class AverageSurfaceMetricWKT implements GeoQualityMetric {
                 if (inputModel != null) {
                     qexecInstances = QueryExecutionFactory.create(GET_INSTANCES.asQuery(), inputModel);
                 } else {
-                    qexecInstances = QueryExecutionFactory.sparqlService(endpoint, GET_INSTANCES.asQuery());
+                    qexecInstances = QueryExecutionFactory.sparqlService(endpoint, GET_INSTANCES.asQuery(),
+                            defaultGraphs, defaultGraphs);
                 }
 
                 for (ResultSet instancesResult = qexecInstances.execSelect(); instancesResult.hasNext();) {
@@ -142,7 +195,8 @@ public class AverageSurfaceMetricWKT implements GeoQualityMetric {
                     if (inputModel != null) {
                         qexecMember = QueryExecutionFactory.create(POLYGON.asQuery(), inputModel);
                     } else {
-                        qexecMember = QueryExecutionFactory.sparqlService(endpoint, POLYGON.asQuery());
+                        qexecMember = QueryExecutionFactory.sparqlService(endpoint, POLYGON.asQuery(), defaultGraphs,
+                                defaultGraphs);
                     }
 
                     try {
@@ -175,54 +229,13 @@ public class AverageSurfaceMetricWKT implements GeoQualityMetric {
         return cube;
     }
 
-    private double calculateArea(String wktString) {
-        WKTReader reader = new WKTReader(geometryFactory);
+    public Model generateResultsDataCube(Model inputModel) {
 
-        try {
-            Geometry geometry = reader.read(wktString);
-            if (geometry instanceof Polygon) {
-                double polygonArea = ((Polygon) geometry).getArea();
-                System.out.println("Area: " + polygonArea);
-                return polygonArea;
-            }
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return 0;
+        return execute(inputModel, null);
     }
 
     public Model generateResultsDataCube(String endpointUrl) {
         return this.execute(null, endpointUrl);
-    }
-
-    private Model createModel() {
-        Model cubeData = ModelFactory.createDefaultModel();
-        Resource structure = cubeData.createResource(STRUCTURE, QB.DataStructureDefinition);
-
-        Resource c1 = cubeData.createResource(STRUCTURE + "/c1", QB.ComponentSpecification);
-        c1.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Instance", "en"));
-        c1.addProperty(QB.dimension, GK.DIM.Instance);
-
-        Resource c2 = cubeData.createResource(STRUCTURE + "/c2", QB.ComponentSpecification);
-        c2.addProperty(QB.measure, GK.MEASURE.Average);
-        c2.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Number of Properties", "en"));
-
-        structure.addProperty(QB.component, c1);
-        structure.addProperty(QB.component, c2);
-
-        cubeData.add(GK.DIM.ClassStatements);
-        cubeData.add(GK.DIM.PropertyStatements);
-        cubeData.add(GK.MEASURE.AverageStatements);
-
-        return cubeData;
-    }
-
-    public static void main(String[] args) throws IOException {
-        // Model m = ModelFactory.createDefaultModel();
-        // m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
-        GeoQualityMetric metric = new AverageSurfaceMetricWKT();
-        Model r = metric.generateResultsDataCube("http://akswnc3.informatik.uni-leipzig.de:8850/sparql");
-        r.write(new FileWriter("datacubes/LinkedGeoData/metric3b.ttl"), "TTL");
     }
 
     private String prettyPrint(StopWatch watch) {

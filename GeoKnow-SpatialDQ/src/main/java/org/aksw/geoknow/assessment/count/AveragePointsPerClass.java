@@ -3,6 +3,7 @@ package org.aksw.geoknow.assessment.count;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
+import java.util.List;
 import java.util.TimeZone;
 
 import org.aksw.geoknow.assessment.GeoQualityMetric;
@@ -39,25 +40,37 @@ import com.hp.hpl.jena.vocabulary.RDFS;
 public class AveragePointsPerClass implements GeoQualityMetric {
 
     private static final Logger logger = LoggerFactory.getLogger(AveragePointsPerClass.class);
-    private final Property property;
-    private String type = null;
+
     private static final String NAMESPACE = "http://www.geoknow.eu/data-cube/";
+
     private static final String GET_CLASSES = "SELECT distinct ?class WHERE {?x a ?class } ";
+
     private static final ParameterizedSparqlString COUNT_LIST = new ParameterizedSparqlString(
             "PREFIX list: <http://jena.hpl.hp.com/ARQ/list#> "
                     + "SELECT ?instance (COUNT (DISTINCT ?member) as ?count) "
                     + "WHERE { ?instance a ?class . ?instance ?property ?list . ?list list:member ?member . } "
                     + "GROUP BY ?instance");
-
     private static final ParameterizedSparqlString COUNT_GEO = new ParameterizedSparqlString(
             "SELECT ?instance (COUNT (DISTINCT ?geo) as ?count) "
                     + "WHERE { ?instance a ?class . ?instance ?property ?geo .} "
                     + "GROUP BY ?instance");
-
     private static final ParameterizedSparqlString COUNT_GEO_TYPE = new ParameterizedSparqlString(
             "SELECT ?instance (COUNT (DISTINCT ?geo) as ?count) "
                     + "WHERE { ?instance a ?class . ?instance ?property ?geo . ?geo a ?type . } "
                     + "GROUP BY ?instance");
+
+    public static void main(String[] args) throws IOException {
+        // Model m = ModelFactory.createDefaultModel();
+        // m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
+        GeoQualityMetric metric = new AveragePointsPerClass(
+                new PropertyImpl("http://www.w3.org/2003/01/geo/wgs84_pos#lat_long"));
+        Model r = metric.generateResultsDataCube("http://linkedgeodata.org/sparql");
+        r.write(new FileWriter("datacubes/LinkedGeoData/metric5.ttl"), "TTL");
+    }
+
+    private final Property property;
+    private String type = null;
+    private List<String> defaultGraphs = null;
 
     private final String structureUri;
 
@@ -66,17 +79,46 @@ public class AveragePointsPerClass implements GeoQualityMetric {
         this.structureUri = NAMESPACE + "metric/" + property.hashCode();
     }
 
+    public AveragePointsPerClass(Property property, List<String> defaultGraphs) {
+        this(property);
+        this.defaultGraphs = defaultGraphs;
+    }
+
     public AveragePointsPerClass(Property p, String type) {
         this(p);
         this.type = type;
     }
 
-    public Model generateResultsDataCube(Model inputModel) {
+    public AveragePointsPerClass(Property property, String type, List<String> defaultGraphs) {
+        this(property, type);
+        this.defaultGraphs = defaultGraphs;
+    }
 
-        QueryExecution queryExec = QueryExecutionFactory.create(GET_CLASSES,
-                inputModel);
 
-        return execute(inputModel, queryExec, null);
+    private Model createModel() {
+        Model cubeData = ModelFactory.createDefaultModel();
+        cubeData.createResource(NAMESPACE + "/structure/metric" + property.getLocalName(), QB.MeasureProperty);
+
+        Resource structure = cubeData.createResource(structureUri, QB.DataStructureDefinition);
+
+        Resource c1 = cubeData.createResource(structure + "/c1", QB.ComponentSpecification);
+        c1.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Class", "en"));
+        c1.addProperty(QB.dimension, GK.DIM.Class);
+
+        Resource c2 = cubeData.createResource(structure + "/c2", QB.ComponentSpecification);
+        c2.addProperty(RDFS.label,
+                cubeData.createLiteral("Component Specification of Average of " + property + " per Instance", "en"));
+        c2.addProperty(QB.measure, GK.MEASURE.Average);
+
+        structure.addProperty(QB.component, c1);
+        structure.addProperty(RDFS.label,
+                cubeData.createLiteral("A Data Structure Definition for Instances Number Metric", "en"));
+        structure.addProperty(QB.component, c2);
+
+        cubeData.add(GK.MEASURE.AverageStatements);
+        cubeData.add(GK.DIM.ClassStatements);
+        // cubeData.commit();
+        return cubeData;
     }
 
     private Model execute(Model inputModel, QueryExecution queryExec, String endpoint) {
@@ -106,7 +148,8 @@ public class AveragePointsPerClass implements GeoQualityMetric {
             if (inputModel != null) {
                 execCount = QueryExecutionFactory.create(COUNT_LIST.asQuery(), inputModel);
             } else {
-                execCount = QueryExecutionFactory.sparqlService(endpoint, COUNT_LIST.asQuery());
+                execCount = QueryExecutionFactory.sparqlService(endpoint, COUNT_LIST.asQuery(), defaultGraphs,
+                        defaultGraphs);
             }
             for (ResultSet resultCount = execCount.execSelect(); resultCount.hasNext();) {
                 QuerySolution next = resultCount.next();
@@ -135,7 +178,7 @@ public class AveragePointsPerClass implements GeoQualityMetric {
                 if (inputModel != null) {
                     execCount = QueryExecutionFactory.create(query, inputModel);
                 } else {
-                    execCount = QueryExecutionFactory.sparqlService(endpoint, query);
+                    execCount = QueryExecutionFactory.sparqlService(endpoint, query, defaultGraphs, defaultGraphs);
                 }
                 for (ResultSet resultCount = execCount.execSelect(); resultCount.hasNext();) {
                     QuerySolution next = resultCount.next();
@@ -154,45 +197,19 @@ public class AveragePointsPerClass implements GeoQualityMetric {
         return cube;
     }
 
+    public Model generateResultsDataCube(Model inputModel) {
+
+        QueryExecution queryExec = QueryExecutionFactory.create(GET_CLASSES,
+                inputModel);
+
+        return execute(inputModel, queryExec, null);
+    }
+
     public Model generateResultsDataCube(String endpointUrl) {
-        QueryExecution queryExec = QueryExecutionFactory.sparqlService(endpointUrl, GET_CLASSES);
+        QueryExecution queryExec = QueryExecutionFactory.sparqlService(endpointUrl, GET_CLASSES, defaultGraphs,
+                defaultGraphs);
 
         return execute(null, queryExec, endpointUrl);
-    }
-
-    private Model createModel() {
-        Model cubeData = ModelFactory.createDefaultModel();
-        cubeData.createResource(NAMESPACE + "/structure/metric" + property.getLocalName(), QB.MeasureProperty);
-
-        Resource structure = cubeData.createResource(structureUri, QB.DataStructureDefinition);
-
-        Resource c1 = cubeData.createResource(structure + "/c1", QB.ComponentSpecification);
-        c1.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Class", "en"));
-        c1.addProperty(QB.dimension, GK.DIM.Class);
-
-        Resource c2 = cubeData.createResource(structure + "/c2", QB.ComponentSpecification);
-        c2.addProperty(RDFS.label,
-                cubeData.createLiteral("Component Specification of Average of " + property + " per Instance", "en"));
-        c2.addProperty(QB.measure, GK.MEASURE.Average);
-
-        structure.addProperty(QB.component, c1);
-        structure.addProperty(RDFS.label,
-                cubeData.createLiteral("A Data Structure Definition for Instances Number Metric", "en"));
-        structure.addProperty(QB.component, c2);
-
-        cubeData.add(GK.MEASURE.AverageStatements);
-        cubeData.add(GK.DIM.ClassStatements);
-        // cubeData.commit();
-        return cubeData;
-    }
-
-    public static void main(String[] args) throws IOException {
-        // Model m = ModelFactory.createDefaultModel();
-        // m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
-        GeoQualityMetric metric = new AveragePointsPerClass(
-                new PropertyImpl("http://www.w3.org/2003/01/geo/wgs84_pos#lat_long"));
-        Model r = metric.generateResultsDataCube("http://linkedgeodata.org/sparql");
-        r.write(new FileWriter("datacubes/LinkedGeoData/metric5.ttl"), "TTL");
     }
 
 }

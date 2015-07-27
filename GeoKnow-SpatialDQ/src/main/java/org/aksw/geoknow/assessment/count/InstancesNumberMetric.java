@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.TimeZone;
 
 import org.aksw.geoknow.assessment.GeoQualityMetric;
@@ -26,7 +27,8 @@ import com.hp.hpl.jena.vocabulary.RDFS;
  * This metric return the number of instance for each class in the data set.
  *
  * @author Didier Cherix
- *         </br> R & D, Unister GmbH, Leipzig, Germany</br>
+ *         </br>
+ *         R & D, Unister GmbH, Leipzig, Germany</br>
  *         This code is a part of the <a href="http://geoknow.eu/Welcome.html">GeoKnow</a> project.
  *
  */
@@ -38,51 +40,24 @@ public class InstancesNumberMetric implements GeoQualityMetric {
 
     private static final String STRUCTURE = NAMESPACE + "structure/metric1";
 
-    public Model generateResultsDataCube(Model inputModel) {
-
-        return execute(inputModel, null);
+    public static void main(String[] args) throws IOException {
+        InstancesNumberMetric metric = new InstancesNumberMetric();
+        Model r = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
+        r.write(new FileWriter("datacubes/GeoLinkedData/metric1.ttl"), "TTL");
     }
 
-    private Model execute(Model inputModel, String endpoint) {
-        Model cubeData = createModel();
-        Resource dataSet;
+    private List<String> defaultGraphs = null;
 
-        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
-        dataSet = cubeData.createResource(GK.uri + "Instance_Count_", QB.Dataset);
-        dataSet.addLiteral(RDFS.comment, "Number of instances for a class");
-        dataSet.addLiteral(DCTerms.date, cubeData.createTypedLiteral(calendar));
-        dataSet.addLiteral(DCTerms.publisher, "R & D, Unister GmbH, Geoknow");
-        if (endpoint != null) {
-            dataSet.addProperty(DCTerms.source, endpoint);
-        }
+    public InstancesNumberMetric() {
+    }
 
-        cubeData.add(cubeData.createStatement(dataSet, QB.structure,
-                cubeData.createResource(STRUCTURE)));
-        QueryExecution queryExec;
-        if (inputModel != null) {
-            queryExec = QueryExecutionFactory.create(GET_CLASSES,
-                    inputModel);
-        } else {
-            queryExec = QueryExecutionFactory.sparqlService(endpoint, GET_CLASSES);
-        }
-        ResultSet result = queryExec.execSelect();
-        int i = 0;
-        while (result.hasNext()) {
-            QuerySolution solution = result.next();
-            RDFNode owlClass = solution.get("class");
-            long instances = solution.getLiteral("count").getLong();
-            Resource obs = cubeData.createResource(NAMESPACE + "observation/" + i, QB.Observation);
-            obs.addLiteral(GK.MEASURE.InstanceCount, instances);
-            obs.addProperty(GK.DIM.Class, cubeData.createResource(owlClass.toString()));
-            obs.addProperty(QB.dataset, dataSet);
-            i++;
-        }
-        return cubeData;
+    public InstancesNumberMetric(List<String> defaultGraphs) {
+        super();
+        this.defaultGraphs = defaultGraphs;
     }
 
     private Model createModel() {
         Model cubeData = ModelFactory.createDefaultModel();
-
 
         Resource structure = cubeData.createResource(STRUCTURE,
                 QB.DataStructureDefinition);
@@ -105,15 +80,51 @@ public class InstancesNumberMetric implements GeoQualityMetric {
         return cubeData;
     }
 
+    private Model execute(Model inputModel, String endpoint) {
+        Model cubeData = createModel();
+        Resource dataSet;
+
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+        dataSet = cubeData.createResource(GK.uri + "Instance_Count_", QB.Dataset);
+        dataSet.addLiteral(RDFS.comment, "Number of instances for a class");
+        dataSet.addLiteral(DCTerms.date, cubeData.createTypedLiteral(calendar));
+        dataSet.addLiteral(DCTerms.publisher, "R & D, Unister GmbH, Geoknow");
+        if (endpoint != null) {
+            dataSet.addProperty(DCTerms.source, endpoint);
+        }
+
+        cubeData.add(cubeData.createStatement(dataSet, QB.structure,
+                cubeData.createResource(STRUCTURE)));
+        QueryExecution queryExec;
+        if (inputModel != null) {
+            queryExec = QueryExecutionFactory.create(GET_CLASSES,
+                    inputModel);
+        } else {
+            queryExec = QueryExecutionFactory.sparqlService(endpoint, GET_CLASSES, defaultGraphs, defaultGraphs);
+        }
+        ResultSet result = queryExec.execSelect();
+        int i = 0;
+        while (result.hasNext()) {
+            QuerySolution solution = result.next();
+            RDFNode owlClass = solution.get("class");
+            long instances = solution.getLiteral("count").getLong();
+            Resource obs = cubeData.createResource(NAMESPACE + "observation/" + i, QB.Observation);
+            obs.addLiteral(GK.MEASURE.InstanceCount, instances);
+            obs.addProperty(GK.DIM.Class, cubeData.createResource(owlClass.toString()));
+            obs.addProperty(QB.dataset, dataSet);
+            i++;
+        }
+        return cubeData;
+    }
+
+    public Model generateResultsDataCube(Model inputModel) {
+
+        return execute(inputModel, null);
+    }
+
     public Model generateResultsDataCube(String endpointUrl) {
 
         return this.execute(null, endpointUrl);
-    }
-
-    public static void main(String[] args) throws IOException {
-        InstancesNumberMetric metric = new InstancesNumberMetric();
-        Model r = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
-        r.write(new FileWriter("datacubes/GeoLinkedData/metric1.ttl"), "TTL");
     }
 
 }

@@ -1,0 +1,2028 @@
+<http://www.geoknow.eu/Instance_of_other_classes_Count>
+      a       <http://purl.org/linked-data/cube#DataSet> ;
+      <http://www.w3.org/2000/01/rdf-schema#comment>
+              "Number of instances of other classes for a class"^^<http://www.w3.org/2001/XMLSchema#string> ;
+      <http://purl.org/dc/terms/date>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://purl.org/dc/terms/publisher>
+              "R & D, Unister GmbH, Geoknow"^^<http://www.w3.org/2001/XMLSchema#string> ;
+      <http://purl.org/dc/terms/source>
+              "http://unidev245:8890/sparql" .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/26>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#mountainrange> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric2>
+      a       <http://purl.org/linked-data/cube#DataStructureDefinition> ;
+      <http://purl.org/linked-data/cube#component>
+              <http://www.geoknow.eu/data-cube/metric2/c1> , <http://www.geoknow.eu/data-cube/metric2/c2> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation5>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapValue> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/structure/metric1/c2>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Number of Instances"@en ;
+      <http://purl.org/linked-data/cube#measure>
+              <http://www.geoknow.eu/properties/measure/InstanceCount> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation12>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/ns/sparql-service-description#Service> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation2>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMap> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              1 .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/27>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#sea> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/9>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapFText> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/17>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Ontology> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation29>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/acco/ns#AccomodationFeature> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation26>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#mountainrange> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              4 .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/c2>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Average of http://www.w3.org/2003/01/geo/wgs84_pos#lat per Instance"@en ;
+      <http://purl.org/linked-data/cube#measure>
+              <http://www.geoknow.eu/properties/measure/Average> .
+
+<http://www.geoknow.eu/properties/measure/Average>
+      a       <http://purl.org/linked-data/cube#MeasureProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Average"@en .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/19>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/Region> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/1>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadStorage> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/9>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapFText> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/structure/metric1/c1>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Class"@en ;
+      <http://purl.org/linked-data/cube#dimension>
+              <http://www.geoknow.eu/properties/Class> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation4>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation3>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMap> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              7 .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/8>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation11>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-string> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              1 .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/28>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/Perimeter> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/18>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#OntologyProperty> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/0>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/18>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#OntologyProperty> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation25>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#water> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              4 .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/c1>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Class"@en ;
+      <http://purl.org/linked-data/cube#dimension>
+              <http://www.geoknow.eu/properties/Class> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/30>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/acco/ns#Hotel> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/14>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Class> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric4>
+      a       <http://purl.org/linked-data/cube#DataStructureDefinition> ;
+      <http://purl.org/linked-data/cube#component>
+              <http://www.geoknow.eu/data-cube/metric4/c2> , <http://www.geoknow.eu/data-cube/metric4/c1> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/8>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/30>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/acco/ns#Hotel> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/29>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/acco/ns#AccomodationFeature> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation7>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapColumn> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation14>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Class> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              4 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation0>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              55 .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/3>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMap> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation24>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#lake> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              4 .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/15>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/31>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#beach> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              9.598838869050352E-6 .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/19>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/Region> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/properties/TimeStamp>
+      a       <http://purl.org/linked-data/cube#DimensionProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Time Stamp"@en .
+
+<http://www.geoknow.eu/data-cube/metric4/observation6>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapATable> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric3>
+      a       <http://purl.org/linked-data/cube#DataStructureDefinition> ;
+      <http://purl.org/linked-data/cube#component>
+              <http://www.geoknow.eu/data-cube/metric3/c1> , <http://www.geoknow.eu/data-cube/metric3/c2> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/7>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapColumn> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/31>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#beach> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation1>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadStorage> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              4 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation13>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              2 .
+
+<http://www.geoknow.eu/data-cube/observation/19>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Ontology> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/2>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMap> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation23>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.opengis.net/ont/geosparql#Feature> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              4 .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/16>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric4/c2>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Number of Other Classes"@en ;
+      <http://purl.org/linked-data/cube#measure>
+              <http://www.geoknow.eu/properties/measure/OtherClasses> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/28>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/Perimeter> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation1>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadStorage> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/22>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://xmlns.com/foaf/0.1/Person> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation19>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/Region> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/15>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/properties/Property>
+      a       <http://purl.org/linked-data/cube#DimensionProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Instance name"@en , "Property name"@en .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/18>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#OntologyProperty> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/12>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/ns/sparql-service-description#Service> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/AveragePoints>
+      a       <http://purl.org/linked-data/cube#DataSet> ;
+      <http://www.w3.org/2000/01/rdf-schema#comment>
+              "Points per class"^^<http://www.w3.org/2001/XMLSchema#string> ;
+      <http://purl.org/dc/terms/date>
+              "2015-07-27T09:40:41.605Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://purl.org/dc/terms/publisher>
+              "R & D, Unister GmbH, Geoknow"^^<http://www.w3.org/2001/XMLSchema#string> ;
+      <http://purl.org/dc/terms/source>
+              "http://unidev245:8890/sparql" ;
+      <http://purl.org/linked-data/cube#structure>
+              <http://www.geoknow.eu/data-cube/metric/1020701218> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation22>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://xmlns.com/foaf/0.1/Person> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric2/c1>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Class"@en ;
+      <http://purl.org/linked-data/cube#dimension>
+              <http://www.geoknow.eu/properties/Class> .
+
+<http://www.geoknow.eu/data-cube/observation/18>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapFText> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "4"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/29>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/acco/ns#AccomodationFeature> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/5>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapValue> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/observation/28>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#sea> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "27"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/27>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#sea> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric4/c3>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Timestamp"@en ;
+      <http://purl.org/linked-data/cube#dimension>
+              <http://www.geoknow.eu/properties/TimeStamp> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation0>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/23>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.opengis.net/ont/geosparql#Feature> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/28>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/Perimeter> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/Properties_per_Class1437990034790>
+      a       <http://purl.org/linked-data/cube#DataSet> ;
+      <http://www.w3.org/2000/01/rdf-schema#comment>
+              "Properties per class"^^<http://www.w3.org/2001/XMLSchema#string> ;
+      <http://purl.org/dc/terms/date>
+              "2015-07-27T09:40:34.79Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://purl.org/dc/terms/publisher>
+              "R & D, Unister GmbH, Geoknow"^^<http://www.w3.org/2001/XMLSchema#string> ;
+      <http://purl.org/linked-data/cube#structure>
+              <http://www.geoknow.eu/data-cube/metric2> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/14>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Class> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/17>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Ontology> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/13>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/c2>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Average of http://www.opengis.net/ont/geosparql#Feature per Instance"@en ;
+      <http://purl.org/linked-data/cube#measure>
+              <http://www.geoknow.eu/properties/measure/Average> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation21>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/stuff/rev#Review> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              8 .
+
+<http://www.geoknow.eu/data-cube/observation/17>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMap> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation31>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#beach> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              38550 .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/4>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/observation/27>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapValue> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "8"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation3>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMap> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/27>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#sea> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "644.6939246175211"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation17>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Ontology> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/24>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#lake> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/16>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/17>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Ontology> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/10>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapATable> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation30>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/acco/ns#Hotel> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/observation/16>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.opengis.net/ont/geosparql#Feature> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "82628"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation30>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/acco/ns#Hotel> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              8 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation20>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/RegionHierarchyClosure> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              5 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation10>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapATable> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/observation/1>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#water> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "14595"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/7>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapColumn> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation20>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/RegionHierarchyClosure> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric4/observation18>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#OntologyProperty> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              4 .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/26>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#mountainrange> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.016520454039497357"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric4/c1>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Class"@en ;
+      <http://purl.org/linked-data/cube#dimension>
+              <http://www.geoknow.eu/properties/Class> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation2>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMap> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/25>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#water> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/29>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/acco/ns#AccomodationFeature> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube//structure/metric-1829421967>
+      a       <http://purl.org/linked-data/cube#MeasureProperty> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/16>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/11>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-string> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/15>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/observation/15>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#beach> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "38550"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric2/c2>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Number of Properties"@en ;
+      <http://purl.org/linked-data/cube#measure>
+              <http://www.geoknow.eu/properties/measure/PropertyCount> .
+
+<http://www.geoknow.eu/data-cube/observation/0>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadStorage> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/observation/29>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapATable> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/properties/measure/OtherClasses>
+      a       <http://purl.org/linked-data/cube#MeasureProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Other Classes Count"@en .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/6>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapATable> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation21>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/stuff/rev#Review> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/observation/3>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/acco/ns#AccomodationFeature> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "92080"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/8>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric3/c2>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Number of Properties"@en ;
+      <http://purl.org/linked-data/cube#measure>
+              <http://www.geoknow.eu/properties/measure/Average> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/2>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMap> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/observation/14>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/Perimeter> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "18"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation31>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#beach> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              4 .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/2>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMap> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/14>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Class> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/11>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-string> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/observation/13>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "126"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/properties/Class>
+      a       <http://purl.org/linked-data/cube#DimensionProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "class of instance"@en .
+
+<http://www.geoknow.eu/data-cube/metric4/observation15>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/observation/23>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapColumn> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "8"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/24>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#lake> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/25>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#water> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.007757735941618084"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/properties/measure/InstanceCount>
+      a       <http://purl.org/linked-data/cube#MeasureProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Property Count"@en , "Instance Count"@en .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/9>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapFText> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/22>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://xmlns.com/foaf/0.1/Person> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/Average_Surface>
+      a       <http://purl.org/linked-data/cube#DataSet> ;
+      <http://www.w3.org/2000/01/rdf-schema#comment>
+              "Average Surface"^^<http://www.w3.org/2001/XMLSchema#string> ;
+      <http://purl.org/dc/terms/date>
+              "2015-07-27T09:28:56.56Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://purl.org/dc/terms/publisher>
+              "R & D, Unister GmbH, Geoknow"^^<http://www.w3.org/2001/XMLSchema#string> ;
+      <http://purl.org/dc/terms/source>
+              "http://unidev245:8890/sparql" ;
+      <http://purl.org/linked-data/cube#structure>
+              <http://www.geoknow.eu/data-cube/metric3> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation22>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://xmlns.com/foaf/0.1/Person> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/observation/2>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapATable> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/3>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMap> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation19>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/Region> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              8 .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/1>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadStorage> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/13>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/observation/12>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/acco/ns#Hotel> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "92080"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/10>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapATable> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation16>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              5 .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/24>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#lake> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.004237098877306245"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/observation/22>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/ns/sparql-service-description#Service> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "1"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/23>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.opengis.net/ont/geosparql#Feature> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/observation/26>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "8"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218>
+      a       <http://purl.org/linked-data/cube#DataStructureDefinition> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "A Data Structure Definition for Instances Number Metric"@en ;
+      <http://purl.org/linked-data/cube#component>
+              <http://www.geoknow.eu/data-cube/metric/1020701218/c1> , <http://www.geoknow.eu/data-cube/metric/1020701218/c2> .
+
+<http://www.geoknow.eu/data-cube/observation/5>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#mountainrange> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "948"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation23>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.opengis.net/ont/geosparql#Feature> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              82628 .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/11>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-string> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/observation/31>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "126"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/13>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/observation/11>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/RegionHierarchyClosure> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "854340"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/0>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation13>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              1 .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/12>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/ns/sparql-service-description#Service> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/0>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapFormat> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/26>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#mountainrange> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation9>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapFText> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/23>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.opengis.net/ont/geosparql#Feature> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "1.7458070956531122"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/21>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/stuff/rev#Review> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/Instance_Count_>
+      a       <http://purl.org/linked-data/cube#DataSet> ;
+      <http://www.w3.org/2000/01/rdf-schema#comment>
+              "Number of instances for a class"^^<http://www.w3.org/2001/XMLSchema#string> ;
+      <http://purl.org/dc/terms/date>
+              "2015-07-27T09:40:37.579Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://purl.org/dc/terms/publisher>
+              "R & D, Unister GmbH, Geoknow"^^<http://www.w3.org/2001/XMLSchema#string> ;
+      <http://purl.org/dc/terms/source>
+              "http://unidev245:8890/sparql" ;
+      <http://purl.org/linked-data/cube#structure>
+              <http://www.geoknow.eu/data-cube/structure/metric1> .
+
+<http://www.geoknow.eu/data-cube/metric3/c1>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Instance"@en ;
+      <http://purl.org/linked-data/cube#dimension>
+              <http://www.geoknow.eu/properties/Instance> .
+
+<http://www.geoknow.eu/data-cube/observation/25>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "15"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation24>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#lake> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              43103 .
+
+<http://www.geoknow.eu/data-cube/observation/4>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMap> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/structure/metric1>
+      a       <http://purl.org/linked-data/cube#DataStructureDefinition> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "A Data Structure Definition for Instances Number Metric"@en ;
+      <http://purl.org/linked-data/cube#component>
+              <http://www.geoknow.eu/data-cube/structure/metric1/c1> , <http://www.geoknow.eu/data-cube/structure/metric1/c2> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/10>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapATable> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/AveragePolygon>
+      a       <http://purl.org/linked-data/cube#DataSet> ;
+      <http://www.w3.org/2000/01/rdf-schema#comment>
+              "Polygons per Class"^^<http://www.w3.org/2001/XMLSchema#string> ;
+      <http://purl.org/dc/terms/date>
+              "2015-07-27T09:40:41.015Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://purl.org/dc/terms/publisher>
+              "R & D, Unister GmbH, Geoknow"^^<http://www.w3.org/2001/XMLSchema#string> ;
+      <http://purl.org/dc/terms/source>
+              "http://unidev245:8890/sparql" ;
+      <http://purl.org/linked-data/cube#structure>
+              <http://www.geoknow.eu/data-cube/metric/-1829421967> .
+
+<http://www.geoknow.eu/data-cube/observation/30>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-string> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "2"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/1>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadStorage> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/observation/10>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Class> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "3"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/12>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/ns/sparql-service-description#Service> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation8>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/25>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#water> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/22>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://xmlns.com/foaf/0.1/Person> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/observation/24>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#AnnotationProperty> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "5"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation14>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Class> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/20>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/RegionHierarchyClosure> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/6>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapATable> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation25>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#water> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              14595 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation16>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              5 .
+
+<http://www.geoknow.eu/data-cube/observation/7>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#OntologyProperty> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "4"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation9>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapFText> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/21>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/stuff/rev#Review> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/6>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapATable> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation7>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapColumn> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              2 .
+
+<http://www.geoknow.eu/data-cube/metric4/observation11>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-string> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/7>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapColumn> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation26>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#mountainrange> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              948 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation29>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/acco/ns#AccomodationFeature> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/metric4/observation8>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapColumn> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation15>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2000/01/rdf-schema#Class> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              3 .
+
+<http://www.geoknow.eu/data-cube/observation/6>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#lake> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "43103"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/5>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapValue> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation6>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapATable> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              2 .
+
+<http://www.geoknow.eu/data-cube/metric4/observation12>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/ns/sparql-service-description#Service> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/20>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/RegionHierarchyClosure> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/observation/9>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "23"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967>
+      a       <http://purl.org/linked-data/cube#DataStructureDefinition> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "A Data Structure Definition for Instances Number Metric"@en ;
+      <http://purl.org/linked-data/cube#component>
+              <http://www.geoknow.eu/data-cube/metric/-1829421967/c1> , <http://www.geoknow.eu/data-cube/metric/-1829421967/c2> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/31>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#beach> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation18>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#OntologyProperty> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              4 .
+
+<http://www.geoknow.eu/data-cube/metric4/observation27>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#sea> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              27 .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/19>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/Region> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/4>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation28>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/Perimeter> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              4 .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/21>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/stuff/rev#Review> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation5>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapValue> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              8 .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/4>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/observation/21>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://xmlns.com/foaf/0.1/Person> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "440000"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/c1>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Class"@en ;
+      <http://purl.org/linked-data/cube#dimension>
+              <http://www.geoknow.eu/properties/Class> .
+
+<http://www.geoknow.eu/data-cube/observation/8>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/stuff/rev#Review> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "440000"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation28>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/Perimeter> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
+
+<http://www.geoknow.eu/data-cube/metric/1020701218/obs/30>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePoints> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://purl.org/acco/ns#Hotel> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "1.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/5>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapValue> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation17>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.w3.org/2002/07/owl#Ontology> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric2/observation4>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#array-of-QuadMapFormat> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              6 .
+
+<http://www.geoknow.eu/data-cube/metric/-1829421967/obs/20>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/AveragePolygon> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/RegionHierarchyClosure> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube/metric2/observation27>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Properties_per_Class1437990034790> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://geoknow.eu/geodata#sea> ;
+      <http://www.geoknow.eu/properties/measure/PropertyCount>
+              4 .
+
+<http://www.geoknow.eu/data-cube/observation/20>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_Count_> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://example.org/ontology/Region> ;
+      <http://www.geoknow.eu/properties/measure/InstanceCount>
+              "184583"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+<http://www.geoknow.eu/data-cube/metric/averageSurface/obs/3>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMap> ;
+      <http://www.geoknow.eu/properties/measure/Average>
+              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+<http://www.geoknow.eu/data-cube//structure/metriclat>
+      a       <http://purl.org/linked-data/cube#MeasureProperty> .
+
+<http://www.geoknow.eu/data-cube/metric4/observation10>
+      a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
+      <http://www.geoknow.eu/properties/Class>
+              <http://www.openlinksw.com/schemas/virtrdf#QuadMapATable> ;
+      <http://www.geoknow.eu/properties/TimeStamp>
+              "2015-07-27T09:40:44.234Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://www.geoknow.eu/properties/measure/OtherClasses>
+              0 .
