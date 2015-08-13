@@ -29,8 +29,8 @@ public static Map<String, Double> hmWeightedCoverage = new HashMap<String, Doubl
 	public static RepositoryConnection con = null;
 	public static void main(String[] args) throws RepositoryException, MalformedQueryException, QueryEvaluationException {
 
-		String endpointUrl = "http://localhost:8891/sparql";
-		String namedGraph = "http://localhost:8890/nuts"; 
+		String endpointUrl = "http://dbpedia.org/sparql";
+		String namedGraph = "http://dbpedia.org/sparql"; 
 		double coherence = getStructurednessValue(endpointUrl, namedGraph);
 		System.out.println("\nOverall Structuredness or Coherence: " + coherence);
 
