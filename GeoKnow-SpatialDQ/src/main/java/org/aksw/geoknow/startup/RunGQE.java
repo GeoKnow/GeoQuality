@@ -98,7 +98,7 @@ public class RunGQE {
 			case 7:
 				break;
 			case 8:
-			        System.out.println("\nCoverage, Weighted Coverage and Structuredness calculation started ...");
+			        System.out.println("\nCoverage, Weighted Coverage and Structuredness DataCube generation started ...");
 				double structuredness = Structuredness.getStructurednessValue(inputEndPoint, null);
 				//System.out.println("\nOverall Structuredness or Coherence: " + structuredness);
 				StructurednessDataCube.generateDataCubes(inputEndPoint,structuredness,outputFile);
