@@ -5,11 +5,16 @@ package org.aksw.geoknow.startup;
 
 import java.io.IOException;
 
+import org.aksw.geoknow.datacube.StructurednessDataCube;
+import org.aksw.simba.largerdfbench.util.Structuredness;
 /**
  * @author sherif
  *
  */
 import org.apache.log4j.Logger;
+import org.openrdf.query.MalformedQueryException;
+import org.openrdf.query.QueryEvaluationException;
+import org.openrdf.repository.RepositoryException;
 public class RunGQE {
 		private static final Logger logger = Logger.getLogger(RunGQE.class.getName());
 		long startTime = System.currentTimeMillis();
@@ -36,7 +41,7 @@ public class RunGQE {
 				+ "For Example: java -jar GQE.jar -e http://linkedgeodata.org/sparql -m 1 -Structuredness.n3";
 
 
-		public static void run(String args[]) throws IOException{
+		public static void run(String args[]) throws IOException, RepositoryException, MalformedQueryException, QueryEvaluationException{
 
 			
 			if(args.length <3){
@@ -70,10 +75,19 @@ public class RunGQE {
 /**
 		 * @param metricNr
 		 * @author sherif
+ * @throws QueryEvaluationException 
+ * @throws MalformedQueryException 
+ * @throws RepositoryException 
+ * @throws IOException 
 		 */
-		private static void runMetric() {
+		private static void runMetric() throws RepositoryException, MalformedQueryException, QueryEvaluationException, IOException {
 			switch(metricNr){
 			case 1:
+				System.out.println("\nCoverage, Weighted Coverage and Structuredness calculation started ...");
+				double structuredness = Structuredness.getStructurednessValue(inputEndPoint, null);
+				//System.out.println("\nOverall Structuredness or Coherence: " + structuredness);
+				StructurednessDataCube.generateDataCubes(inputEndPoint,structuredness,outputFile);
+		      
 				break;
 			case 2:
 				break;
@@ -102,8 +116,12 @@ public class RunGQE {
 	 * @param args
 	 * @author sherif
 	 * @throws IOException 
+	 * @throws QueryEvaluationException 
+	 * @throws MalformedQueryException 
+	 * @throws RepositoryException 
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, RepositoryException, MalformedQueryException, QueryEvaluationException {
+	//	System.out.println(args.length);
 		run(args);
 
 	}
