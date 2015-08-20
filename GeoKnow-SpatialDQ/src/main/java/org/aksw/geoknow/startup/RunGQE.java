@@ -83,11 +83,7 @@ public class RunGQE {
 		private static void runMetric() throws RepositoryException, MalformedQueryException, QueryEvaluationException, IOException {
 			switch(metricNr){
 			case 1:
-				System.out.println("\nCoverage, Weighted Coverage and Structuredness calculation started ...");
-				double structuredness = Structuredness.getStructurednessValue(inputEndPoint, null);
-				//System.out.println("\nOverall Structuredness or Coherence: " + structuredness);
-				StructurednessDataCube.generateDataCubes(inputEndPoint,structuredness,outputFile);
-		      
+			
 				break;
 			case 2:
 				break;
@@ -102,6 +98,11 @@ public class RunGQE {
 			case 7:
 				break;
 			case 8:
+			        System.out.println("\nCoverage, Weighted Coverage and Structuredness calculation started ...");
+				double structuredness = Structuredness.getStructurednessValue(inputEndPoint, null);
+				//System.out.println("\nOverall Structuredness or Coherence: " + structuredness);
+				StructurednessDataCube.generateDataCubes(inputEndPoint,structuredness,outputFile);
+		      
 				break;
 			default:
 				System.out.println(metricNr + "is not correcte \n" + HELP_MESSAGE);
