@@ -1,5 +1,6 @@
 package org.aksw.geoknow.assessment.count;
 
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
 
     private static final String NAMESPACE = "http://www.geoknow.eu/data-cube/";
 
-    private static final String STRUCTURE = NAMESPACE + "metric3";
+    private static final String STRUCTURE = NAMESPACE + "structure/metric3";
 
     private static final String GET_AREA = "SELECT ?area WHERE { ?instance <http://linkedgeodata.org/ontology/area> ?area . }";
     private static final ParameterizedSparqlString GET_INSTANCES = new ParameterizedSparqlString(
@@ -68,11 +69,11 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
         blacklist.add("http://www.w3.org/2003/01/geo/wgs84_pos#Point");
     }
     public static void main(String[] args) throws IOException {
-        // Model m = ModelFactory.createDefaultModel();
-        // m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
+         Model m = ModelFactory.createDefaultModel();
+         m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
         GeoQualityMetric metric = new AverageSurfaceMetric();
-        Model r = metric.generateResultsDataCube("http://geo.linkeddata.es/sparql");
-        r.write(new FileWriter("datacubes/GeoLinkedData/metric3.ttl"), "TTL");
+        Model r = metric.generateResultsDataCube(m);
+        r.write(new FileWriter("datacubes/NUTS/metric3.ttl"), "TTL");
     }
     private String structureUri;
     private List<String> defaultGraphs = null;
@@ -116,7 +117,7 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
 
         Resource c1 = cubeData.createResource(STRUCTURE + "/c1", QB.ComponentSpecification);
         c1.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Instance", "en"));
-        c1.addProperty(QB.dimension, GK.DIM.Instance);
+        c1.addProperty(QB.dimension, GK.DIM.Class);
 
         Resource c2 = cubeData.createResource(STRUCTURE + "/c2", QB.ComponentSpecification);
         c2.addProperty(QB.measure, GK.MEASURE.Average);
@@ -126,7 +127,6 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
         structure.addProperty(QB.component, c2);
 
         cubeData.add(GK.DIM.ClassStatements);
-        cubeData.add(GK.DIM.PropertyStatements);
         cubeData.add(GK.MEASURE.AverageStatements);
 
         return cubeData;

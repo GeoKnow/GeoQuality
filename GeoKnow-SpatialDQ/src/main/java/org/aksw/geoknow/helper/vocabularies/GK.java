@@ -92,34 +92,34 @@ public class GK {
             InstanceCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDF.type, QB.MeasureProperty));
             InstanceCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.label,
                     ResourceFactory.createLangLiteral("Instance Count", "en")));
-            // InstanceCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.subPropertyOf,
-            // SDMX.MEASURE.obs));
-            // InstanceCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.range, XSD.integer));
+             InstanceCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.subPropertyOf,
+             SDMX.MEASURE.obs));
+             InstanceCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.range, XSD.integer));
 
             AverageStatements = new ArrayList<Statement>(2);
             AverageStatements.add(ResourceFactory.createStatement(Average, RDF.type, QB.MeasureProperty));
             AverageStatements.add(ResourceFactory.createStatement(Average, RDFS.label,
                     ResourceFactory.createLangLiteral("Average", "en")));
-            // AverageStatements.add(ResourceFactory.createStatement(Average, RDFS.subPropertyOf,
-            // SDMX.MEASURE.obs));
-            // AverageStatements.add(ResourceFactory.createStatement(Average, RDFS.range, XSD.decimal));
+             AverageStatements.add(ResourceFactory.createStatement(Average, RDFS.subPropertyOf,
+             SDMX.MEASURE.obs));
+             AverageStatements.add(ResourceFactory.createStatement(Average, RDFS.range, XSD.decimal));
 
             PropertyCountStatements = new ArrayList<Statement>(2);
-            PropertyCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDF.type, QB.MeasureProperty));
-            PropertyCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.label,
+            PropertyCountStatements.add(ResourceFactory.createStatement(PropertyCount, RDF.type, QB.MeasureProperty));
+            PropertyCountStatements.add(ResourceFactory.createStatement(PropertyCount, RDFS.label,
                     ResourceFactory.createLangLiteral("Property Count", "en")));
-            // PropertyCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.subPropertyOf,
-            // SDMX.MEASURE.obs));
-            // PropertyCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.range, XSD.integer));
+             PropertyCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.subPropertyOf,
+             SDMX.MEASURE.obs));
+             PropertyCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.range, XSD.integer));
 
             OtherClassesCountStatements = new ArrayList<Statement>(2);
             OtherClassesCountStatements.add(ResourceFactory
                     .createStatement(OtherClassesCount, RDF.type, QB.MeasureProperty));
             OtherClassesCountStatements.add(ResourceFactory.createStatement(OtherClassesCount, RDFS.label,
                     ResourceFactory.createLangLiteral("Other Classes Count", "en")));
-            // OtherClassesCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.subPropertyOf,
-            // SDMX.MEASURE.obs));
-            // OtherClassesCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.range, XSD.integer));
+             OtherClassesCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.subPropertyOf,
+             SDMX.MEASURE.obs));
+             OtherClassesCountStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.range, XSD.integer));
             TimeStampStatements = new ArrayList<Statement>(2);
             TimeStampStatements.add(ResourceFactory.createStatement(InstanceCount, RDF.type, QB.MeasureProperty));
             TimeStampStatements.add(ResourceFactory.createStatement(InstanceCount, RDFS.label,

@@ -1,19 +1,27 @@
-<http://www.geoknow.eu/data-cube/metric3/c1>
-      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
-      <http://www.w3.org/2000/01/rdf-schema#label>
-              "Component Specification of Instance"@en ;
-      <http://purl.org/linked-data/cube#dimension>
-              <http://www.geoknow.eu/properties/Instance> .
-
 <http://www.geoknow.eu/data-cube/metric/averageSurface/obs/1>
       a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
       <http://www.geoknow.eu/properties/Class>
               <http://geovocab.org/geometry#LinearRing> ;
       <http://www.geoknow.eu/properties/measure/Average>
               "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
 
+<http://www.geoknow.eu/Average_Surface>
+      a       <http://purl.org/linked-data/cube#DataSet> ;
+      <http://www.w3.org/2000/01/rdf-schema#comment>
+              "Average Surface per class"^^<http://www.w3.org/2001/XMLSchema#string> ;
+      <http://purl.org/dc/terms/date>
+              "2015-08-03T14:47:54.969Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+      <http://purl.org/dc/terms/publisher>
+              "R & D, Unister GmbH, Geoknow"^^<http://www.w3.org/2001/XMLSchema#string> ;
+      <http://purl.org/linked-data/cube#structure>
+              <http://www.geoknow.eu/data-cube/structure/metric3> .
+
 <http://www.geoknow.eu/data-cube/metric/averageSurface/obs/3>
       a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
       <http://www.geoknow.eu/properties/Class>
               <http://geovocab.org/geometry#MultiPolygon> ;
       <http://www.geoknow.eu/properties/measure/Average>
@@ -21,6 +29,8 @@
 
 <http://www.geoknow.eu/data-cube/metric/averageSurface/obs/2>
       a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
       <http://www.geoknow.eu/properties/Class>
               <http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion> ;
       <http://www.geoknow.eu/properties/measure/Average>
@@ -28,6 +38,8 @@
 
 <http://www.geoknow.eu/data-cube/metric/averageSurface/obs/0>
       a       <http://purl.org/linked-data/cube#Observation> ;
+      <http://purl.org/linked-data/cube#dataSet>
+              <http://www.geoknow.eu/Average_Surface> ;
       <http://www.geoknow.eu/properties/Class>
               <http://geovocab.org/geometry#Polygon> ;
       <http://www.geoknow.eu/properties/measure/Average>
@@ -38,28 +50,26 @@
       <http://www.w3.org/2000/01/rdf-schema#label>
               "class of instance"@en .
 
-<http://www.geoknow.eu/data-cube/metric3/c2>
+<http://www.geoknow.eu/data-cube/structure/metric3>
+      a       <http://purl.org/linked-data/cube#DataStructureDefinition> ;
+      <http://purl.org/linked-data/cube#component>
+              <http://www.geoknow.eu/data-cube/structure/metric3/c2> , <http://www.geoknow.eu/data-cube/structure/metric3/c1> .
+
+<http://www.geoknow.eu/properties/measure/Average>
+      a       <http://purl.org/linked-data/cube#MeasureProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Average"@en .
+
+<http://www.geoknow.eu/data-cube/structure/metric3/c2>
       a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
       <http://www.w3.org/2000/01/rdf-schema#label>
               "Component Specification of Number of Properties"@en ;
       <http://purl.org/linked-data/cube#measure>
               <http://www.geoknow.eu/properties/measure/Average> .
 
-<http://www.geoknow.eu/data-cube/metric3>
-      a       <http://purl.org/linked-data/cube#DataStructureDefinition> ;
-      <http://purl.org/linked-data/cube#component>
-              <http://www.geoknow.eu/data-cube/metric3/c1> , <http://www.geoknow.eu/data-cube/metric3/c2> .
-
-<http://www.geoknow.eu/properties/measure/Average>
-      a       <http://purl.org/linked-data/cube#MeasureProperty> ;
+<http://www.geoknow.eu/data-cube/structure/metric3/c1>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
       <http://www.w3.org/2000/01/rdf-schema#label>
-              "Average"@en ;
-      <http://www.w3.org/2000/01/rdf-schema#range>
-              <http://www.w3.org/2001/XMLSchema#decimal> ;
-      <http://www.w3.org/2000/01/rdf-schema#subPropertyOf>
-              <http://purl.org/linked-data/sdmx/2009/measure#obs> .
-
-<http://www.geoknow.eu/properties/Property>
-      a       <http://purl.org/linked-data/cube#DimensionProperty> ;
-      <http://www.w3.org/2000/01/rdf-schema#label>
-              "Property name"@en .
+              "Component Specification of Instance"@en ;
+      <http://purl.org/linked-data/cube#dimension>
+              <http://www.geoknow.eu/properties/Class> .

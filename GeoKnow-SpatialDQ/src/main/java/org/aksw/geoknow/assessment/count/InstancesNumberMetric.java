@@ -38,7 +38,7 @@ public class InstancesNumberMetric implements GeoQualityMetric {
 
     private static final String NAMESPACE = "http://www.geoknow.eu/data-cube/";
 
-    private static final String STRUCTURE = NAMESPACE + "structure/metric1";
+    private static final String STRUCTURE = NAMESPACE + "metric1";
 
     public static void main(String[] args) throws IOException {
         InstancesNumberMetric metric = new InstancesNumberMetric();
@@ -70,12 +70,18 @@ public class InstancesNumberMetric implements GeoQualityMetric {
         c2.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Number of Instances", "en"));
         c2.addProperty(QB.measure, GK.MEASURE.InstanceCount);
 
+        Resource c3 = cubeData.createResource(STRUCTURE + "/c3", QB.ComponentSpecification);
+        c3.addProperty(RDFS.label, cubeData.createLiteral("TimeStamp", "en"));
+        c3.addProperty(QB.measure, GK.MEASURE.TimeStamp);
+
         structure.addProperty(QB.component, c1);
         structure.addProperty(RDFS.label,
                 cubeData.createLiteral("A Data Structure Definition for Instances Number Metric", "en"));
         structure.addProperty(QB.component, c2);
+        structure.addProperty(QB.component, c3);
 
         cubeData.add(GK.MEASURE.InstanceCountStatements);
+        cubeData.add(GK.MEASURE.TimeStampStatements);
         cubeData.add(GK.DIM.ClassStatements);
         return cubeData;
     }
@@ -111,6 +117,7 @@ public class InstancesNumberMetric implements GeoQualityMetric {
             Resource obs = cubeData.createResource(NAMESPACE + "observation/" + i, QB.Observation);
             obs.addLiteral(GK.MEASURE.InstanceCount, instances);
             obs.addProperty(GK.DIM.Class, cubeData.createResource(owlClass.toString()));
+            obs.addProperty(GK.MEASURE.TimeStamp, cubeData.createTypedLiteral(calendar));
             obs.addProperty(QB.dataset, dataSet);
             i++;
         }

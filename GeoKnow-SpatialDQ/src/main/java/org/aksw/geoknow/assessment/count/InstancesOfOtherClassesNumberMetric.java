@@ -42,7 +42,7 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
 
     private static final String NAMESPACE = "http://www.geoknow.eu/data-cube/";
 
-    private static final String STRUCTURE = NAMESPACE + "metric4";
+    private static final String STRUCTURE = NAMESPACE + "iooc";
 
     public static void main(String[] args) throws IOException {
         OntModel m = ModelFactory.createOntologyModel();
@@ -98,6 +98,7 @@ public class InstancesOfOtherClassesNumberMetric implements GeoQualityMetric {
         dataset.addLiteral(RDFS.comment, "Number of instances of other classes for a class");
         dataset.addLiteral(DCTerms.date, cubeData.createTypedLiteral(calendar));
         dataset.addLiteral(DCTerms.publisher, "R & D, Unister GmbH, Geoknow");
+        dataset.addProperty(QB.structure, STRUCTURE);
         if (endpoint != null) {
             dataset.addProperty(DCTerms.source, endpoint);
         }

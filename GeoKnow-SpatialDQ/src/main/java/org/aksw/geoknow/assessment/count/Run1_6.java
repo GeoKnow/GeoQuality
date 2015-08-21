@@ -66,7 +66,7 @@ public class Run1_6 {
         String endpoint = "";
         String output = "";
         String format = null;
-        boolean wkt = true;
+        boolean wkt = false;
         List<String> defaultGraphs = null;
 
         CommandLineParser parser = new DefaultParser();

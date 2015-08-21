@@ -76,7 +76,7 @@ public class AveragePointsPerClass implements GeoQualityMetric {
 
     public AveragePointsPerClass(Property p) {
         this.property = p;
-        this.structureUri = NAMESPACE + "metric/" + property.hashCode();
+        this.structureUri = NAMESPACE + "AveragePointsPerClassStructure";
     }
 
     public AveragePointsPerClass(Property property, List<String> defaultGraphs) {
@@ -97,7 +97,7 @@ public class AveragePointsPerClass implements GeoQualityMetric {
 
     private Model createModel() {
         Model cubeData = ModelFactory.createDefaultModel();
-        cubeData.createResource(NAMESPACE + "/structure/metric" + property.getLocalName(), QB.MeasureProperty);
+//        cubeData.createResource(NAMESPACE + "/structure/metric" + property.getLocalName(), QB.MeasureProperty);
 
         Resource structure = cubeData.createResource(structureUri, QB.DataStructureDefinition);
 
@@ -182,7 +182,6 @@ public class AveragePointsPerClass implements GeoQualityMetric {
                 }
                 for (ResultSet resultCount = execCount.execSelect(); resultCount.hasNext();) {
                     QuerySolution next = resultCount.next();
-                    System.out.println(next);
                     sum += next.get("count").asLiteral().getInt();
                     i++;
                 }
