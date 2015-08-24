@@ -87,8 +87,8 @@ public class RunGQE {
             if (args[i].equals("-g") || args[i].toLowerCase().equals("--graph")) {
                 defaultGraphs.add(args[i + 1]);
             }
-            if (args[i].equals("-g") || args[i].toLowerCase().equals("--graph")) {
-                defaultGraphs.add(args[i + 1]);
+            if (args[i].equals("-cp") || args[i].toLowerCase().equals("--classPolygon")) {
+                polygonClass = args[i+1];
             }
         }
 
