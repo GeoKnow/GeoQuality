@@ -32,7 +32,7 @@ public class QB {
 	public static final Property measure	 = property("measure");
 	public static final Property dataset	 = property("dataSet");
 
-
+	
 	public static final Resource Dataset				 = resource( "DataSet" );
 	public static final Resource DataStructureDefinition = resource( "DataStructureDefinition" );
 	public static final Resource ComponentSpecification	 = resource( "ComponentSpecification" );

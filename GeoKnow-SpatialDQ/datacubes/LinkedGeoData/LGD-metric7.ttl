@@ -1,0 +1,285 @@
+@prefix qb:    <http://purl.org/linked-data/cube#> .
+@prefix gk:    <http://www.geoknow.eu/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+gk:avg_poly_comp_dist
+        a           qb:ComponentSpecification ;
+        rdfs:label  "Average Polygon Distance" ;
+        qb:measure  <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop> .
+
+gk:avg_poly_obv_1_14  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "4.084620475769043" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/FuelStation> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "hausdorff" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 12:58:20 CEST 2015" .
+
+<http://www.geoknow.eu/properties/avg_poly_metric_prop>
+        a           qb:DimensionProperty ;
+        rdfs:label  "Polygon Metric" .
+
+gk:avg_poly_obv_1_29  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "3873.9653068176576" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/Parking> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "surjection" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 13:25:05 CEST 2015" .
+
+<http://www.geoknow.eu/properties/avg_poly_cls_prop>
+        a           qb:DimensionProperty ;
+        rdfs:label  "Class Name" .
+
+gk:avg_poly_obv_1_13  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "308.77555183693767" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/School> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "hausdorff" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 12:58:20 CEST 2015" .
+
+gk:avg_poly_obv_1_19  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "3873.9653068176576" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/Parking> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "fairsurjection" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 13:04:28 CEST 2015" .
+
+gk:avg_poly_obv_1_28  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "4.084620475769043" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/FuelStation> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "surjection" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 13:25:05 CEST 2015" .
+
+gk:avg_poly_comp_metric
+        a             qb:ComponentSpecification ;
+        rdfs:label    "Component Specification of Polygon Metric" ;
+        qb:dimension  <http://www.geoknow.eu/properties/avg_poly_metric_prop> .
+
+gk:avg_poly_obv_1_22  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "3873.9653068176576" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/Parking> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "geomean" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 13:11:32 CEST 2015" .
+
+gk:avg_poly_obv_1_5  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "3873.9653068176576" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/Parking> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "geomax" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 12:41:31 CEST 2015" .
+
+gk:avg_poly_obv_1_18  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "4.084620475769043" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/FuelStation> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "fairsurjection" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 13:04:28 CEST 2015" .
+
+gk:avg_poly_obv_1_21  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "4.084620475769043" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/FuelStation> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "geomean" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 13:11:32 CEST 2015" .
+
+gk:avg_poly_obv_1_4  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "4.084620475769043" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/FuelStation> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "geomax" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 12:41:31 CEST 2015" .
+
+gk:avg_poly_obv_1_11  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "3873.9653068176576" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/Parking> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "geoavg" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 12:53:08 CEST 2015" .
+
+gk:avg_poly_obv_1_17  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "0.12926657497882843" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/Amenity> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "fairsurjection" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 13:04:28 CEST 2015" .
+
+gk:avg_poly_obv_1_26  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "3873.9653068176576" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/Parking> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "geosummin" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 13:16:55 CEST 2015" .
+
+gk:avg_poly_data_struct_def
+        a             qb:DataStructureDefinition ;
+        rdfs:comment  "A Data Structure Definition for http://www.geoknow.eu/avg_poly_dataset" ;
+        rdfs:label    "A Data Structure Definition" ;
+        qb:component  gk:avg_poly_comp_dist , gk:avg_poly_comp_cls , gk:avg_poly_comp_metric , gk:avg_poly_comp_time .
+
+gk:avg_poly_comp_cls  a  qb:ComponentSpecification ;
+        rdfs:label    "Component Specification of Class" ;
+        qb:dimension  <http://www.geoknow.eu/properties/avg_poly_cls_prop> .
+
+gk:avg_poly_obv_1_10  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "4.084620475769043" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/FuelStation> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "geoavg" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 12:53:08 CEST 2015" .
+
+gk:avg_poly_dataset  a     qb:DataSet ;
+        rdfs:comment       "Average distance between polygons which represent the same resource" ;
+        rdfs:label         "Per class average polygons distances" ;
+        dcterms:date       "Wed Jul 22 12:29:59 CEST 2015" ;
+        dcterms:publisher  "AKSW, GeoKnow" ;
+        qb:structure       gk:avg_poly_data_struct_def .
+
+gk:avg_poly_comp_time
+        a             qb:ComponentSpecification ;
+        rdfs:label    "Component Specification of Time Stamp" ;
+        qb:dimension  <http://www.geoknow.eu/properties/avg_poly_time_prop> .
+
+gk:avg_poly_obv_1_25  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "4.084620475769043" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/FuelStation> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "geosummin" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 13:16:55 CEST 2015" .
+
+gk:avg_poly_obv_1_2  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "3873.9653068176576" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/Parking> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "geolink" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 12:34:57 CEST 2015" .
+
+gk:avg_poly_obv_1_8  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "3873.9653068176576" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/Parking> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "geomin" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 12:47:41 CEST 2015" .
+
+<http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+        a           qb:MeasureProperty ;
+        rdfs:label  "Average Polygon Distance" .
+
+gk:avg_poly_obv_1_15  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "3873.9653068176576" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/Parking> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "hausdorff" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 12:58:20 CEST 2015" .
+
+gk:avg_poly_obv_1_24  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "308.77555183693767" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/School> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "geosummin" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 13:16:55 CEST 2015" .
+
+gk:avg_poly_obv_1_1  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "4.084620475769043" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/FuelStation> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "geolink" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 12:34:57 CEST 2015" .
+
+<http://www.geoknow.eu/properties/avg_poly_time_prop>
+        a           qb:DimensionProperty ;
+        rdfs:label  "Time Stamp" .
+
+gk:avg_poly_obv_1_7  a  qb:Observation ;
+        qb:dataSet  gk:avg_poly_dataset ;
+        <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+                "4.084620475769043" ;
+        <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+                <http://linkedgeodata.org/ontology/FuelStation> ;
+        <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+                "geomin" ;
+        <http://www.geoknow.eu/properties/avg_poly_time_prop>
+                "Wed Jul 22 12:47:41 CEST 2015" .
