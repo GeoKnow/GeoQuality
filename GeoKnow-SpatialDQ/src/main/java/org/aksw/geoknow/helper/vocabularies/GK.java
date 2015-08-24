@@ -42,7 +42,7 @@ public class GK {
         public static final Property Class = property(uri, "Class");
         public static final Property TimeStamp = property(uri, "TimeStamp");
         public static final Property Property = property(uri, "Property");
-        public static final Property Instance = property(uri, "Instance");
+//        public static final Property Instance = property(uri, "Instance");
 
         public static List<Statement> InstanceTypeStatements = new ArrayList<Statement>();
         public static List<Statement> ClassStatements = new ArrayList<Statement>();
@@ -61,10 +61,13 @@ public class GK {
                     ResourceFactory.createLangLiteral("Normal or Outlier instance", "en")));
             ClassStatements.add(ResourceFactory.createStatement(Class, RDFS.label,
                     ResourceFactory.createLangLiteral("class of instance", "en")));
+            ClassStatements.add(ResourceFactory.createStatement(Class, RDFS.range, RDFS.Resource));
             TimeStampStatements.add(ResourceFactory.createStatement(TimeStamp, RDFS.label,
                     ResourceFactory.createLangLiteral("Time Stamp", "en")));
+            TimeStampStatements.add(ResourceFactory.createStatement(TimeStamp, RDFS.range, RDFS.Resource));
             PropertyStatements.add(ResourceFactory.createStatement(Property, RDFS.label,
                     ResourceFactory.createLangLiteral("Property name", "en")));
+            PropertyStatements.add(ResourceFactory.createStatement(Property, RDFS.range, RDFS.Resource));
             InstanceStatements.add(ResourceFactory.createStatement(Property, RDFS.label,
                     ResourceFactory.createLangLiteral("Instance name", "en")));
         }

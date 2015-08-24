@@ -73,9 +73,9 @@ public class Run1_6 {
         try {
             // parse the command line arguments
             CommandLine line = parser.parse(options, args);
-            if (line.hasOption('h')){
+            if (line.hasOption('h')) {
                 HelpFormatter formatter = new HelpFormatter();
-                formatter.printHelp("java -jar metrics.jar", options,true);
+                formatter.printHelp("java -jar metrics.jar", options, true);
                 return;
             }
 
@@ -84,11 +84,11 @@ public class Run1_6 {
             String pointClass = line.getOptionValue("pC");
             endpoint = line.getOptionValue('e');
             output = line.getOptionValue('o');
-            wkt = line.getOptionValue('w') == null ? true : Boolean.parseBoolean(line.getOptionValue('w'));
+            wkt = line.getOptionValue('w') == null ? false : Boolean.parseBoolean(line.getOptionValue('w'));
             format = (String) (line.getOptionValue('f') == null ? true : line.getOptionValue('f'));
-            if(line.getOptionValues('g')!=null){
+            if (line.getOptionValues('g') != null) {
                 defaultGraphs = Lists.newLinkedList();
-                for(String g : line.getOptionValues('g')){
+                for (String g : line.getOptionValues('g')) {
                     defaultGraphs.add(g);
                 }
             }
@@ -120,9 +120,10 @@ public class Run1_6 {
                     break;
                 case "5":
                     if (pointClass != null) {
-                        metrics.add(new AveragePointsPerClass(new PropertyImpl(pointPredicate), pointClass,defaultGraphs));
+                        metrics.add(
+                                new AveragePointsPerClass(new PropertyImpl(pointPredicate), pointClass, defaultGraphs));
                     } else {
-                        metrics.add(new AveragePointsPerClass(new PropertyImpl(pointPredicate),defaultGraphs));
+                        metrics.add(new AveragePointsPerClass(new PropertyImpl(pointPredicate), defaultGraphs));
                     }
                     break;
                 case "6":
@@ -133,14 +134,16 @@ public class Run1_6 {
 
         } catch (ParseException exp) {
             HelpFormatter formatter = new HelpFormatter();
-            formatter.printHelp("java -jar metrics.jar", options,true);
+            formatter.printHelp("java -jar metrics.jar", options, true);
             return;
         }
 
         Model model = ModelFactory.createDefaultModel();
         for (GeoQualityMetric metric : metrics) {
             System.out.println("######### Starting " + metric.getClass().getSimpleName() + " ############");
-            Model generateResultsDataCube = metric.generateResultsDataCube(endpoint);
+            Model m = ModelFactory.createDefaultModel();
+            m.read(new FileReader("nuts-rdf-0.91.ttl"), "", "TTL");
+            Model generateResultsDataCube = metric.generateResultsDataCube(m);
             model.add(generateResultsDataCube);
             generateResultsDataCube.write(new FileWriter("/tmp/nuts-" + metric.getClass().getSimpleName() + ".ttl"),
                     "TTL");

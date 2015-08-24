@@ -119,7 +119,7 @@ public class AverageSurfaceMetricWKT implements GeoQualityMetric {
 
         Resource c1 = cubeData.createResource(STRUCTURE + "/c1", QB.ComponentSpecification);
         c1.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Instance", "en"));
-        c1.addProperty(QB.dimension, GK.DIM.Instance);
+        c1.addProperty(QB.dimension, GK.DIM.Class);
 
         Resource c2 = cubeData.createResource(STRUCTURE + "/c2", QB.ComponentSpecification);
         c2.addProperty(QB.measure, GK.MEASURE.Average);

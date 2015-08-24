@@ -4898,3 +4898,37 @@
 2015-08-20 18:05:11 INFO  AveragePointsPerClass:163 - Proccesing class http://phenomenontology.linkeddata.es/ontology/Termas with geometry
 2015-08-20 18:05:11 INFO  AveragePointsPerClass:142 - Proccesing class http://phenomenontology.linkeddata.es/ontology/Villa with list
 2015-08-20 18:05:11 INFO  AveragePointsPerClass:163 - Proccesing class http://phenomenontology.linkeddata.es/ontology/Villa with geometry
+2015-08-21 14:05:10 ERROR riot:80 - Content is not allowed in prolog.
+2015-08-21 14:05:54 ERROR riot:80 - Content is not allowed in prolog.
+2015-08-21 14:07:39 INFO  AveragePointsPerClass:142 - Proccesing class http://geovocab.org/geometry#LinearRing with list
+2015-08-21 14:07:39 INFO  AveragePointsPerClass:163 - Proccesing class http://geovocab.org/geometry#LinearRing with geometry
+2015-08-21 14:07:39 INFO  AveragePointsPerClass:142 - Proccesing class http://geovocab.org/geometry#Polygon with list
+2015-08-21 14:07:39 INFO  AveragePointsPerClass:163 - Proccesing class http://geovocab.org/geometry#Polygon with geometry
+2015-08-21 14:07:39 INFO  AveragePointsPerClass:142 - Proccesing class http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion with list
+2015-08-21 14:07:39 INFO  AveragePointsPerClass:163 - Proccesing class http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion with geometry
+2015-08-21 14:07:39 INFO  AveragePointsPerClass:142 - Proccesing class http://geovocab.org/geometry#MultiPolygon with list
+2015-08-21 14:07:39 INFO  AveragePointsPerClass:163 - Proccesing class http://geovocab.org/geometry#MultiPolygon with geometry
+2015-08-21 14:22:36 INFO  AveragePointsPerClass:142 - Proccesing class http://geovocab.org/geometry#Polygon with list
+2015-08-21 14:22:36 INFO  AveragePointsPerClass:163 - Proccesing class http://geovocab.org/geometry#Polygon with geometry
+2015-08-21 14:22:36 INFO  AveragePointsPerClass:142 - Proccesing class http://geovocab.org/geometry#LinearRing with list
+2015-08-21 14:22:36 INFO  AveragePointsPerClass:163 - Proccesing class http://geovocab.org/geometry#LinearRing with geometry
+2015-08-21 14:22:36 INFO  AveragePointsPerClass:142 - Proccesing class http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion with list
+2015-08-21 14:22:36 INFO  AveragePointsPerClass:163 - Proccesing class http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion with geometry
+2015-08-21 14:22:36 INFO  AveragePointsPerClass:142 - Proccesing class http://geovocab.org/geometry#MultiPolygon with list
+2015-08-21 14:22:36 INFO  AveragePointsPerClass:163 - Proccesing class http://geovocab.org/geometry#MultiPolygon with geometry
+2015-08-21 14:24:08 INFO  AveragePointsPerClass:142 - Proccesing class http://geovocab.org/geometry#Polygon with list
+2015-08-21 14:24:08 INFO  AveragePointsPerClass:163 - Proccesing class http://geovocab.org/geometry#Polygon with geometry
+2015-08-21 14:24:08 INFO  AveragePointsPerClass:142 - Proccesing class http://geovocab.org/geometry#LinearRing with list
+2015-08-21 14:24:08 INFO  AveragePointsPerClass:163 - Proccesing class http://geovocab.org/geometry#LinearRing with geometry
+2015-08-21 14:24:08 INFO  AveragePointsPerClass:142 - Proccesing class http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion with list
+2015-08-21 14:24:08 INFO  AveragePointsPerClass:163 - Proccesing class http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion with geometry
+2015-08-21 14:24:08 INFO  AveragePointsPerClass:142 - Proccesing class http://geovocab.org/geometry#MultiPolygon with list
+2015-08-21 14:24:08 INFO  AveragePointsPerClass:163 - Proccesing class http://geovocab.org/geometry#MultiPolygon with geometry
+2015-08-21 15:04:32 INFO  AveragePointsPerClass:142 - Proccesing class http://geovocab.org/geometry#LinearRing with list
+2015-08-21 15:04:32 INFO  AveragePointsPerClass:163 - Proccesing class http://geovocab.org/geometry#LinearRing with geometry
+2015-08-21 15:04:32 INFO  AveragePointsPerClass:142 - Proccesing class http://geovocab.org/geometry#Polygon with list
+2015-08-21 15:04:32 INFO  AveragePointsPerClass:163 - Proccesing class http://geovocab.org/geometry#Polygon with geometry
+2015-08-21 15:04:32 INFO  AveragePointsPerClass:142 - Proccesing class http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion with list
+2015-08-21 15:04:32 INFO  AveragePointsPerClass:163 - Proccesing class http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion with geometry
+2015-08-21 15:04:32 INFO  AveragePointsPerClass:142 - Proccesing class http://geovocab.org/geometry#MultiPolygon with list
+2015-08-21 15:04:32 INFO  AveragePointsPerClass:163 - Proccesing class http://geovocab.org/geometry#MultiPolygon with geometry

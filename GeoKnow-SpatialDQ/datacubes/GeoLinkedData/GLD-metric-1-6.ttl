@@ -6436,7 +6436,13 @@
 <http://www.geoknow.eu/properties/Property>
       a       <http://purl.org/linked-data/cube#DimensionProperty> ;
       <http://www.w3.org/2000/01/rdf-schema#label>
-              "Instance name"@en , "Property name"@en .
+              "Instance name"@en , "Property name"@en ;
+      <http://www.w3.org/2000/01/rdf-schema#range>
+              <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+      <http://www.w3.org/2000/01/rdf-schema#range>
+              <http://www.w3.org/2000/01/rdf-schema#Resource> .
+
+
 
 <http://www.geoknow.eu/data-cube/AveragePointsPerClassStructure/obs/134>
       a       <http://purl.org/linked-data/cube#Observation> ;
@@ -9024,7 +9030,13 @@
 <http://www.geoknow.eu/properties/TimeStamp>
       a       <http://purl.org/linked-data/cube#DimensionProperty> ;
       <http://www.w3.org/2000/01/rdf-schema#label>
-              "Time Stamp"@en .
+              "Time Stamp"@en ;
+      <http://www.w3.org/2000/01/rdf-schema#range>
+              <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+      <http://www.w3.org/2000/01/rdf-schema#range>
+              <http://www.w3.org/2000/01/rdf-schema#Resource> .
+
+
 
 <http://www.geoknow.eu/data-cube/metric4/observation85>
       a       <http://purl.org/linked-data/cube#Observation> ;
@@ -10072,7 +10084,13 @@
 <http://www.geoknow.eu/properties/Class>
       a       <http://purl.org/linked-data/cube#DimensionProperty> ;
       <http://www.w3.org/2000/01/rdf-schema#label>
-              "class of instance"@en .
+              "class of instance"@en ;
+      <http://www.w3.org/2000/01/rdf-schema#range>
+              <http://www.w3.org/2000/01/rdf-schema#Resource> ;
+      <http://www.w3.org/2000/01/rdf-schema#range>
+              <http://www.w3.org/2000/01/rdf-schema#Resource> .
+
+
 
 <http://www.geoknow.eu/data-cube/metric/-617212746/obs/46>
       a       <http://purl.org/linked-data/cube#Observation> ;

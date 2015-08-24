@@ -121,7 +121,7 @@ public class AverageSurfaceMetric implements GeoQualityMetric {
 
         Resource c2 = cubeData.createResource(STRUCTURE + "/c2", QB.ComponentSpecification);
         c2.addProperty(QB.measure, GK.MEASURE.Average);
-        c2.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Number of Properties", "en"));
+        c2.addProperty(RDFS.label, cubeData.createLiteral("Component Specification of Average Surface", "en"));
 
         structure.addProperty(QB.component, c1);
         structure.addProperty(QB.component, c2);
