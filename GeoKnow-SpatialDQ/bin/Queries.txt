@@ -1,0 +1,47 @@
+////////////////////////////////////////////////////////////////////////////////
+
+prefix gk-dim: <http://www.geoknow.eu/properties/>
+prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#>
+prefix qb: <http://purl.org/linked-data/cube#>
+SELECT ?InstanceType ?class ?TimeStamp ?InstanceCount  
+WHERE
+{
+?obsrv qb:dataSet <http://www.geoknow.eu/dataset/ds1> ; 
+	gk-dim:InstanceType ?InstanceType;
+	gk-dim:Class ?class ;
+	gk-dim:TimeStamp ?TimeStamp ;
+	sdmx-measure:InstanceCount ?InstanceCount ;
+	a qb:Observation .
+}
+////////////////////////////////////////////////////////////////////////
+
+prefix gk-dim: <http://www.geoknow.eu/properties/>
+prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#>
+prefix qb: <http://purl.org/linked-data/cube#>
+SELECT ?Instance ?Type ?Class ?TimeStamp ?PropsCount
+WHERE
+{
+?obsr qb:dataSet <http://www.geoknow.eu/dataset/ds2> ;
+       gk-dim:Instance ?Instance;
+	gk-dim:InstanceType ?Type ;
+	gk-dim:Class ?Class ;
+	gk-dim:TimeStamp ?TimeStamp ;
+	sdmx-measure:PropsCount ?PropsCount ;
+	a qb:Observation .
+}
+///////////////////////////////////////////////////////////////
+prefix gk-dim: <http://www.geoknow.eu/properties/>
+prefix sdmx-measure: <http://purl.org/linked-data/sdmx/2009/measure#>
+prefix qb: <http://purl.org/linked-data/cube#>
+SELECT DISTINCT ?property ?class ?timeStamp ?objectsCount ?subjectsCount 
+WHERE
+{
+?obsr qb:dataSet <http://www.geoknow.eu/dataset/ds3> ;
+        gk-dim:Property ?property ;
+	gk-dim:Class ?class ;
+	gk-dim:TimeStamp ?timeStamp ;
+	sdmx-measure:SubjectsCount ?objectsCount ;
+	sdmx-measure:ObjectsCount ?subjectsCount ;
+	a qb:Observation .
+}
+
