@@ -50,12 +50,16 @@
       <http://purl.org/dc/terms/publisher>
               "R & D, Unister GmbH, Geoknow"^^<http://www.w3.org/2001/XMLSchema#string> ;
       <http://purl.org/dc/terms/source>
-              "http://unidev245:8890/sparql" .
+              "http://unidev245:8890/sparql" ;
+       <http://purl.org/linked-data/cube#structure>
+              "http://www.geoknow.eu/data-cube/iooc" .
 
 <http://www.geoknow.eu/properties/Property>
       a       <http://purl.org/linked-data/cube#DimensionProperty> ;
       <http://www.w3.org/2000/01/rdf-schema#label>
-              "Instance name"@en , "Property name"@en .
+              "Instance name"@en , "Property name"@en ;
+      <http://www.w3.org/2000/01/rdf-schema#range>
+              <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.geoknow.eu/data-cube/metric2>
       a       <http://purl.org/linked-data/cube#DataStructureDefinition> ;
@@ -479,7 +483,9 @@
 <http://www.geoknow.eu/properties/TimeStamp>
       a       <http://purl.org/linked-data/cube#DimensionProperty> ;
       <http://www.w3.org/2000/01/rdf-schema#label>
-              "Time Stamp"@en .
+              "Time Stamp"@en ;
+      <http://www.w3.org/2000/01/rdf-schema#range>
+              <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.geoknow.eu/data-cube//structure/metric-1829421967>
       a       <http://purl.org/linked-data/cube#MeasureProperty> .
@@ -570,3 +576,29 @@
       a       <http://purl.org/linked-data/cube#MeasureProperty> ;
       <http://www.w3.org/2000/01/rdf-schema#label>
               "Other Classes Count"@en .
+
+<http://www.geoknow.eu/data-cube/iooc>
+      a       <http://purl.org/linked-data/cube#DataStructureDefinition> ;
+      <http://purl.org/linked-data/cube#component>
+              <http://www.geoknow.eu/data-cube/iooc/c2> , <http://www.geoknow.eu/data-cube/iooc/c1> .
+
+<http://www.geoknow.eu/data-cube/iooc/c1>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Class"@en ;
+      <http://purl.org/linked-data/cube#dimension>
+              <http://www.geoknow.eu/properties/Class> .
+
+<http://www.geoknow.eu/data-cube/iooc/c2>
+      a       <http://purl.org/linked-data/cube#ComponentSpecification> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "Component Specification of Number of Other Classes"@en ;
+      <http://purl.org/linked-data/cube#measure>
+              <http://www.geoknow.eu/properties/measure/OtherClasses> .
+
+<http://www.geoknow.eu/properties/Class>
+      a       <http://purl.org/linked-data/cube#DimensionProperty> ;
+      <http://www.w3.org/2000/01/rdf-schema#label>
+              "class of instance"@en ;
+      <http://www.w3.org/2000/01/rdf-schema#range>
+              <http://www.w3.org/2000/01/rdf-schema#Resource> .
