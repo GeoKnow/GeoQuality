@@ -123,7 +123,7 @@ public class Run1_6 {
                         metrics.add(
                                 new AveragePointsPerClass(new PropertyImpl(pointPredicate), pointClass, defaultGraphs));
                     } else {
-                        metrics.add(new AveragePointsPerClass(new PropertyImpl(pointPredicate), defaultGraphs));
+                        metrics.add(new AveragePointsPerClass(new PropertyImpl(pointPredicate), defaultGraphs, wkt));
                     }
                     break;
                 case "6":
@@ -141,9 +141,7 @@ public class Run1_6 {
         Model model = ModelFactory.createDefaultModel();
         for (GeoQualityMetric metric : metrics) {
             System.out.println("######### Starting " + metric.getClass().getSimpleName() + " ############");
-            Model m = ModelFactory.createDefaultModel();
-            m.read(new FileReader("nuts-rdf-0.91.ttl"), "", "TTL");
-            Model generateResultsDataCube = metric.generateResultsDataCube(m);
+            Model generateResultsDataCube = metric.generateResultsDataCube(endpoint);
             model.add(generateResultsDataCube);
             generateResultsDataCube.write(new FileWriter("/tmp/nuts-" + metric.getClass().getSimpleName() + ".ttl"),
                     "TTL");

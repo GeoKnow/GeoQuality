@@ -58,6 +58,10 @@ public class AveragePointsPerClass implements GeoQualityMetric {
             "SELECT ?instance (COUNT (DISTINCT ?geo) as ?count) "
                     + "WHERE { ?instance a ?class . ?instance ?property ?geo . ?geo a ?type . } "
                     + "GROUP BY ?instance");
+    private static final ParameterizedSparqlString COUNT_WKT = new ParameterizedSparqlString(
+            "SELECT ?instance (COUNT (DISTINCT ?geo) as ?count) "
+                    + "WHERE { ?instance a ?class . ?instance ?property ?geo . ?geo <http://www.opengis.net/ont/geosparql#asWKT> ?wkt . FILTER(strStarts(?wkt,\"POINT\")) } "
+                    + "GROUP BY ?instance");
 
     public static void main(String[] args) throws IOException {
         // Model m = ModelFactory.createDefaultModel();
@@ -71,6 +75,7 @@ public class AveragePointsPerClass implements GeoQualityMetric {
     private final Property property;
     private String type = null;
     private List<String> defaultGraphs = null;
+    private boolean wkt = false;
 
     private final String structureUri;
 
@@ -79,8 +84,19 @@ public class AveragePointsPerClass implements GeoQualityMetric {
         this.structureUri = NAMESPACE + "AveragePointsPerClassStructure";
     }
 
+    public AveragePointsPerClass(Property p, boolean wkt) {
+        this.property = p;
+        this.structureUri = NAMESPACE + "AveragePointsPerClassStructure";
+        this.wkt = wkt;
+    }
+
     public AveragePointsPerClass(Property property, List<String> defaultGraphs) {
         this(property);
+        this.defaultGraphs = defaultGraphs;
+    }
+
+    public AveragePointsPerClass(Property property, List<String> defaultGraphs, boolean wkt) {
+        this(property, wkt);
         this.defaultGraphs = defaultGraphs;
     }
 
@@ -169,6 +185,9 @@ public class AveragePointsPerClass implements GeoQualityMetric {
                     COUNT_GEO_TYPE.setIri("property", property.getURI());
                     COUNT_GEO_TYPE.setIri("type", type);
                     query = COUNT_GEO_TYPE.asQuery();
+                } else if (wkt) {
+                    COUNT_WKT.setIri("property", property.getURI());
+                    query = COUNT_WKT.asQuery();
                 } else {
                     COUNT_GEO.setIri("class", owlClass.getURI());
                     COUNT_GEO.setIri("property", property.getURI());
