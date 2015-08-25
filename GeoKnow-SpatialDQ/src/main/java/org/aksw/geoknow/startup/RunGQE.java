@@ -38,6 +38,7 @@ public class RunGQE {
     static String polygonClass = null;
     static List<String> defaultGraphs = new ArrayList();
     static int metricNr = 0;
+    static boolean wkt = false;
     private static final String HELP_MESSAGE = "usage: java -jar GQE.jar -e <endpoint_url> -m <metric_number> -o <file>  [-c <class_name>]  [-p <predicate>]"
             + "\n"
             + "-e\t\tendpoint\t<endpoint_url>\tSPARQL endpoint URL" + "\n"
@@ -46,6 +47,7 @@ public class RunGQE {
             + "-p\t--predicate\t<predicate>\tPredicate for point, required for metrix 1" + "\n"
             + "-cp\t--classPolygon\t<predicate>\tPredicate for polygon, required for metrix 6" + "\n"
             + "-g\t--graph\tgraph\tGraph to use as default graph" + "\n"
+            + "-w\t--wkt\t<boolean>\tuse wkt for metric 5:" + "\n"
             + "-m\t\tmetrics\t<metric_number>\tGQE metric number, where:" + "\n"
             + "\t 1 \t Average Point Set" + "\n"
             + "\t 2 \t Properties Per Class" + "\n"
@@ -90,6 +92,9 @@ public class RunGQE {
             if (args[i].equals("-cp") || args[i].toLowerCase().equals("--classPolygon")) {
                 polygonClass = args[i+1];
             }
+            if (args[i].equals("-w") || args[i].toLowerCase().equals("--wkt")) {
+                wkt = Boolean.parseBoolean(args[i+1]);
+            }
         }
 
     }
@@ -125,7 +130,7 @@ public class RunGQE {
             if (className != null && !className.isEmpty()) {
                 metric = new AveragePointsPerClass(new PropertyImpl(predicateName), className, defaultGraphs);
             } else {
-                metric = new AveragePointsPerClass(new PropertyImpl(predicateName), defaultGraphs);
+                metric = new AveragePointsPerClass(new PropertyImpl(predicateName), defaultGraphs, wkt);
             }
             writeOutput(outputFile, metric.generateResultsDataCube(inputEndPoint));
             break;
