@@ -6807,11 +6807,6 @@ ns4:OtherClasses  a  ns3:MeasureProperty ;
         ns2:Class          <http://linkedgeodata.org/ontology/Retail> ;
         ns4:InstanceCount  "51"^^<http://www.w3.org/2001/XMLSchema#long> .
 
-<http://www.geoknow.eu/data-cube/metric/473805453>
-        a              ns3:DataStructureDefinition ;
-        rdfs:label     "A Data Structure Definition for Instances Number Metric"@en ;
-        ns3:component  <http://www.geoknow.eu/data-cube/metric/473805453/c1> , <http://www.geoknow.eu/data-cube/metric/473805453/c2> .
-
 <http://www.geoknow.eu/data-cube/metric4/observation56>
         a                 ns3:Observation ;
         ns3:dataSet       <http://www.geoknow.eu/Instance_of_other_classes_Count> ;
@@ -14165,7 +14160,7 @@ ns2:Property  a     ns3:DimensionProperty ;
         ns1:date       "2015-07-23T12:12:11.121Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> , "2015-08-25T06:08:04.281Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
         ns1:publisher  "R & D, Unister GmbH, Geoknow"^^<http://www.w3.org/2001/XMLSchema#string> ;
         ns1:source     "http://akswnc3.informatik.uni-leipzig.de:8850/sparql" ;
-        ns3:structure  <http://www.geoknow.eu/data-cube/metric/473805453> , <http://www.geoknow.eu/data-cube/AveragePointsPerClassStructure> .
+        ns3:structure   <http://www.geoknow.eu/data-cube/AveragePointsPerClassStructure> .
 
 <http://www.geoknow.eu/data-cube/metric/-617212746/obs/789>
         a            ns3:Observation ;
