@@ -370,7 +370,7 @@
       <http://www.geoknow.eu/properties/Class>
               <http://geovocab.org/geometry#LinearRing> ;
       <http://www.geoknow.eu/properties/measure/Average>
-              "0.0"^^<http://www.w3.org/2001/XMLSchema#double> .
+              "28.888032454361056"^^<http://www.w3.org/2001/XMLSchema#double> .
 
 <http://www.geoknow.eu/data-cube/metric4/observation2>
       a       <http://purl.org/linked-data/cube#Observation> ;

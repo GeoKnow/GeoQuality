@@ -1,5 +1,6 @@
 package org.aksw.geoknow.assessment.count;
 
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
@@ -64,12 +65,12 @@ public class AveragePointsPerClass implements GeoQualityMetric {
                     + "GROUP BY ?instance");
 
     public static void main(String[] args) throws IOException {
-        // Model m = ModelFactory.createDefaultModel();
-        // m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
+         Model m = ModelFactory.createDefaultModel();
+         m.read(new FileReader("nuts-rdf-0.91.ttl"), "http://nuts.geovocab.org/id/", "TTL");
         GeoQualityMetric metric = new AveragePointsPerClass(
-                new PropertyImpl("http://www.w3.org/2003/01/geo/wgs84_pos#lat_long"));
-        Model r = metric.generateResultsDataCube("http://linkedgeodata.org/sparql");
-        r.write(new FileWriter("datacubes/LinkedGeoData/metric5.ttl"), "TTL");
+                new PropertyImpl("http://www.w3.org/2003/01/geo/wgs84_pos#lat"));
+        Model r = metric.generateResultsDataCube(m);
+        r.write(new FileWriter("nutsPoints.ttl"), "TTL");
     }
 
     private final Property property;
@@ -159,7 +160,7 @@ public class AveragePointsPerClass implements GeoQualityMetric {
             double sum = 0;
             double i = 0;
             COUNT_LIST.setIri("class", owlClass.getURI());
-            COUNT_LIST.setIri("property", property.getURI());
+//            COUNT_LIST.setIri("property", property.getURI());
             QueryExecution execCount = null;
             if (inputModel != null) {
                 execCount = QueryExecutionFactory.create(COUNT_LIST.asQuery(), inputModel);

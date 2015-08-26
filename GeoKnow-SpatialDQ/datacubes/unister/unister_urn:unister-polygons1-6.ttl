@@ -125,7 +125,9 @@
 <http://www.geoknow.eu/properties/Class>
       a       <http://purl.org/linked-data/cube#DimensionProperty> ;
       <http://www.w3.org/2000/01/rdf-schema#label>
-              "class of instance"@en .
+              "class of instance"@en ;
+      <http://www.w3.org/2000/01/rdf-schema#range>
+              <http://www.w3.org/2000/01/rdf-schema#Resource> .
 
 <http://www.geoknow.eu/data-cube/metric/1020701218/obs/5>
       a       <http://purl.org/linked-data/cube#Observation> ;
