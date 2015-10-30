@@ -1,0 +1,164 @@
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix gk:      <http://www.geoknow.eu/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix qb:      <http://purl.org/linked-data/cube#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+
+gk:avg_poly_obv_1_15
+      a       qb:Observation ;
+      qb:dataSet gk:avg_poly_dataset ;
+      <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+              "14224.5018729976" ;
+      <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+              <http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion> ;
+      <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+              "geolink" ;
+      <http://www.geoknow.eu/properties/avg_poly_time_prop>
+              "Fri Oct 30 16:11:27 CET 2015" .
+
+gk:avg_poly_comp_metric
+      a       qb:ComponentSpecification ;
+      rdfs:label "Component Specification of Polygon Metric" ;
+      qb:dimension <http://www.geoknow.eu/properties/avg_poly_metric_prop> .
+
+<http://www.geoknow.eu/properties/avg_poly_metric_prop>
+      a       qb:DimensionProperty ;
+      rdfs:label "Polygon Metric" .
+
+gk:avg_poly_dataset
+      a       qb:DataSet ;
+      rdfs:comment "Average distance between polygons which represent the same resource" ;
+      rdfs:label "Per class average polygons distances" ;
+      dcterms:date "Fri Oct 30 16:11:12 CET 2015" ;
+      dcterms:publisher "AKSW, GeoKnow" ;
+      qb:structure gk:avg_poly_data_struct_def .
+
+gk:avg_poly_comp_dist
+      a       qb:ComponentSpecification ;
+      rdfs:label "Average Polygon Distance" ;
+      qb:measure <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop> .
+
+<http://www.geoknow.eu/properties/avg_poly_time_prop>
+      a       qb:DimensionProperty ;
+      rdfs:label "Time Stamp" .
+
+gk:avg_poly_comp_time
+      a       qb:ComponentSpecification ;
+      rdfs:label "Component Specification of Time Stamp" ;
+      qb:dimension <http://www.geoknow.eu/properties/avg_poly_time_prop> .
+
+<http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+      a       qb:MeasureProperty ;
+      rdfs:label "Average Polygon Distance" .
+
+gk:avg_poly_obv_1_7
+      a       qb:Observation ;
+      qb:dataSet gk:avg_poly_dataset ;
+      <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+              "1617.7955498447852" ;
+      <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+              <http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion> ;
+      <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+              "hausdorff" ;
+      <http://www.geoknow.eu/properties/avg_poly_time_prop>
+              "Fri Oct 30 16:11:21 CET 2015" .
+
+gk:avg_poly_comp_cls
+      a       qb:ComponentSpecification ;
+      rdfs:label "Component Specification of Class" ;
+      qb:dimension <http://www.geoknow.eu/properties/avg_poly_cls_prop> .
+
+gk:avg_poly_obv_1_5
+      a       qb:Observation ;
+      qb:dataSet gk:avg_poly_dataset ;
+      <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+              "1591.0545858306366" ;
+      <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+              <http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion> ;
+      <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+              "geomax" ;
+      <http://www.geoknow.eu/properties/avg_poly_time_prop>
+              "Fri Oct 30 16:11:19 CET 2015" .
+
+gk:avg_poly_obv_1_11
+      a       qb:Observation ;
+      qb:dataSet gk:avg_poly_dataset ;
+      <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+              "8023.949516040084" ;
+      <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+              <http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion> ;
+      <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+              "geosummin" ;
+      <http://www.geoknow.eu/properties/avg_poly_time_prop>
+              "Fri Oct 30 16:11:25 CET 2015" .
+
+gk:avg_poly_obv_1_17
+      a       qb:Observation ;
+      qb:dataSet gk:avg_poly_dataset ;
+      <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+              "1560.2955076035444" ;
+      <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+              <http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion> ;
+      <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+              "geoavg" ;
+      <http://www.geoknow.eu/properties/avg_poly_time_prop>
+              "Fri Oct 30 16:11:29 CET 2015" .
+
+gk:avg_poly_obv_1_9
+      a       qb:Observation ;
+      qb:dataSet gk:avg_poly_dataset ;
+      <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+              "14798.846244919414" ;
+      <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+              <http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion> ;
+      <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+              "surjection" ;
+      <http://www.geoknow.eu/properties/avg_poly_time_prop>
+              "Fri Oct 30 16:11:23 CET 2015" .
+
+gk:avg_poly_obv_1_1
+      a       qb:Observation ;
+      qb:dataSet gk:avg_poly_dataset ;
+      <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+              "1530.053430818462" ;
+      <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+              <http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion> ;
+      <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+              "geomean" ;
+      <http://www.geoknow.eu/properties/avg_poly_time_prop>
+              "Fri Oct 30 16:11:16 CET 2015" .
+
+gk:avg_poly_obv_1_13
+      a       qb:Observation ;
+      qb:dataSet gk:avg_poly_dataset ;
+      <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+              "14094.361330783335" ;
+      <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+              <http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion> ;
+      <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+              "fairsurjection" ;
+      <http://www.geoknow.eu/properties/avg_poly_time_prop>
+              "Fri Oct 30 16:11:26 CET 2015" .
+
+gk:avg_poly_data_struct_def
+      a       qb:DataStructureDefinition ;
+      rdfs:comment "A Data Structure Definition for http://www.geoknow.eu/avg_poly_dataset" ;
+      rdfs:label "A Data Structure Definition" ;
+      qb:component gk:avg_poly_comp_metric , gk:avg_poly_comp_cls , gk:avg_poly_comp_dist , gk:avg_poly_comp_time .
+
+<http://www.geoknow.eu/properties/avg_poly_cls_prop>
+      a       qb:DimensionProperty ;
+      rdfs:label "Class Name" .
+
+gk:avg_poly_obv_1_3
+      a       qb:Observation ;
+      qb:dataSet gk:avg_poly_dataset ;
+      <http://purl.org/linked-data/sdmx/2009/measure#avg_poly_dist_prop>
+              "1426.1137515744895" ;
+      <http://www.geoknow.eu/properties/avg_poly_cls_prop>
+              <http://rdfdata.eionet.europa.eu/ramon/ontology/NUTSRegion> ;
+      <http://www.geoknow.eu/properties/avg_poly_metric_prop>
+              "geomin" ;
+      <http://www.geoknow.eu/properties/avg_poly_time_prop>
+              "Fri Oct 30 16:11:18 CET 2015" .
